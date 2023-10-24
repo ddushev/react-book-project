@@ -7,7 +7,7 @@ export const Header = () => {
                         href="index.html"
                         className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
                     >
-                        <h1 className="m-0 text-primary text-uppercase">Hotelier</h1>
+                        <h1 className="m-0 text-primary text-uppercase">Reactbook</h1>
                     </a>
                 </div>
                 <div className="col-lg-9">
@@ -15,28 +15,28 @@ export const Header = () => {
                         <div className="col-lg-7 px-5 text-start">
                             <div className="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i className="fa fa-envelope text-primary me-2" />
-                                <p className="mb-0">info@example.com</p>
+                                <p className="mb-0">danieldyshew@gmail.com</p>
                             </div>
                             <div className="h-100 d-inline-flex align-items-center py-2">
                                 <i className="fa fa-phone-alt text-primary me-2" />
-                                <p className="mb-0">+012 345 6789</p>
+                                <p className="mb-0">+359 896-859-188</p>
                             </div>
                         </div>
                         <div className="col-lg-5 px-5 text-end">
                             <div className="d-inline-flex align-items-center py-2">
-                                <a className="me-3" href="">
+                                <a className="me-3" target="_blank" href="https://www.facebook.com/daniel.dushew/">
                                     <i className="fab fa-facebook-f" />
                                 </a>
-                                <a className="me-3" href="">
+                                <a className="me-3" target="_blank" href="https://twitter.com/danieldushev">
                                     <i className="fab fa-twitter" />
                                 </a>
-                                <a className="me-3" href="">
+                                <a className="me-3" target="_blank" href="https://www.linkedin.com/in/ddushev/">
                                     <i className="fab fa-linkedin-in" />
                                 </a>
-                                <a className="me-3" href="">
+                                <a className="me-3" target="_blank" href="https://www.instagram.com/daniel.dushev/">
                                     <i className="fab fa-instagram" />
                                 </a>
-                                <a className="" href="">
+                                <a className="me-3" target="_blank" href="https://www.youtube.com/@daniel.dushev">
                                     <i className="fab fa-youtube" />
                                 </a>
                             </div>
@@ -99,8 +99,7 @@ export const Header = () => {
                                 href="https://htmlcodex.com/hotel-html-template-pro"
                                 className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
                             >
-                                Premium Version
-                                <i className="fa fa-arrow-right ms-3" />
+                                Sign
                             </a>
                         </div>
                     </nav>
