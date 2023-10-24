@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
+
 export const Header = () => {
     return (
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
                 <div className="col-lg-3 bg-dark d-none d-lg-block">
-                    <a
-                        href="index.html"
+                    <Link
+                        to="/"
                         className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
                     >
                         <h1 className="m-0 text-primary text-uppercase">Reactbook</h1>
-                    </a>
+                    </Link>
                 </div>
                 <div className="col-lg-9">
                     <div className="row gx-0 bg-white d-none d-lg-flex">
@@ -59,9 +61,9 @@ export const Header = () => {
                             id="navbarCollapse"
                         >
                             <div className="navbar-nav mr-auto py-0">
-                                <a href="index.html" className="nav-item nav-link active">
+                                <Link to="/" className="nav-item nav-link active">
                                     Home
-                                </a>
+                                </Link>
                                 <a href="about.html" className="nav-item nav-link">
                                     About
                                 </a>
