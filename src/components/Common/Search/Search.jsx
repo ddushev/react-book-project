@@ -1,4 +1,4 @@
-export const Booking = () => {
+export const Search = () => {
     return (
         <div
             className="container-fluid booking pb-5 wow fadeIn"
