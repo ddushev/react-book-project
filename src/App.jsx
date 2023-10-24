@@ -4,6 +4,7 @@ import { Footer } from "./components/Footer/Footer"
 import { BackToTop } from "./components/BackToTop/BackToTop"
 import { Newsletter } from "./components/Newsletter/Newsletter"
 import { Route, Routes } from "react-router-dom"
+import { About } from "./components/About/About"
 
 function App() {
 
@@ -13,8 +14,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
       </Routes>
-      
+
       <Newsletter />
       <Footer />
       <BackToTop />
