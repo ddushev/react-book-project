@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom"
 import { About } from "./components/About/About"
 import { RoomsCatalog } from "./components/RoomsCatalog/RoomsCatalog"
 import { AddRoom } from "./components/AddRoom/AddRoom"
+import { Testimonials } from "./components/Testimonials/Testimonials"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/available-rooms" element={<RoomsCatalog />} />
         <Route path="/add-room" element={<AddRoom />} />
+        <Route path="/testimonials" element={<Testimonials />} />
       </Routes>
 
       <Newsletter />

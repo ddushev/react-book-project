@@ -5,7 +5,8 @@ export const CommonHeader = () => {
     const currentPageInfo = {
         "/about": "About Us",
         "/available-rooms": "Book a Room",
-        "/add-room": "Add Room"
+        "/add-room": "Add Room",
+        "/testimonials": "Testimonials"
     }
     return (
         <div
