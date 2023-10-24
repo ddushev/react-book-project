@@ -79,7 +79,7 @@ export const Header = () => {
                                         <Link to="available-rooms" className="dropdown-item">
                                             Catalog
                                         </Link>
-                                        <Link href="add-room" className="dropdown-item">
+                                        <Link to="add-room" className="dropdown-item">
                                             Add
                                         </Link>
                                     </div>

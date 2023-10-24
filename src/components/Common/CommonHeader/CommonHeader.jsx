@@ -1,4 +1,4 @@
-export const RoomsHeader = () => {
+export const CommonHeader = () => {
     return (
         <div
             className="container-fluid page-header mb-5 p-0"
@@ -7,7 +7,7 @@ export const RoomsHeader = () => {
             <div className="container-fluid page-header-inner py-5">
                 <div className="container text-center pb-5">
                     <h1 className="display-3 text-white mb-3 animated slideInDown">
-                        Rooms
+                        About Us
                     </h1>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb justify-content-center text-uppercase">
@@ -21,7 +21,7 @@ export const RoomsHeader = () => {
                                 className="breadcrumb-item text-white active"
                                 aria-current="page"
                             >
-                                Rooms
+                                About
                             </li>
                         </ol>
                     </nav>

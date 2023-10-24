@@ -6,6 +6,7 @@ import { Newsletter } from "./components/Newsletter/Newsletter"
 import { Route, Routes } from "react-router-dom"
 import { About } from "./components/About/About"
 import { RoomsCatalog } from "./components/RoomsCatalog/RoomsCatalog"
+import { AddRoom } from "./components/AddRoom/AddRoom"
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/available-rooms" element={<RoomsCatalog />} />
+        <Route path="/add-room" element={<AddRoom />} />
       </Routes>
 
       <Newsletter />

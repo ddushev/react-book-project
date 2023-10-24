@@ -1,11 +1,11 @@
 import { Search } from "../Common/Search/Search";
-import { AboutHeader } from "./AboutHeader/AboutHeader";
+import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { AboutMain } from "./AboutMain/AboutMain";
 
 export const About = () => {
     return (
         <>
-            <AboutHeader />
+            <CommonHeader />
             <Search />
             <AboutMain />
         </>
