@@ -1,4 +1,12 @@
+import { useLocation } from "react-router-dom";
+
 export const CommonHeader = () => {
+    const locationPathname = useLocation().pathname;
+    const currentPageInfo = {
+        "/about": "About Us",
+        "/available-rooms": "Book a Room",
+        "/add-room": "Add Room"
+    }
     return (
         <div
             className="container-fluid page-header mb-5 p-0"
@@ -7,7 +15,7 @@ export const CommonHeader = () => {
             <div className="container-fluid page-header-inner py-5">
                 <div className="container text-center pb-5">
                     <h1 className="display-3 text-white mb-3 animated slideInDown">
-                        About Us
+                        {currentPageInfo[locationPathname]}
                     </h1>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb justify-content-center text-uppercase">
