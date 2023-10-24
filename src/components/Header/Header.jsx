@@ -64,15 +64,12 @@ export const Header = () => {
                                 <Link to="/" className="nav-item nav-link active">
                                     Home
                                 </Link>
-                                <a href="about.html" className="nav-item nav-link">
+                                <Link to="/about" className="nav-item nav-link">
                                     About
-                                </a>
-                                <a href="service.html" className="nav-item nav-link">
-                                    Services
-                                </a>
-                                <a href="room.html" className="nav-item nav-link">
+                                </Link>
+                                <Link to="/rooms" className="nav-item nav-link">
                                     Rooms
-                                </a>
+                                </Link>
                                 <div className="nav-item dropdown">
                                     <a
                                         href="#"
