@@ -5,6 +5,7 @@ import { BackToTop } from "./components/BackToTop/BackToTop"
 import { Newsletter } from "./components/Newsletter/Newsletter"
 import { Route, Routes } from "react-router-dom"
 import { About } from "./components/About/About"
+import { RoomsCatalog } from "./components/RoomsCatalog/RoomsCatalog"
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/available-rooms" element={<RoomsCatalog />} />
       </Routes>
 
       <Newsletter />

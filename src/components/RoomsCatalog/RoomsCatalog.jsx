@@ -1,11 +1,11 @@
 import { RoomsList } from "../Common/RoomsList/RoomsList";
 import { Search } from "../Common/Search/Search";
-import { RoomHeader } from "./RoomHeader/RoomHeader";
+import { RoomsHeader } from "./RoomsHeader/RoomsHeader";
 
-export const Room = () => {
+export const RoomsCatalog = () => {
     return (
         <>
-            <RoomHeader />
+            <RoomsHeader />
             <Search />
             <RoomsList />
         </>

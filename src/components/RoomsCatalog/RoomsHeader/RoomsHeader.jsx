@@ -1,4 +1,4 @@
-export const RoomHeader = () => {
+export const RoomsHeader = () => {
     return (
         <div
             className="container-fluid page-header mb-5 p-0"

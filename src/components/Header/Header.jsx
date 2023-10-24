@@ -9,7 +9,7 @@ export const Header = () => {
                         to="/"
                         className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
                     >
-                        <h1 className="m-0 text-primary text-uppercase">Reactbook</h1>
+                        <h1 className="m-0 text-primary text-uppercase">ReactBook</h1>
                     </Link>
                 </div>
                 <div className="col-lg-9">
@@ -67,29 +67,26 @@ export const Header = () => {
                                 <Link to="/about" className="nav-item nav-link">
                                     About
                                 </Link>
-                                <Link to="/rooms" className="nav-item nav-link">
-                                    Rooms
-                                </Link>
                                 <div className="nav-item dropdown">
                                     <a
                                         href="#"
                                         className="nav-link dropdown-toggle"
                                         data-bs-toggle="dropdown"
                                     >
-                                        Pages
+                                        Rooms
                                     </a>
                                     <div className="dropdown-menu rounded-0 m-0">
-                                        <a href="booking.html" className="dropdown-item">
-                                            Booking
-                                        </a>
-                                        <a href="team.html" className="dropdown-item">
-                                            Our Team
-                                        </a>
-                                        <a href="testimonial.html" className="dropdown-item">
-                                            Testimonial
-                                        </a>
+                                        <Link to="available-rooms" className="dropdown-item">
+                                            Catalog
+                                        </Link>
+                                        <Link href="add-room" className="dropdown-item">
+                                            Add
+                                        </Link>
                                     </div>
                                 </div>
+                                <Link to="/testimonials" className="nav-item nav-link">
+                                    Testimonials
+                                </Link>
                                 <a href="contact.html" className="nav-item nav-link">
                                     Contact
                                 </a>
