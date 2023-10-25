@@ -1,6 +1,7 @@
+import './Testimonials.css'
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
-export const Testimonials = function (){
+export const Testimonials = function () {
     return (
         <>
             <CommonHeader />
@@ -9,7 +10,7 @@ export const Testimonials = function (){
                 data-wow-delay="0.1s"
             >
                 <div className="container">
-                    <div className="owl-carousel testimonial-carousel py-5 ">
+                    <div className="owl-carousel testimonial-carousel py-5 owl-loaded owl-drag">
                         <div className="testimonial-item position-relative bg-white rounded overflow-hidden">
                             <p>
                                 Tempor stet labore dolor clita stet diam amet ipsum dolor duo ipsum
