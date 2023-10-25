@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Footer = () => {
     return (<div
         className="container-fluid bg-dark text-light footer wow fadeIn"
@@ -8,18 +10,14 @@ export const Footer = () => {
                 <div className="col-md-6 col-lg-4">
                     <div className="bg-primary rounded p-4">
                         <a href="index.html">
-                            <h1 className="text-white text-uppercase mb-3">Hotelier</h1>
+                            <h1 className="text-white text-uppercase mb-3">ReactBook</h1>
                         </a>
                         <p className="text-white mb-0">
-                            Download{" "}
+                            Your opinnion is very important to us so please do not forget to share it with us and leave a like on our
                             <a
                                 className="text-dark fw-medium"
-                                href="https://htmlcodex.com/hotel-html-template-pro"
-                            >
-                                Hotelier – Premium Version
-                            </a>
-                            , build a professional website for your hotel business and grab
-                            the attention of new visitors upon your site’s launch.
+                                href="#"
+                            > social channels</a> !
                         </p>
                     </div>
                 </div>
@@ -29,27 +27,27 @@ export const Footer = () => {
                     </h6>
                     <p className="mb-2">
                         <i className="fa fa-map-marker-alt me-3" />
-                        123 Street, New York, USA
+                        123 Street, Sofia, Bulgaria
                     </p>
                     <p className="mb-2">
                         <i className="fa fa-phone-alt me-3" />
-                        +012 345 67890
+                        +359 896-859-188
                     </p>
                     <p className="mb-2">
                         <i className="fa fa-envelope me-3" />
-                        info@example.com
+                        danieldyshew@gmail.com
                     </p>
                     <div className="d-flex pt-2">
-                        <a className="btn btn-outline-light btn-social" href="">
+                        <a className="btn btn-outline-light btn-social" href="https://twitter.com/danieldushev">
                             <i className="fab fa-twitter" />
                         </a>
-                        <a className="btn btn-outline-light btn-social" href="">
+                        <a className="btn btn-outline-light btn-social" href="https://www.facebook.com/daniel.dushew/">
                             <i className="fab fa-facebook-f" />
                         </a>
-                        <a className="btn btn-outline-light btn-social" href="">
+                        <a className="btn btn-outline-light btn-social" href="https://www.youtube.com/@daniel.dushev">
                             <i className="fab fa-youtube" />
                         </a>
-                        <a className="btn btn-outline-light btn-social" href="">
+                        <a className="btn btn-outline-light btn-social" href="https://www.linkedin.com/in/ddushev/">
                             <i className="fab fa-linkedin-in" />
                         </a>
                     </div>
@@ -105,9 +103,9 @@ export const Footer = () => {
                 <div className="row">
                     <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         ©{" "}
-                        <a className="border-bottom" href="#">
-                            Your Site Name
-                        </a>
+                        <Link className="border-bottom" to="/">
+                            ReactBook
+                        </Link>
                         , All Right Reserved.
                         {/*/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. *** /*/}
                         Designed By{" "}
