@@ -9,6 +9,8 @@ import { RoomsCatalog } from "./components/RoomsCatalog/RoomsCatalog"
 import { AddRoom } from "./components/AddRoom/AddRoom"
 import { Testimonials } from "./components/Testimonials/Testimonials"
 import { Feedback } from "./components/Feedback/Feedback"
+import { Login } from "./components/Sign/Login/Login"
+import { Register } from "./components/Sign/Register/Register"
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
         <Route path="/add-room" element={<AddRoom />} />
         <Route path="/testimonials" element={<Testimonials />} />
         <Route path="/send-feedback" element={<Feedback />} />
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/sign-up" element={<Register />} />
       </Routes>
 
       <Newsletter />

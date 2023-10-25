@@ -91,12 +91,12 @@ export const Header = () => {
                                     Feedback
                                 </Link>
                             </div>
-                            <a
-                                href="https://htmlcodex.com/hotel-html-template-pro"
+                            <Link
+                                to="/sign-in"
                                 className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
                             >
                                 Sign
-                            </a>
+                            </Link>
                         </div>
                     </nav>
                 </div>
