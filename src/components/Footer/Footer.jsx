@@ -13,7 +13,7 @@ export const Footer = () => {
                             <h1 className="text-white text-uppercase mb-3">ReactBook</h1>
                         </a>
                         <p className="text-white mb-0">
-                            Your opinnion is very important to us so please do not forget to share it with us and leave a like on our
+                            Your opinnion is very important to us so please do not forget to <Link to="/send-feedback" className="text-dark fw-medium">share</Link> it with us and leave a like on our
                             <a
                                 className="text-dark fw-medium"
                                 href="#"
@@ -58,19 +58,19 @@ export const Footer = () => {
                             <h6 className="section-title text-start text-primary text-uppercase mb-4">
                                 Company
                             </h6>
-                            <a className="btn btn-link" href="">
+                            <Link className="btn btn-link" to="/about">
                                 About Us
-                            </a>
-                            <a className="btn btn-link" href="">
-                                Contact Us
-                            </a>
-                            <a className="btn btn-link" href="">
+                            </Link>
+                            <Link className="btn btn-link" to="/send-feedback">
+                                Share your feedback
+                            </Link>
+                            <a className="btn btn-link" href="#">
                                 Privacy Policy
                             </a>
-                            <a className="btn btn-link" href="">
+                            <a className="btn btn-link" href="#">
                                 Terms &amp; Condition
                             </a>
-                            <a className="btn btn-link" href="">
+                            <a className="btn btn-link" href="#">
                                 Support
                             </a>
                         </div>
@@ -78,21 +78,12 @@ export const Footer = () => {
                             <h6 className="section-title text-start text-primary text-uppercase mb-4">
                                 Services
                             </h6>
-                            <a className="btn btn-link" href="">
-                                Food &amp; Restaurant
-                            </a>
-                            <a className="btn btn-link" href="">
-                                Spa &amp; Fitness
-                            </a>
-                            <a className="btn btn-link" href="">
-                                Sports &amp; Gaming
-                            </a>
-                            <a className="btn btn-link" href="">
-                                Event &amp; Party
-                            </a>
-                            <a className="btn btn-link" href="">
-                                GYM &amp; Yoga
-                            </a>
+                            <Link className="btn btn-link" to="/available-rooms">
+                                Book a Room
+                            </Link>
+                            <Link className="btn btn-link" to="/add-room">
+                                Add Room
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -103,8 +94,8 @@ export const Footer = () => {
                 <div className="row">
                     <div className="col-md-6 text-center text-md-start mb-3 mb-md-0">
                         ©{" "}
-                        <Link className="border-bottom" to="/">
-                            ReactBook
+                        <Link className="border-bottom" to="https://www.linkedin.com/in/ddushev/">
+                            ReactBook by Daniel Dushev
                         </Link>
                         , All Right Reserved.
                         {/*/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. *** /*/}
@@ -115,10 +106,10 @@ export const Footer = () => {
                     </div>
                     <div className="col-md-6 text-center text-md-end">
                         <div className="footer-menu">
-                            <a href="">Home</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
+                            <Link to="/">Home</Link>
+                            <a href="#">Cookies</a>
+                            <a href="#">Help</a>
+                            <a href="#">FQAs</a>
                         </div>
                     </div>
                 </div>
