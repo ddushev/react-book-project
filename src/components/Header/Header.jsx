@@ -46,7 +46,7 @@ export const Header = () => {
                     </div>
                     <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
                         <a href="index.html" className="navbar-brand d-block d-lg-none">
-                            <h1 className="m-0 text-primary text-uppercase">Hotelier</h1>
+                            <h1 className="m-0 text-primary text-uppercase">ReactBook</h1>
                         </a>
                         <button
                             type="button"
