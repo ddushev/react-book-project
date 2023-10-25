@@ -87,9 +87,9 @@ export const Header = () => {
                                 <Link to="/testimonials" className="nav-item nav-link">
                                     Testimonials
                                 </Link>
-                                <a href="contact.html" className="nav-item nav-link">
-                                    Contact
-                                </a>
+                                <Link to="send-feedback" className="nav-item nav-link">
+                                    Feedback
+                                </Link>
                             </div>
                             <a
                                 href="https://htmlcodex.com/hotel-html-template-pro"

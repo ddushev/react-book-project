@@ -62,7 +62,7 @@ export const Footer = () => {
                                 About Us
                             </Link>
                             <Link className="btn btn-link" to="/send-feedback">
-                                Share your feedback
+                                Share Your Feedback
                             </Link>
                             <a className="btn btn-link" href="#">
                                 Privacy Policy
