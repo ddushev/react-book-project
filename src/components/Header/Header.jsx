@@ -84,12 +84,23 @@ export const Header = () => {
                                         </Link>
                                     </div>
                                 </div>
-                                <Link to="/testimonials" className="nav-item nav-link">
-                                    Testimonials
-                                </Link>
-                                <Link to="send-feedback" className="nav-item nav-link">
-                                    Feedback
-                                </Link>
+                                <div className="nav-item dropdown">
+                                    <a
+                                        href="#"
+                                        className="nav-link dropdown-toggle"
+                                        data-bs-toggle="dropdown"
+                                    >
+                                        Feedback
+                                    </a>
+                                    <div className="dropdown-menu rounded-0 m-0">
+                                        <Link to="/testimonials" className="dropdown-item">
+                                            Testimonials
+                                        </Link>
+                                        <Link to="/send-feedback" className="dropdown-item">
+                                            Share your feedback
+                                        </Link>
+                                    </div>
+                                </div>
                             </div>
                             <Link
                                 to="/sign-in"
