@@ -1,3 +1,5 @@
+import "./CommonHeader.css";
+
 import { useLocation } from "react-router-dom";
 
 export const CommonHeader = () => {

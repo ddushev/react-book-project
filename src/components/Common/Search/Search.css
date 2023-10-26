@@ -1,0 +1,6 @@
+/* Search */
+.booking {
+    position: relative;
+    margin-top: -100px !important;
+    z-index: 1;
+}

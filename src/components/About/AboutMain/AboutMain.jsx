@@ -1,3 +1,5 @@
+import "./AboutMain.jsx";
+
 export const AboutMain = () => {
     return (
         <div className="container-xxl py-5">
