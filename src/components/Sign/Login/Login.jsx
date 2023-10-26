@@ -5,12 +5,12 @@ export const Login = () => {
         <div className="container-xxl py-5">
             <div className="container">
                 <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 className="section-title text-center text-primary text-uppercase">
-                        Sign in
-                    </h6>
                     <h1 className="mb-5">
-                        Don't have an account yet? <span className="text-primary text-uppercase"><Link to="/sign-up">Sign up</Link></span>
+                        <span className="text-primary text-uppercase">Sign in</span>
                     </h1>
+                    <h6 className="section-title text-center text-uppercase">
+                       Don't have an account yet? <Link to="/sign-up">Sign up</Link>
+                    </h6>
                 </div>
                 <div className="row g-4">
                     <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
