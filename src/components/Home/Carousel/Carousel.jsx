@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Carousel = () => {
     return (
         <div className="container-fluid p-0 mb-5">
@@ -17,18 +19,18 @@ export const Carousel = () => {
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">
                                     Discover A Brand Luxurious Hotel
                                 </h1>
-                                <a
-                                    href=""
+                                <Link
+                                    to="/available-rooms"
                                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                                 >
-                                    Our Rooms
-                                </a>
-                                <a
-                                    href=""
+                                    Book Room
+                                </Link>
+                                <Link
+                                    to="/add-room"
                                     className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                                 >
-                                    Book A Room
-                                </a>
+                                    Add Room
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -42,18 +44,18 @@ export const Carousel = () => {
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">
                                     Discover A Brand Luxurious Hotel
                                 </h1>
-                                <a
-                                    href=""
+                                <Link
+                                    to="/available-rooms"
                                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                                 >
-                                    Our Rooms
-                                </a>
-                                <a
-                                    href=""
+                                    Book Room
+                                </Link>
+                                <Link
+                                    to="/add-room"
                                     className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                                 >
-                                    Book A Room
-                                </a>
+                                    Add Room
+                                </Link>
                             </div>
                         </div>
                     </div>
