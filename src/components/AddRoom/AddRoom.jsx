@@ -9,11 +9,11 @@ export const AddRoom = () => {
                 <div className="container">
                     <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
                         <h6 className="section-title text-center text-primary text-uppercase">
-                            Room Booking
+                            Add Availability
                         </h6>
                         <h1 className="mb-5">
-                            Book A{" "}
-                            <span className="text-primary text-uppercase">Luxury Room</span>
+                            Host A{" "}
+                            <span className="text-primary text-uppercase">Room</span>
                         </h1>
                     </div>
                     <div className="row g-5">
@@ -52,7 +52,7 @@ export const AddRoom = () => {
                         </div>
                         <div className="col-lg-6">
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
-                                <form>
+                                <form method="POST">
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
@@ -60,20 +60,22 @@ export const AddRoom = () => {
                                                     type="text"
                                                     className="form-control"
                                                     id="name"
-                                                    placeholder="Your Name"
+                                                    placeholder="Property Name"
+                                                    name="name"
                                                 />
-                                                <label htmlFor="name">Your Name</label>
+                                                <label htmlFor="name">Property Name</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input
-                                                    type="email"
+                                                    type="number"
                                                     className="form-control"
-                                                    id="email"
-                                                    placeholder="Your Email"
+                                                    id="price"
+                                                    placeholder="Price per night"
+                                                    name="price"
                                                 />
-                                                <label htmlFor="email">Your Email</label>
+                                                <label htmlFor="email">Price per night </label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -85,12 +87,13 @@ export const AddRoom = () => {
                                                 <input
                                                     type="text"
                                                     className="form-control datetimepicker-input"
-                                                    id="checkin"
+                                                    id="checkin-availability"
                                                     placeholder="Check In"
                                                     data-target="#date3"
                                                     data-toggle="datetimepicker"
+                                                    name="checkin-availability"
                                                 />
-                                                <label htmlFor="checkin">Check In</label>
+                                                <label htmlFor="checkin">Available from</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -106,38 +109,62 @@ export const AddRoom = () => {
                                                     placeholder="Check Out"
                                                     data-target="#date4"
                                                     data-toggle="datetimepicker"
+                                                    name="checkout-availability"
                                                 />
-                                                <label htmlFor="checkout">Check Out</label>
+                                                <label htmlFor="checkout">Available to</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select" id="select1">
-                                                    <option value={1}>Adult 1</option>
-                                                    <option value={2}>Adult 2</option>
-                                                    <option value={3}>Adult 3</option>
+                                                <select name="adult" className="form-select" id="select1">
+                                                    <option value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={4}>4</option>
                                                 </select>
-                                                <label htmlFor="select1">Select Adult</label>
+                                                <label htmlFor="select1">Adults</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select className="form-select" id="select2">
-                                                    <option value={1}>Child 1</option>
-                                                    <option value={2}>Child 2</option>
-                                                    <option value={3}>Child 3</option>
+                                                <select name="child" className="form-select" id="select2">
+                                                    <option value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={3}>4</option>
                                                 </select>
-                                                <label htmlFor="select2">Select Child</label>
+                                                <label htmlFor="select2">Children</label>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <select name="beds" className="form-select" id="select3">
+                                                    <option value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={3}>4</option>
+                                                </select>
+                                                <label htmlFor="select3">Beds</label>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <select name="baths" className="form-select" id="select4">
+                                                    <option value={1}>1</option>
+                                                    <option value={2}>2</option>
+                                                    <option value={3}>3</option>
+                                                    <option value={3}>4</option>
+                                                </select>
+                                                <label htmlFor="select4">Baths</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <select className="form-select" id="select3">
-                                                    <option value={1}>Room 1</option>
-                                                    <option value={2}>Room 2</option>
-                                                    <option value={3}>Room 3</option>
+                                                <select value="wifi" className="form-select" id="select5">
+                                                    <option value={true}>Yes</option>
+                                                    <option value={false}>No</option>
                                                 </select>
-                                                <label htmlFor="select3">Select A Room</label>
+                                                <label htmlFor="select5">WiFi</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
@@ -145,16 +172,17 @@ export const AddRoom = () => {
                                                 <textarea
                                                     className="form-control"
                                                     placeholder="Special Request"
-                                                    id="message"
+                                                    id="description"
                                                     style={{ height: 100 }}
                                                     defaultValue={""}
+                                                    name="description"
                                                 />
-                                                <label htmlFor="message">Special Request</label>
+                                                <label htmlFor="description">Description</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <button className="btn btn-primary w-100 py-3" type="submit">
-                                                Book Now
+                                                Add
                                             </button>
                                         </div>
                                     </div>
