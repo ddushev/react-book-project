@@ -4,32 +4,32 @@ import { baseUrl } from "../utils/constants"
 export function dataFactory(token) {
     const api = requestFactory(token);
 
-    async function getData() {
-        return api.get(`${baseUrl}/data/games`);
+    async function getRooms() {
+        return api.get(`${baseUrl}/data/rooms`);
     }
 
-    async function getGame(gameId) {
-        return api.get(`${baseUrl}/data/games/${gameId}`);
+    async function getRoom(roomId) {
+        return api.get(`${baseUrl}/data/rooms/${roomId}`);
     }
 
-    async function createData(gameInfo) {
-        return api.post(`${baseUrl}/data/games`, gameInfo);
+    async function createRoom(roomInfo) {
+        return api.post(`${baseUrl}/data/rooms`, roomInfo);
     }
 
-    async function editGame(gameInfo, gameId) {
-        return api.update(`${baseUrl}/data/games/${gameId}`, gameInfo);
+    async function editRoom(roomInfo, roomId) {
+        return api.update(`${baseUrl}/data/rooms/${roomId}`, roomInfo);
     }
 
-    async function deleteGame(gameId) {
-        return api.del(`${baseUrl}/data/games/${gameId}`);
+    async function deleteRoom(roomId) {
+        return api.del(`${baseUrl}/data/rooms/${roomId}`);
     }
 
     async function createComment(commentInfo) {
         return api.post(`${baseUrl}/data/comments/`, commentInfo);
     }
 
-    async function getComments(gameId) {
-        const match = encodeURIComponent(`gameId="${gameId}"`);
+    async function getComments(roomId) {
+        const match = encodeURIComponent(`roomId="${roomId}"`);
         const relations = encodeURIComponent(`author=_ownerId:users`)
         return api.get(`${baseUrl}/data/comments?where=${match}&load=${relations}`);
     }
@@ -47,11 +47,11 @@ export function dataFactory(token) {
     }
 
     return {
-        getData,
-        getGame,
-        createData,
-        editGame,
-        deleteGame,
+        getRooms,
+        getRoom,
+        createRoom,
+        editRoom,
+        deleteRoom,
         createComment,
         getComments,
         login,

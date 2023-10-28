@@ -12,7 +12,7 @@ export const RoomContextProvider = ({ children }) => {
     const data = dataFactory(); 
     const navigate = useNavigate();
     useEffect(() => {
-        data.getData()
+        data.getRooms()
             .then(data => setRooms(Object.values(data)));
     }, []);
 
