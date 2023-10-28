@@ -18,7 +18,7 @@ export const AuthContextProvider = ({
         try {
             const loginToken = await data.login(loginInfo);
             setAuth(loginToken);
-            navigate('/catalog');
+            navigate('/available-rooms');
         } catch (error) {
             console.error(error.message)
         }
@@ -44,7 +44,7 @@ export const AuthContextProvider = ({
             const registerdInfo = await data.register(registerData)
             const { password, _createdOn, ...registeredData } = registerdInfo;
             setAuth(registeredData);
-            navigate('/catalog');
+            navigate('/available-rooms');
         } catch (error) {
             console.error(error.message);
         }
