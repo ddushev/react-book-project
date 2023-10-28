@@ -41,7 +41,7 @@ export const Register = () => {
                                             <label htmlFor="lastName">Last Name</label>
                                         </div>
                                     </div>
-                                    <div className="col-12">
+                                    <div className="col-md-12">
                                         <div className="form-floating">
                                             <input
                                                 type="text"
@@ -62,7 +62,7 @@ export const Register = () => {
                                                 placeholder="Password"
                                                 name="password"
                                             />
-                                            <label htmlFor="password">Password</label>
+                                            <label htmlFor="password">Your Password</label>
                                         </div>
                                     </div>
                                     <div className="col-md-12">
@@ -83,15 +83,15 @@ export const Register = () => {
                                                 type="text"
                                                 className="form-control"
                                                 id="imageUrl"
-                                                placeholder="Image URL"
+                                                placeholder="Profile Image URL"
                                                 name="imageUrl"
                                             />
-                                            <label htmlFor="imageUrl">Image URL</label>
+                                            <label htmlFor="imageUrl">Profile Image URL</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <button className="btn btn-primary w-100 py-3" type="submit">
-                                            Register
+                                            Sign Up
                                         </button>
                                     </div>
                                 </div>

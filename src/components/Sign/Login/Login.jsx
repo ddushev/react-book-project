@@ -9,7 +9,7 @@ export const Login = () => {
                         <span className="text-primary text-uppercase">Sign in</span>
                     </h1>
                     <h6 className="section-title text-center text-uppercase">
-                       Don't have an account yet? <Link to="/sign-up">Sign up</Link>
+                        Don't have an account yet? <Link to="/sign-up">Sign up</Link>
                     </h6>
                 </div>
                 <div className="row g-4">
@@ -28,54 +28,33 @@ export const Login = () => {
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
                             <form>
                                 <div className="row g-3">
-                                    <div className="col-md-6">
+                                    <div className="col-md-12">
                                         <div className="form-floating">
                                             <input
                                                 type="text"
-                                                className="form-control"
-                                                id="name"
-                                                placeholder="Your Name"
-                                            />
-                                            <label htmlFor="name">Your Name</label>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="form-floating">
-                                            <input
-                                                type="email"
                                                 className="form-control"
                                                 id="email"
-                                                placeholder="Your Email"
+                                                placeholder="Email"
+                                                name="email"
                                             />
-                                            <label htmlFor="email">Your Email</label>
+                                            <label htmlFor="email">Email</label>
                                         </div>
                                     </div>
-                                    <div className="col-12">
+                                    <div className="col-md-12">
                                         <div className="form-floating">
                                             <input
                                                 type="text"
                                                 className="form-control"
-                                                id="subject"
-                                                placeholder="Subject"
+                                                id="password"
+                                                placeholder="Password"
+                                                name="password"
                                             />
-                                            <label htmlFor="subject">Subject</label>
-                                        </div>
-                                    </div>
-                                    <div className="col-12">
-                                        <div className="form-floating">
-                                            <textarea
-                                                className="form-control"
-                                                placeholder="Leave a message here"
-                                                id="message"
-                                                style={{ height: 150 }}
-                                                defaultValue={""}
-                                            />
-                                            <label htmlFor="message">Message</label>
+                                            <label htmlFor="password">Password</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <button className="btn btn-primary w-100 py-3" type="submit">
-                                            Share
+                                            Sign In
                                         </button>
                                     </div>
                                 </div>
