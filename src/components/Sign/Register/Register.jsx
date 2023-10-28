@@ -45,7 +45,7 @@ export const Register = () => {
                                     <div className="col-md-6">
                                         <div className="form-floating">
                                             <input
-                                                type="email"
+                                                type="text"
                                                 className="form-control"
                                                 id="lastName"
                                                 placeholder="Last Name"
@@ -73,7 +73,7 @@ export const Register = () => {
                                     <div className="col-md-12">
                                         <div className="form-floating">
                                             <input
-                                                type="text"
+                                                type="password"
                                                 className="form-control"
                                                 id="password"
                                                 placeholder="Password"
@@ -87,7 +87,7 @@ export const Register = () => {
                                     <div className="col-md-12">
                                         <div className="form-floating">
                                             <input
-                                                type="text"
+                                                type="password"
                                                 className="form-control"
                                                 id="repeatPassword"
                                                 placeholder="Repeat password"

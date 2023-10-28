@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
+import useForm from "../../../../hooks/useForm";
+import { useAuthContext } from "../../../../contexts/AuthContext";
 
 export const Login = () => {
+    const { onLoginSubmit } = useAuthContext();
+    const { values, onChangeHandler, onSubmit } = useForm({
+        email: '',
+        password: '',
+    }, onLoginSubmit);
     return (
         <div className="container-xxl py-5">
             <div className="container">
@@ -26,7 +33,7 @@ export const Login = () => {
                     </div>
                     <div className="col-md-6">
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
-                            <form>
+                            <form onSubmit={onSubmit}>
                                 <div className="row g-3">
                                     <div className="col-md-12">
                                         <div className="form-floating">
@@ -36,6 +43,8 @@ export const Login = () => {
                                                 id="email"
                                                 placeholder="Email"
                                                 name="email"
+                                                value={values.email}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="email">Email</label>
                                         </div>
@@ -48,6 +57,8 @@ export const Login = () => {
                                                 id="password"
                                                 placeholder="Password"
                                                 name="password"
+                                                value={values.password}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="password">Password</label>
                                         </div>
