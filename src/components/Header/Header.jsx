@@ -1,8 +1,10 @@
+import { useAuthContext } from "../../../contexts/AuthContext";
 import "./Header.css";
 
 import { Link } from "react-router-dom";
 
 export const Header = () => {
+    const { isAuthenticated } = useAuthContext();
     return (
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
@@ -104,12 +106,21 @@ export const Header = () => {
                                     </div>
                                 </div>
                             </div>
-                            <Link
-                                to="/sign-in"
-                                className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
-                            >
-                                Sign
-                            </Link>
+                            {
+                                isAuthenticated ?
+                                    <Link
+                                        to="/logout"
+                                        className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
+                                    >
+                                        Logout
+                                    </Link> :
+                                    <Link
+                                        to="/sign-in"
+                                        className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
+                                    >
+                                        Sign
+                                    </Link>
+                            }
                         </div>
                     </nav>
                 </div>
