@@ -1,6 +1,21 @@
+import { UseRoomContext } from "../../../contexts/RoomContext";
+import useForm from "../../../hooks/useForm";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 export const AddRoom = () => {
+    const { onAddRoomSubmit } = UseRoomContext();
+    const { values, onSubmit, onChangeHandler } = useForm({
+        "name": '',
+        "price": '',
+        "checkin-availability": '',
+        "checkout-availability": '',
+        "child": '',
+        "adult": '',
+        "bed": '',
+        "bath": '',
+        "wifi": '',
+        "description": ''
+    }, onAddRoomSubmit);
     return (
         <>
             <CommonHeader />
@@ -51,7 +66,7 @@ export const AddRoom = () => {
                         </div>
                         <div className="col-lg-6">
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
-                                <form method="POST">
+                                <form method="POST" onSubmit={onSubmit}>
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
@@ -61,6 +76,8 @@ export const AddRoom = () => {
                                                     id="name"
                                                     placeholder="Property Name"
                                                     name="name"
+                                                    value={values.name}
+                                                    onChange={onChangeHandler}
                                                 />
                                                 <label htmlFor="name">Property Name</label>
                                             </div>
@@ -73,6 +90,8 @@ export const AddRoom = () => {
                                                     id="price"
                                                     placeholder="Price per night"
                                                     name="price"
+                                                    value={values.price}
+                                                    onChange={onChangeHandler}
                                                 />
                                                 <label htmlFor="email">Price per night </label>
                                             </div>
@@ -91,6 +110,8 @@ export const AddRoom = () => {
                                                     data-target="#date3"
                                                     data-toggle="datetimepicker"
                                                     name="checkin-availability"
+                                                    value={values["checkin-availability"]}
+                                                    onChange={onChangeHandler}
                                                 />
                                                 <label htmlFor="checkin">Available from</label>
                                             </div>
@@ -109,59 +130,61 @@ export const AddRoom = () => {
                                                     data-target="#date4"
                                                     data-toggle="datetimepicker"
                                                     name="checkout-availability"
+                                                    value={values["checkout-availability"]}
+                                                    onChange={onChangeHandler}
                                                 />
                                                 <label htmlFor="checkout">Available to</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="adult" className="form-select" id="select1">
-                                                    <option value={1}>1</option>
-                                                    <option value={2}>2</option>
-                                                    <option value={3}>3</option>
-                                                    <option value={4}>4</option>
+                                                <select name="adult" value={values.adult} onChange={onChangeHandler} className="form-select" id="select1">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
                                                 </select>
                                                 <label htmlFor="select1">Adults</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="child" className="form-select" id="select2">
-                                                    <option value={1}>1</option>
-                                                    <option value={2}>2</option>
-                                                    <option value={3}>3</option>
-                                                    <option value={3}>4</option>
+                                                <select name="child" value={values.child} onChange={onChangeHandler} className="form-select" id="select2">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
                                                 </select>
                                                 <label htmlFor="select2">Children</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="beds" className="form-select" id="select3">
-                                                    <option value={1}>1</option>
-                                                    <option value={2}>2</option>
-                                                    <option value={3}>3</option>
-                                                    <option value={3}>4</option>
+                                                <select name="bed" value={values.bed} onChange={onChangeHandler} className="form-select" id="select3">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
                                                 </select>
                                                 <label htmlFor="select3">Beds</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="baths" className="form-select" id="select4">
-                                                    <option value={1}>1</option>
-                                                    <option value={2}>2</option>
-                                                    <option value={3}>3</option>
-                                                    <option value={3}>4</option>
+                                                <select name="bath" value={values.bath} onChange={onChangeHandler} className="form-select" id="select4">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
                                                 </select>
                                                 <label htmlFor="select4">Baths</label>
                                             </div>
                                         </div>
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <select value="wifi" className="form-select" id="select5">
-                                                    <option value={true}>Yes</option>
-                                                    <option value={false}>No</option>
+                                                <select name="wifi" value={values.wifi} onChange={onChangeHandler} className="form-select" id="select5">
+                                                    <option>Yes</option>
+                                                    <option>No</option>
                                                 </select>
                                                 <label htmlFor="select5">WiFi</label>
                                             </div>
@@ -173,8 +196,9 @@ export const AddRoom = () => {
                                                     placeholder="Special Request"
                                                     id="description"
                                                     style={{ height: 100 }}
-                                                    defaultValue={""}
                                                     name="description"
+                                                    value={values.description}
+                                                    onChange={onChangeHandler}
                                                 />
                                                 <label htmlFor="description">Description</label>
                                             </div>

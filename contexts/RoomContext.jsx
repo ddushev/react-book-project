@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 
 import { useEffect, useState } from "react";
-import { dataFactory } from "../services/data";
+import { dataFactory } from "../services/requests";
 import { useNavigate } from "react-router-dom";
 
 const RoomContext = createContext();
@@ -16,13 +16,13 @@ export const RoomContextProvider = ({ children }) => {
             .then(data => setRooms(Object.values(data)));
     }, []);
 
-    async function onAddSubmit(roomInfo) {
+    async function onAddRoomSubmit(roomInfo) {
         const newRoom = await data.createRoom(roomInfo)
         setRooms(state => [...state, newRoom]);
         navigate('/available-rooms');
     }
 
-    async function onEditSubmit(gameInfo, roomId) {
+    async function onEditRoomSubmit(gameInfo, roomId) {
         try {
             const editedRoom = await data.editRoom(gameInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? editedRoom : room));
@@ -32,7 +32,7 @@ export const RoomContextProvider = ({ children }) => {
         }
     }
 
-    async function onDeleteClick(e, roomId) {
+    async function onDeleteRoomClick(e, roomId) {
         e.preventDefault();
         await data.deleteRoom(roomId);
         setRooms(state => state.filter(room => room._id !== roomId));
@@ -45,9 +45,9 @@ export const RoomContextProvider = ({ children }) => {
 
     const context = {
         rooms,
-        onAddSubmit,
-        onEditSubmit,
-        onDeleteClick,
+        onAddRoomSubmit,
+        onEditRoomSubmit,
+        onDeleteRoomClick,
         getRoomFromState
     }
 
@@ -60,6 +60,6 @@ export const RoomContextProvider = ({ children }) => {
     );
 }
 
-export const UseGameContext = () => {
+export const UseRoomContext = () => {
     return useContext(RoomContext);
 }

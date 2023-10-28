@@ -12,26 +12,29 @@ import { Feedback } from "./components/Feedback/Feedback"
 import { Login } from "./components/Sign/Login/Login"
 import { Register } from "./components/Sign/Register/Register"
 import { Spinner } from "./components/Common/Spinner/Spinner"
+import { RoomContextProvider } from "../contexts/RoomContext"
 
 function App() {
 
     return (
         <div className="container-xxl bg-white p-0">
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/available-rooms" element={<RoomsCatalog />} />
-                <Route path="/add-room" element={<AddRoom />} />
-                <Route path="/testimonials" element={<Testimonials />} />
-                <Route path="/send-feedback" element={<Feedback />} />
-                <Route path="/sign-in" element={<Login />} />
-                <Route path="/sign-up" element={<Register />} />
-            </Routes>
+            <RoomContextProvider>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/available-rooms" element={<RoomsCatalog />} />
+                    <Route path="/add-room" element={<AddRoom />} />
+                    <Route path="/testimonials" element={<Testimonials />} />
+                    <Route path="/send-feedback" element={<Feedback />} />
+                    <Route path="/sign-in" element={<Login />} />
+                    <Route path="/sign-up" element={<Register />} />
+                </Routes>
 
-            <Newsletter />
-            <Footer />
-            <BackToTop />
+                <Newsletter />
+                <Footer />
+                <BackToTop />
+            </RoomContextProvider>
         </div>
     )
 }
