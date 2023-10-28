@@ -1,5 +1,5 @@
-import useForm from "../../../hooks/useForm";
-import { UseRoomContext } from "../../../contexts/RoomContext";
+import useForm from "../../hooks/useForm";
+import { UseRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 export const AddRoom = () => {
@@ -101,12 +101,12 @@ export const AddRoom = () => {
                                                     type="text"
                                                     className="form-control"
                                                     id="name"
-                                                    placeholder="Image"
+                                                    placeholder="Image URL"
                                                     name="imageUrl"
                                                     value={values.imageUrl}
                                                     onChange={onChangeHandler}
                                                 />
-                                                <label htmlFor="name">Image</label>
+                                                <label htmlFor="name">Image URL</label>
                                             </div>
                                         </div>
                                         {/* <div className="col-md-6">

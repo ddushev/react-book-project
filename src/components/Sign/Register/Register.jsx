@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import useForm from "../../../../hooks/useForm";
-import { useAuthContext } from "../../../../contexts/AuthContext";
+import useForm from "../../../hooks/useForm";
+import { useAuthContext } from "../../../contexts/AuthContext";
 
 export const Register = () => {
     const { onRegisterSubmit } = useAuthContext();
