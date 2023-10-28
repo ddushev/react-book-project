@@ -6,7 +6,6 @@ import { Search } from "../Common/Search/Search";
 
 export const RoomsCatalog = () => {
     const { rooms } = UseRoomContext();
-    console.log(rooms);
     return (
         <>
             <CommonHeader />
