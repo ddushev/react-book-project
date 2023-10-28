@@ -57,6 +57,7 @@ export const AuthContextProvider = ({
         token: auth.accessToken,
         userEmail: auth.email,
         userId: auth._id,
+        userImg: auth.imageUrl,
         isAuthenticated: !!auth.accessToken
     }
     return (

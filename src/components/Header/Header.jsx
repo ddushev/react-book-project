@@ -4,7 +4,7 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 
 export const Header = () => {
-    const { isAuthenticated } = useAuthContext();
+    const { isAuthenticated, userImg } = useAuthContext();
     return (
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
@@ -110,9 +110,12 @@ export const Header = () => {
                                 isAuthenticated ?
                                     <Link
                                         to="/logout"
-                                        className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
-                                    >
-                                        Logout
+                                        className=""
+                                    >                                <img
+                                            className="img-fluid flex-shrink-0 rounded"
+                                            src={userImg}
+                                            style={{ width: 60, height: 60, margin: "20px" }}
+                                        />
                                     </Link> :
                                     <Link
                                         to="/sign-in"
