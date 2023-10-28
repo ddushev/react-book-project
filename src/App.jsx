@@ -13,6 +13,8 @@ import { Testimonials } from "./components/Testimonials/Testimonials"
 import { Feedback } from "./components/Feedback/Feedback"
 import { Login } from "./components/Sign/Login/Login"
 import { Register } from "./components/Sign/Register/Register"
+import Logout from "./components/Logout/Logout"
+
 import { Spinner } from "./components/Common/Spinner/Spinner"
 
 
@@ -32,6 +34,7 @@ function App() {
                         <Route path="/send-feedback" element={<Feedback />} />
                         <Route path="/sign-in" element={<Login />} />
                         <Route path="/sign-up" element={<Register />} />
+                        <Route path="/logout" element={<Logout />} />
                     </Routes>
 
                     <Newsletter />
