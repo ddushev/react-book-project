@@ -1,5 +1,5 @@
-import { UseRoomContext } from "../../../contexts/RoomContext";
 import useForm from "../../../hooks/useForm";
+import { UseRoomContext } from "../../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 export const AddRoom = () => {
@@ -96,7 +96,7 @@ export const AddRoom = () => {
                                                 <label htmlFor="email">Price per night </label>
                                             </div>
                                         </div>
-                                        <div className="col-md-6">
+                                        {/* <div className="col-md-6">
                                             <div
                                                 className="form-floating date"
                                                 id="date3"
@@ -105,7 +105,7 @@ export const AddRoom = () => {
                                                 <input
                                                     type="text"
                                                     className="form-control datetimepicker-input"
-                                                    id="checkin-availability"
+                                                    id="checkin"
                                                     placeholder="Check In"
                                                     data-target="#date3"
                                                     data-toggle="datetimepicker"
@@ -135,7 +135,7 @@ export const AddRoom = () => {
                                                 />
                                                 <label htmlFor="checkout">Available to</label>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select name="adult" value={values.adult} onChange={onChangeHandler} className="form-select" id="select1">
