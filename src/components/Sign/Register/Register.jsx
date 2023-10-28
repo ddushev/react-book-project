@@ -1,6 +1,17 @@
 import { Link } from "react-router-dom";
+import useForm from "../../../../hooks/useForm";
+import { useAuthContext } from "../../../../contexts/AuthContext";
 
 export const Register = () => {
+    const { onRegisterSubmit } = useAuthContext();
+    const { values, onChangeHandler, onSubmit } = useForm({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        repeatPassword: '',
+        imageUrl: '',
+    }, onRegisterSubmit);
     return (
         <div className="container-xxl py-5">
             <div className="container">
@@ -15,7 +26,7 @@ export const Register = () => {
                 <div className="row g-4">
                     <div className="col-md-6">
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
-                            <form>
+                            <form onSubmit={onSubmit}>
                                 <div className="row g-3">
                                     <div className="col-md-6">
                                         <div className="form-floating">
@@ -25,6 +36,8 @@ export const Register = () => {
                                                 id="firstName"
                                                 placeholder="First Name"
                                                 name="firstName"
+                                                value={values.firstName}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="firstName   ">First Name</label>
                                         </div>
@@ -37,6 +50,8 @@ export const Register = () => {
                                                 id="lastName"
                                                 placeholder="Last Name"
                                                 name="lastName"
+                                                value={values.lastName}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="lastName">Last Name</label>
                                         </div>
@@ -49,6 +64,8 @@ export const Register = () => {
                                                 id="email"
                                                 placeholder="Your Email"
                                                 name="email"
+                                                value={values.email}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="email">Your Email</label>
                                         </div>
@@ -61,6 +78,8 @@ export const Register = () => {
                                                 id="password"
                                                 placeholder="Password"
                                                 name="password"
+                                                value={values.password}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="password">Your Password</label>
                                         </div>
@@ -73,6 +92,8 @@ export const Register = () => {
                                                 id="repeatPassword"
                                                 placeholder="Repeat password"
                                                 name="repeatPassword"
+                                                value={values.repeatPassword}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="repeatPassword">Repeat password</label>
                                         </div>
@@ -85,6 +106,8 @@ export const Register = () => {
                                                 id="imageUrl"
                                                 placeholder="Profile Image URL"
                                                 name="imageUrl"
+                                                value={values.imageUrl}
+                                                onChange={onChangeHandler}
                                             />
                                             <label htmlFor="imageUrl">Profile Image URL</label>
                                         </div>
