@@ -16,10 +16,10 @@ export const Carousel = () => {
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div className="p-3" style={{ maxWidth: 700 }}>
                                 <h6 className="section-title text-white text-uppercase mb-3 animated slideInDown">
-                                    Luxury Living
+                                    Discover Rooms
                                 </h6>
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">
-                                    Discover A Brand Luxurious Hotel
+                                    Find your place
                                 </h1>
                                 <Link
                                     to="/available-rooms"
@@ -41,10 +41,10 @@ export const Carousel = () => {
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div className="p-3" style={{ maxWidth: 700 }}>
                                 <h6 className="section-title text-white text-uppercase mb-3 animated slideInDown">
-                                    Luxury Living
+                                    Host rooms
                                 </h6>
                                 <h1 className="display-3 text-white mb-4 animated slideInDown">
-                                    Discover A Brand Luxurious Hotel
+                                    Share your place
                                 </h1>
                                 <Link
                                     to="/available-rooms"
