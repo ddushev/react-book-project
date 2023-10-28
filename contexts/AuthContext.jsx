@@ -1,12 +1,12 @@
 import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { dataFactory } from "../services/data"
+import { dataFactory } from "../services/requests"
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 
 export const AuthContext = createContext();
 
-export const AuthProvider = ({
+export const AuthContextProvider = ({
     children
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});

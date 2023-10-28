@@ -22,10 +22,11 @@ export const Register = () => {
                                             <input
                                                 type="text"
                                                 className="form-control"
-                                                id="name"
-                                                placeholder="Your Name"
+                                                id="firstName"
+                                                placeholder="First Name"
+                                                name="firstName"
                                             />
-                                            <label htmlFor="name">Your Name</label>
+                                            <label htmlFor="firstName   ">First Name</label>
                                         </div>
                                     </div>
                                     <div className="col-md-6">
@@ -33,10 +34,11 @@ export const Register = () => {
                                             <input
                                                 type="email"
                                                 className="form-control"
-                                                id="email"
-                                                placeholder="Your Email"
+                                                id="lastName"
+                                                placeholder="Last Name"
+                                                name="lastName"
                                             />
-                                            <label htmlFor="email">Your Email</label>
+                                            <label htmlFor="lastName">Last Name</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
@@ -44,34 +46,59 @@ export const Register = () => {
                                             <input
                                                 type="text"
                                                 className="form-control"
-                                                id="subject"
-                                                placeholder="Subject"
+                                                id="email"
+                                                placeholder="Your Email"
+                                                name="email"
                                             />
-                                            <label htmlFor="subject">Subject</label>
+                                            <label htmlFor="email">Your Email</label>
                                         </div>
                                     </div>
-                                    <div className="col-12">
+                                    <div className="col-md-12">
                                         <div className="form-floating">
-                                            <textarea
+                                            <input
+                                                type="text"
                                                 className="form-control"
-                                                placeholder="Leave a message here"
-                                                id="message"
-                                                style={{ height: 150 }}
-                                                defaultValue={""}
+                                                id="password"
+                                                placeholder="Password"
+                                                name="password"
                                             />
-                                            <label htmlFor="message">Message</label>
+                                            <label htmlFor="password">Password</label>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <div className="form-floating">
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                id="repeatPassword"
+                                                placeholder="Repeat password"
+                                                name="repeatPassword"
+                                            />
+                                            <label htmlFor="repeatPassword">Repeat password</label>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12">
+                                        <div className="form-floating">
+                                            <input
+                                                type="text"
+                                                className="form-control"
+                                                id="imageUrl"
+                                                placeholder="Image URL"
+                                                name="imageUrl"
+                                            />
+                                            <label htmlFor="imageUrl">Image URL</label>
                                         </div>
                                     </div>
                                     <div className="col-12">
                                         <button className="btn btn-primary w-100 py-3" type="submit">
-                                            Share
+                                            Register
                                         </button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div className="col-md-6 wow fadeInDown" data-wow-delay="0.1s">
                         <img
                             className="position-relative rounded w-100 h-100"
                             src="/img/about-3.jpg"

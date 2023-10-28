@@ -13,7 +13,7 @@ export const Login = () => {
                     </h6>
                 </div>
                 <div className="row g-4">
-                    <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div className="col-md-6 wow fadeInDown" data-wow-delay="0.1s">
                         <img
                             className="position-relative rounded w-100 h-100"
                             src="/img/about-2.jpg"
