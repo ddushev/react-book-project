@@ -9,7 +9,7 @@ export const AddRoom = () => {
         price: '',
         imageUrl: '',
         adult: '1',
-        child: '1',
+        child: '0',
         bed: '1',
         bath: '1',
         wifi: 'Yes',
@@ -163,6 +163,7 @@ export const AddRoom = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select name="child" value={values.child} onChange={onChangeHandler} className="form-select" id="select2">
+                                                    <option>0</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
