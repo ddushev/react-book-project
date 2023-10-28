@@ -52,7 +52,7 @@ export const Login = () => {
                                     <div className="col-md-12">
                                         <div className="form-floating">
                                             <input
-                                                type="text"
+                                                type="password"
                                                 className="form-control"
                                                 id="password"
                                                 placeholder="Password"

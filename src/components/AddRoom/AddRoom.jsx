@@ -5,16 +5,15 @@ import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 export const AddRoom = () => {
     const { onAddRoomSubmit } = UseRoomContext();
     const { values, onSubmit, onChangeHandler } = useForm({
-        "name": '',
-        "price": '',
-        "checkin-availability": '',
-        "checkout-availability": '',
-        "child": '',
-        "adult": '',
-        "bed": '',
-        "bath": '',
-        "wifi": '',
-        "description": ''
+        name: '',
+        price: '',
+        imageUrl: '',
+        adult: '1',
+        child: '1',
+        bed: '1',
+        bath: '1',
+        wifi: 'Yes',
+        description: ''
     }, onAddRoomSubmit);
     return (
         <>
@@ -66,7 +65,7 @@ export const AddRoom = () => {
                         </div>
                         <div className="col-lg-6">
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
-                                <form method="POST" onSubmit={onSubmit}>
+                                <form onSubmit={onSubmit}>
                                     <div className="row g-3">
                                         <div className="col-md-6">
                                             <div className="form-floating">
@@ -94,6 +93,20 @@ export const AddRoom = () => {
                                                     onChange={onChangeHandler}
                                                 />
                                                 <label htmlFor="email">Price per night </label>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-12">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="name"
+                                                    placeholder="Image"
+                                                    name="imageUrl"
+                                                    value={values.imageUrl}
+                                                    onChange={onChangeHandler}
+                                                />
+                                                <label htmlFor="name">Image</label>
                                             </div>
                                         </div>
                                         {/* <div className="col-md-6">
