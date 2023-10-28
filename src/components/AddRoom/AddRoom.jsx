@@ -4,7 +4,6 @@ export const AddRoom = () => {
     return (
         <>
             <CommonHeader />
-
             <div className="container-xxl py-5">
                 <div className="container">
                     <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
