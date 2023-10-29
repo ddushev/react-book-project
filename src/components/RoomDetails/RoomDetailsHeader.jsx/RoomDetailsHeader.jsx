@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const RoomDetailsHeader = () => {
     return (
         <div
@@ -12,16 +14,16 @@ export const RoomDetailsHeader = () => {
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb justify-content-center text-uppercase">
                             <li className="breadcrumb-item">
-                                <a href="#">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                                <a href="#">Pages</a>
+                                <Link to="/available-rooms">All Rooms</Link>
                             </li>
                             <li
                                 className="breadcrumb-item text-white active"
                                 aria-current="page"
                             >
-                                About
+                                Info
                             </li>
                         </ol>
                     </nav>
