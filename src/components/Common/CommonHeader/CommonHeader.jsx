@@ -1,15 +1,37 @@
+import { useEffect, useRef, useState } from "react";
 import "./CommonHeader.css";
 
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const CommonHeader = () => {
     const locationPathname = useLocation().pathname;
-    const currentPageInfo = {
-        "/about": "About Us",
-        "/available-rooms": "Book a Room",
-        "/add-room": "Add Room",
-        "/testimonials": "Testimonials"
-    }
+    const [currentPageInfo, setPageInfo] = useState({
+        heading: '',
+    });
+    
+    useEffect(() => {
+        setPageInfo(pageInfo.current[locationPathname]);
+    }, [locationPathname]);
+
+    const pageInfo = useRef({
+        "/about": {
+            heading: 'About Us',
+            page: 'About'
+
+        },
+        "/available-rooms": {
+            heading: 'Book a Room',
+            page: 'Available Rooms'
+        },
+        "/add-room": {
+            heading: 'Add Room',
+            page: 'Host a Room'
+        },
+        "/testimonials":{
+            heading: 'Testimonials',
+            page: 'Customer feedback'
+        },
+    });
     return (
         <div
             className="container-fluid page-header mb-5 p-0"
@@ -18,21 +40,21 @@ export const CommonHeader = () => {
             <div className="container-fluid page-header-inner py-5">
                 <div className="container text-center pb-5">
                     <h1 className="display-3 text-white mb-3 animated slideInDown">
-                        {currentPageInfo[locationPathname]}
+                        {currentPageInfo.heading}
                     </h1>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb justify-content-center text-uppercase">
                             <li className="breadcrumb-item">
-                                <a href="#">Home</a>
+                                <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                                <a href="#">Pages</a>
+                                <Link to="/send-feedback">Feedback</Link>
                             </li>
                             <li
                                 className="breadcrumb-item text-white active"
                                 aria-current="page"
                             >
-                                About
+                                {currentPageInfo.page}
                             </li>
                         </ol>
                     </nav>
