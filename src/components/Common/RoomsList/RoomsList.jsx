@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 export const RoomsList = ({
+    _id,
     imageUrl,
     price,
     name,
@@ -6,7 +9,6 @@ export const RoomsList = ({
     bath,
     wifi,
     description
-
 }) => {
     return (
         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -44,9 +46,9 @@ export const RoomsList = ({
                         {description}
                     </p>
                     <div className="d-flex justify-content-between">
-                        <a className="btn btn-sm btn-primary rounded py-2 px-4" href="">
+                        <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${_id}/details`}>
                             View Detail
-                        </a>
+                        </Link>
                         <a className="btn btn-sm btn-dark rounded py-2 px-4" href="">
                             Book Now
                         </a>
@@ -54,6 +56,5 @@ export const RoomsList = ({
                 </div>
             </div>
         </div>
-
     );
 }
