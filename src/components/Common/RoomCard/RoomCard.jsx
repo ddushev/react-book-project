@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const RoomsList = ({
+export const RoomCard = ({
     _id,
     imageUrl,
     price,

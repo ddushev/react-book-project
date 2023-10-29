@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { UseRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
-import { RoomsList } from "../Common/RoomsList/RoomsList";
+import { RoomCard } from "../Common/RoomCard/RoomCard";
 import { Search } from "../Common/Search/Search";
 
 export const RoomsCatalog = () => {
@@ -23,7 +23,7 @@ export const RoomsCatalog = () => {
                                 </h1>
                             </div>
                             <div className="row g-4">
-                                {rooms.map(room => <RoomsList key={room._id} {...room} />)}
+                                {rooms.map(room => <RoomCard key={room._id} {...room} />)}
                             </div>
                         </> :
                         <>
