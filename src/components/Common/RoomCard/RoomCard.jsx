@@ -8,6 +8,7 @@ export const RoomCard = ({
     bed,
     bath,
     wifi,
+    parking,
     description
 }) => {
     return (
@@ -37,10 +38,23 @@ export const RoomCard = ({
                         <small className="border-end me-3 pe-3">
                             <i className="fa fa-bath text-primary me-2" />{bath} Bath
                         </small>
-                        <small>
-                            <i className="fa fa-wifi text-primary me-2" />
-                            Wifi
-                        </small>
+                        {
+                            wifi == "Yes" &&
+                            <small className="border-end me-3 pe-3">
+                                <i className="fa fa-wifi text-primary me-2" />
+                                Wifi
+                            </small>
+                        }
+
+                        {
+                            parking == "Yes" &&
+                            <small className="border-end me-3 pe-3">
+                                <i className="fa fa-parking text-primary me-2" />
+                                Parking
+                            </small>
+                        }
+
+
                     </div>
                     <p className="text-body mb-3">
                         {description}
