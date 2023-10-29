@@ -194,13 +194,39 @@ export const AddRoom = () => {
                                                 <label htmlFor="select4">Baths</label>
                                             </div>
                                         </div>
-                                        <div className="col-12">
-                                            <div className="form-floating">
-                                                <select name="wifi" value={values.wifi} onChange={onChangeHandler} className="form-select" id="select5">
+                                        <div className="col-6">
+                                            <div className="form-floating" >
+                                                {/* <select name="wifi" value={values.wifi} onChange={onChangeHandler} className="form-select" id="select5">
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
-                                                <label htmlFor="select5">WiFi</label>
+                                                <label htmlFor="select5">WiFi</label> */}
+                                                <div>
+                                                    <div className="radio">
+                                                        <label>
+                                                            <input
+                                                                type="radio"
+                                                                name="wifi"
+                                                                onChange={onChangeHandler}
+                                                                value="yes"
+                                                                checked={values.wifi === "yes"}
+                                                            />
+                                                            Yes
+                                                        </label>
+                                                    </div>
+                                                    <div className="radio">
+                                                        <label>
+                                                            <input
+                                                                type="radio"
+                                                                name="wifi"
+                                                                onChange={onChangeHandler}
+                                                                value="no"
+                                                                checked={values.wifi === "no"}
+                                                            />
+                                                            No
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div className="col-12">
