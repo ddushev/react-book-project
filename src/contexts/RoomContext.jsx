@@ -15,7 +15,7 @@ export const RoomContextProvider = ({ children }) => {
         data.getRooms()
             .then(data => setRooms(Object.values(data)));
     }, []);
-
+    
     async function onAddRoomSubmit(roomInfo) {
         const newRoom = await data.createRoom(roomInfo);
         setRooms(state => [...state, newRoom]);
