@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 import "./CommonHeader.css";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 
 export const CommonHeader = () => {
     const locationPathname = useLocation().pathname;
     const [currentPageInfo, setPageInfo] = useState({
         heading: '',
     });
-    
+
+    const { roomId } = useParams();
+    const editUrl = `/available-rooms/${roomId}/edit`
+
     useEffect(() => {
         setPageInfo(pageInfo.current[locationPathname]);
     }, [locationPathname]);
@@ -27,9 +30,13 @@ export const CommonHeader = () => {
             heading: 'Add Room',
             page: 'Host a Room'
         },
-        "/testimonials":{
+        "/testimonials": {
             heading: 'Testimonials',
             page: 'Customer feedback'
+        },
+        [editUrl]: {
+            heading: 'Edit Room',
+            page: 'Update details'
         },
     });
     return (
