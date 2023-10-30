@@ -31,31 +31,6 @@ export const RoomCard = ({
                             <small className="fa fa-star text-primary" />
                         </div>
                     </div>
-                    <div className="d-flex mb-3">
-                        <small className="border-end me-3 pe-3">
-                            <i className="fa fa-bed text-primary me-2" />{bed} Bed
-                        </small>
-                        <small className="border-end me-3 pe-3">
-                            <i className="fa fa-bath text-primary me-2" />{bath} Bath
-                        </small>
-                        {
-                            wifi == "Yes" &&
-                            <small className="border-end me-3 pe-3">
-                                <i className="fa fa-wifi text-primary me-2" />
-                                Wifi
-                            </small>
-                        }
-
-                        {
-                            parking == "Yes" &&
-                            <small className="border-end me-3 pe-3">
-                                <i className="fa fa-parking text-primary me-2" />
-                                Parking
-                            </small>
-                        }
-
-
-                    </div>
                     <p className="text-body mb-3">
                         {description}
                     </p>
@@ -63,9 +38,6 @@ export const RoomCard = ({
                         <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${_id}/details`}>
                             View Detail
                         </Link>
-                        <a className="btn btn-sm btn-dark rounded py-2 px-4" href="">
-                            Book Now
-                        </a>
                     </div>
                 </div>
             </div>
