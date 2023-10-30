@@ -7,7 +7,7 @@ import { UseRoomContext } from "../../contexts/RoomContext";
 
 export const RoomDetails = () => {
     const { roomId } = useParams();
-    const { getRoomFromState } = UseRoomContext();
+    const { getRoomFromState, onDeleteRoomClick} = UseRoomContext();
     const roomData = getRoomFromState(roomId);
     return (
         <>
@@ -64,9 +64,9 @@ export const RoomDetails = () => {
                             <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
                                 Edit Room
                             </Link>
-                            <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/delete`}>
+                            <a onClick={(e) => onDeleteRoomClick(e, roomId)} className="btn btn-sm btn-dark rounded py-2 px-4" href="#">
                                 Delete Room
-                            </Link>
+                            </a>
                         </div>
                     </div>
                 </div>

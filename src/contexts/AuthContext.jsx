@@ -16,8 +16,8 @@ export const AuthContextProvider = ({
 
     async function onLoginSubmit(loginInfo) {
         try {
-            const loginToken = await data.login(loginInfo);
-            setAuth(loginToken);
+            const loginData = await data.login(loginInfo);
+            setAuth(loginData);
             navigate('/available-rooms');
         } catch (error) {
             console.error(error.message)

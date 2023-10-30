@@ -23,7 +23,7 @@ export const CommonHeader = () => {
 
         },
         "/available-rooms": {
-            heading: 'Book a Room',
+            heading: 'Rooms Catalog',
             page: 'Available Rooms'
         },
         "/add-room": {
