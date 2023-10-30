@@ -15,7 +15,7 @@ export const RoomContextProvider = ({ children }) => {
         data.getRooms()
             .then(data => setRooms(Object.values(data)));
     }, []);
-    
+
     async function onAddRoomSubmit(roomInfo) {
         const newRoom = await data.createRoom(roomInfo);
         setRooms(state => [...state, newRoom]);
@@ -26,7 +26,7 @@ export const RoomContextProvider = ({ children }) => {
         try {
             const editedRoom = await data.editRoom(gameInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? editedRoom : room));
-            navigate(`/details/${roomId}`); //TBD
+            navigate(`/available-rooms/${roomId}/details`);
         } catch (error) {
             console.error(error.message);
         }
