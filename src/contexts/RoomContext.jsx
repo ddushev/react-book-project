@@ -17,7 +17,7 @@ export const RoomContextProvider = ({ children }) => {
     }, []);
 
     async function onAddRoomSubmit(roomInfo) {
-        const newRoom = await data.createRoom(roomInfo)
+        const newRoom = await data.createRoom(roomInfo);
         setRooms(state => [...state, newRoom]);
         navigate('/available-rooms');
     }
