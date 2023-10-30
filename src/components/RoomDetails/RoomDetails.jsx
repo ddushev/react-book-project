@@ -80,11 +80,11 @@ export const RoomDetails = () => {
                             userId && userId != roomData._ownerId &&
 
                             <div className="d-flex justify-content-between">
-                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
+                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/details`}>
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
-                                    Rooms Catalog
+                                    Back to Catalog
                                 </Link>
                             </div>
                         }
@@ -93,13 +93,10 @@ export const RoomDetails = () => {
                         {
                             !userId &&
 
-                            <div className="d-flex justify-content-between">
+                            <div className="details-button-center">
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
-                                    Rooms Catalog
+                                    Back to Catalog
                                 </Link>
-                                {/* <a onClick={(e) => onDeleteRoomClick(e, roomId)} className="btn btn-sm btn-dark rounded py-2 px-4" href="#">
-                                    Rate Room
-                                </a> */}
                             </div>
                         }
 

@@ -25,7 +25,7 @@ export const Carousel = () => {
                                     to="/available-rooms"
                                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                                 >
-                                    Book Room
+                                    Our Rooms
                                 </Link>
                                 <Link
                                     to="/add-room"
@@ -50,7 +50,7 @@ export const Carousel = () => {
                                     to="/available-rooms"
                                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                                 >
-                                    Book Room
+                                    Our Rooms
                                 </Link>
                                 <Link
                                     to="/add-room"

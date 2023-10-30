@@ -10,9 +10,9 @@ export const Footer = () => {
             <div className="row g-5">
                 <div className="col-md-6 col-lg-4">
                     <div className="bg-primary rounded p-4">
-                        <a href="index.html">
+                        <Link to="/">
                             <h1 className="text-white text-uppercase mb-3">ReactBook</h1>
-                        </a>
+                        </Link>
                         <p className="text-white mb-0">
                             Your opinnion is very important to us so please do not forget to <Link to="/send-feedback" className="text-dark fw-medium">share</Link> it with us and leave a like on our
                             <a

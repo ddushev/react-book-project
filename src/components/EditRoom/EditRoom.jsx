@@ -165,11 +165,11 @@ export const EditRoom = () => {
                                             </button>
                                         </div>
                                         <div className="col-12">
-                                            <Link className="btn btn-secondary w-50 py-3" to="/available-rooms">
-                                                Rooms Catalog
+                                            <Link className="btn btn-secondary w-50 py-3" to={`/available-rooms/${roomId}/details`}>
+                                                Back to Details
                                             </Link>
-                                            <Link className="btn btn-dark w-50 py-3" to={`/available-rooms/${roomId}/details`}>
-                                                Room Details
+                                            <Link className="btn btn-dark w-50 py-3" to="/available-rooms">
+                                                Back to Catalog
                                             </Link>
                                         </div>
                                     </div>
