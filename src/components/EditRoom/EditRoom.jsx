@@ -2,11 +2,13 @@ import useForm from "../../hooks/useForm";
 import { UseRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 
 export const EditRoom = () => {
     const { roomId } = useParams();
     const { onEditRoomSubmit, getRoomFromState } = UseRoomContext();
     const currentRoom = getRoomFromState(roomId);
+
     const { values, onSubmit, onChangeHandler } = useForm({
         name: currentRoom?.name,
         price: currentRoom?.price,
@@ -159,8 +161,16 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-12">
                                             <button className="btn btn-primary w-100 py-3" type="submit">
-                                                Add
+                                                Update
                                             </button>
+                                        </div>
+                                        <div className="col-12">
+                                            <Link className="btn btn-secondary w-50 py-3" to="/available-rooms">
+                                                Rooms Catalog
+                                            </Link>
+                                            <Link className="btn btn-dark w-50 py-3" to={`/available-rooms/${roomId}/details`}>
+                                                Room Details
+                                            </Link>
                                         </div>
                                     </div>
                                 </form>

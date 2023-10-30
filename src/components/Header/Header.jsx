@@ -49,9 +49,9 @@ export const Header = () => {
                         </div>
                     </div>
                     <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <a href="index.html" className="navbar-brand d-block d-lg-none">
+                        <Link to="/" className="navbar-brand d-block d-lg-none">
                             <h1 className="m-0 text-primary text-uppercase">ReactBook</h1>
-                        </a>
+                        </Link>
                         <button
                             type="button"
                             className="navbar-toggler"
