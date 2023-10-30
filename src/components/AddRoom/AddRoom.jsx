@@ -1,9 +1,9 @@
 import useForm from "../../hooks/useForm";
-import { UseRoomContext } from "../../contexts/RoomContext";
+import { useRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 export const AddRoom = () => {
-    const { onAddRoomSubmit } = UseRoomContext();
+    const { onAddRoomSubmit } = useRoomContext();
     const { values, onSubmit, onChangeHandler } = useForm({
         name: '',
         price: '',

@@ -61,6 +61,6 @@ export const RoomContextProvider = ({ children }) => {
     );
 }
 
-export const UseRoomContext = () => {
+export const useRoomContext = () => {
     return useContext(RoomContext);
 }

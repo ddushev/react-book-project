@@ -1,12 +1,12 @@
 import useForm from "../../hooks/useForm";
-import { UseRoomContext } from "../../contexts/RoomContext";
+import { useRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 export const EditRoom = () => {
     const { roomId } = useParams();
-    const { onEditRoomSubmit, getRoomFromState } = UseRoomContext();
+    const { onEditRoomSubmit, getRoomFromState } = useRoomContext();
     const currentRoom = getRoomFromState(roomId);
 
     const { values, onSubmit, onChangeHandler } = useForm({

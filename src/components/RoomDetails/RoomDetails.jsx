@@ -2,12 +2,13 @@ import "./RoomDetails.css"
 import { Link, useParams } from "react-router-dom";
 import { Search } from "../Common/Search/Search";
 import { RoomDetailsHeader } from "./RoomDetailsHeader.jsx/RoomDetailsHeader";
-import { UseRoomContext } from "../../contexts/RoomContext";
+import { useRoomContext } from "../../contexts/RoomContext";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 
 export const RoomDetails = () => {
     const { roomId } = useParams();
-    const { getRoomFromState, onDeleteRoomClick} = UseRoomContext();
+    const { getRoomFromState, onDeleteRoomClick} = useRoomContext();
     const roomData = getRoomFromState(roomId);
     return (
         <>

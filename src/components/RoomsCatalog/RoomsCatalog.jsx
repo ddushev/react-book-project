@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { UseRoomContext } from "../../contexts/RoomContext";
+import { useRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { RoomCard } from "../Common/RoomCard/RoomCard";
 import { Search } from "../Common/Search/Search";
 
 export const RoomsCatalog = () => {
-    const { rooms } = UseRoomContext();
+    const { rooms } = useRoomContext();
     return (
         <>
             <CommonHeader />
