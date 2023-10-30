@@ -8,8 +8,9 @@ import { useAuthContext } from "../../contexts/AuthContext";
 
 export const RoomDetails = () => {
     const { roomId } = useParams();
-    const { getRoomFromState, onDeleteRoomClick} = useRoomContext();
+    const { getRoomFromState, onDeleteRoomClick } = useRoomContext();
     const roomData = getRoomFromState(roomId);
+    const { userId } = useAuthContext();
     return (
         <>
             <RoomDetailsHeader />
@@ -61,14 +62,47 @@ export const RoomDetails = () => {
                         <p className="text-body mb-3">
                             {roomData?.description}
                         </p>
-                        <div className="d-flex justify-content-between">
-                            <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
-                                Edit Room
-                            </Link>
-                            <a onClick={(e) => onDeleteRoomClick(e, roomId)} className="btn btn-sm btn-dark rounded py-2 px-4" href="#">
-                                Delete Room
-                            </a>
-                        </div>
+                        {/* Owner buttons */}
+                        {
+                            userId == roomData._ownerId &&
+
+                            <div className="d-flex justify-content-between">
+                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
+                                    Edit Room
+                                </Link>
+                                <a onClick={(e) => onDeleteRoomClick(e, roomId)} className="btn btn-sm btn-dark rounded py-2 px-4" href="#">
+                                    Delete Room
+                                </a>
+                            </div>
+                        }
+                        {/* Not owner user buttons */}
+                        {
+                            userId && userId != roomData._ownerId &&
+
+                            <div className="d-flex justify-content-between">
+                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
+                                    Book Room
+                                </Link>
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                    Rooms Catalog
+                                </Link>
+                            </div>
+                        }
+
+                        {/* Guest */}
+                        {
+                            !userId &&
+
+                            <div className="d-flex justify-content-between">
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                    Rooms Catalog
+                                </Link>
+                                {/* <a onClick={(e) => onDeleteRoomClick(e, roomId)} className="btn btn-sm btn-dark rounded py-2 px-4" href="#">
+                                    Rate Room
+                                </a> */}
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>
