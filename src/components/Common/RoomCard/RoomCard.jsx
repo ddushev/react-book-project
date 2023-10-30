@@ -31,7 +31,7 @@ export const RoomCard = ({
                     <p className="text-body mb-3">
                         {description}
                     </p>
-                    <div className="details-button-center">
+                    <div className="button-center">
                         <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${_id}/details`}>
                             View Details
                         </Link>

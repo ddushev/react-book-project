@@ -93,7 +93,7 @@ export const RoomDetails = () => {
                         {
                             !userId &&
 
-                            <div className="details-button-center">
+                            <div className="button-center">
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
                                     Back to Catalog
                                 </Link>
