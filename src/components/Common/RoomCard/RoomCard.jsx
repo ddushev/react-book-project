@@ -1,3 +1,4 @@
+import "./RoomCard.css"
 import { Link } from "react-router-dom";
 
 export const RoomCard = ({
@@ -5,14 +6,10 @@ export const RoomCard = ({
     imageUrl,
     price,
     name,
-    bed,
-    bath,
-    wifi,
-    parking,
     description
 }) => {
     return (
-        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${Math.random()}s`}>
             <div className="room-item shadow rounded overflow-hidden">
                 <div className="position-relative">
                     <img className="img-fluid" src={imageUrl} alt="room image" />
@@ -34,9 +31,9 @@ export const RoomCard = ({
                     <p className="text-body mb-3">
                         {description}
                     </p>
-                    <div className="d-flex justify-content-between">
+                    <div className="details-button-center">
                         <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${_id}/details`}>
-                            View Detail
+                            View Details
                         </Link>
                     </div>
                 </div>

@@ -64,7 +64,7 @@ export const RoomDetails = () => {
                             <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData._id}/edit`}>
                                 Edit Room
                             </Link>
-                            <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={`/available-rooms/${roomData._id}/edit`}>
+                            <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={`/available-rooms/${roomData._id}/delete`}>
                                 Delete Room
                             </Link>
                         </div>
