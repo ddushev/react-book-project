@@ -3,4 +3,20 @@
     margin: auto;
 }
 
-/* TODO: Add responsive styles  */
+/*  Laptop */
+@media (max-width: 1024px) {
+    .room-details {
+        width: 45%;
+        margin: auto;
+    }
+}
+
+/*  Tablet */
+@media (max-width: 768px) {
+    .room-details {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+
