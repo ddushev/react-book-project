@@ -28,14 +28,14 @@ function createOptions(method, data, token) {
     }
 
     if (token) {
-        options.headers['X-Authorization'] = token;
-    }else {
+        options.headers['X-Authorization'] = auth.accessToken;
+    } else {
         const persistedStateSerialized = localStorage.getItem('auth');
         const auth = JSON.parse(persistedStateSerialized);
         if (auth?.accessToken) {
-            if(data?.booked) {
+            if (data?.booked) {
                 options.headers['X-Admin'] = auth.accessToken;
-            }else {
+            } else {
                 options.headers['X-Authorization'] = auth.accessToken;
             }
         }

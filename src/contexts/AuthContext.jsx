@@ -13,7 +13,6 @@ export const AuthContextProvider = ({
     const navigate = useNavigate();
     const data = dataFactory(auth.accessToken);
 
-
     async function onLoginSubmit(loginInfo) {
         try {
             const loginData = await data.login(loginInfo);
