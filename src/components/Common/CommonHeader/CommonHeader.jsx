@@ -10,7 +10,8 @@ export const CommonHeader = () => {
     });
 
     const { roomId } = useParams();
-    const editUrl = `/available-rooms/${roomId}/edit`
+    const editUrl = `/available-rooms/${roomId}/edit`;
+    const bookingConfirmationUrl = `/booking-confirmation/${roomId}`;
 
     useEffect(() => {
         setPageInfo(pageInfo.current[locationPathname]);
@@ -38,6 +39,10 @@ export const CommonHeader = () => {
             heading: 'Edit Room',
             page: 'Update details'
         },
+        [bookingConfirmationUrl]: {
+            heading: 'Booking Confirmed',
+            page: 'Confirmation page'
+        }
     });
     return (
         <div

@@ -1,19 +1,18 @@
-import "./RoomDetails.css"
 import { Link, useParams } from "react-router-dom";
 import { Search } from "../Common/Search/Search";
-import { RoomDetailsHeader } from "./RoomDetailsHeader.jsx/RoomDetailsHeader";
 import { useRoomContext } from "../../contexts/RoomContext";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 
-export const RoomDetails = () => {
+export const RoomBooked = () => {
     const { roomId } = useParams();
-    const { getRoomFromState, onDeleteRoomClick, onBookRoomClick } = useRoomContext();
+    const { getRoomFromState } = useRoomContext();
     const roomData = getRoomFromState(roomId);
     const { userId } = useAuthContext();
     return (
         <>
-            <RoomDetailsHeader />
+            <CommonHeader />
             <Search />
             <div className="room-details wow fadeInUp" data-wow-delay="0.1s">
                 <div className="room-item shadow rounded overflow-hidden">
@@ -59,61 +58,26 @@ export const RoomDetails = () => {
 
 
                         </div>
-                        <p className="text-body mb-3">
-                            {roomData?.description}
-                        </p>
-                        {/* Owner buttons */}
-                        {
-                            userId == roomData?._ownerId &&
-
-                            <div className="d-flex justify-content-between">
-                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
-                                    Edit Room
-                                </Link>
-                                <a onClick={(e) => onDeleteRoomClick(e, roomId)} className="btn btn-sm btn-dark rounded py-2 px-4" href="#">
-                                    Delete Room
-                                </a>
-                            </div>
-                        }
-                        {/* Not owner user buttons before booking */}
-                        {
-                            userId && userId != roomData?._ownerId && !roomData?.booked &&
-
-                            <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomClick({...roomData, booked: true}, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
-                                    Book Room
-                                </Link>
-                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
-                                    Back to Catalog
-                                </Link>
-                            </div>
-                        }
+                        <div className="text-body mb-3">
+                            <p>Dear [Guest's Name],</p>
+                            <p>We are delighted to confirm your booking. We look forward to welcoming you and ensuring your stay is a memorable one. If you have any special requests or need further assistance, please feel free to reach out to us.</p>
+                            <p>Warm regards,</p>
+                            <p>ReactBook's team</p>
+                        </div>
 
                         {/* Not owner user buttons after booking */}
                         {
                             userId && userId != roomData?._ownerId && roomData?.booked &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomClick({...roomData, booked: true}, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to={`/booking-confirmation/${roomData?._id}/`}>
-                                    Thank you for Booking
+                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-bookings">
+                                    Check your bookings
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
                                     Back to Catalog
                                 </Link>
                             </div>
                         }
-
-                        {/* Guest */}
-                        {
-                            !userId &&
-
-                            <div className="button-center">
-                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
-                                    Back to Catalog
-                                </Link>
-                            </div>
-                        }
-
                     </div>
                 </div>
             </div>

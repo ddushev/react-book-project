@@ -37,7 +37,7 @@ export const RoomContextProvider = ({ children }) => {
         try {
             const bookedRoom = await data.editRoom(gameInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? bookedRoom : room));
-            navigate(`/available-rooms`);
+            navigate(`/booking-confirmation/${roomId}`);
         } catch (error) {
             console.error(error.message);
         }
