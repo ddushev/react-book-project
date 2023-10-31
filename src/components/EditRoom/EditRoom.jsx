@@ -3,25 +3,38 @@ import { useRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useAuthContext } from "../../contexts/AuthContext";
+import { dataFactory } from "../../services/requests";
+import { useEffect } from "react";
 
 export const EditRoom = () => {
-    const { roomId } = useParams();
-    const { onEditRoomSubmit, getRoomFromState } = useRoomContext();
-    const currentRoom = getRoomFromState(roomId);
+    const { token } = useAuthContext();
+    const data = dataFactory(token);
 
-    const { values, onSubmit, onChangeHandler } = useForm({
-        name: currentRoom?.name,
-        price: currentRoom?.price,
-        imageUrl: currentRoom?.imageUrl,
-        adult: currentRoom?.adult,
-        child: currentRoom?.child,
-        bed: currentRoom?.bed,
-        bath: currentRoom?.bath,
-        wifi: currentRoom?.wifi,
-        parking: currentRoom?.parking,
-        description: currentRoom?.description,
-        booked: currentRoom?.booked
+    const { roomId } = useParams();
+    const { onEditRoomSubmit } = useRoomContext();
+
+    const { values, onSubmit, onChangeHandler, changeValues } = useForm({
+        name: '',
+        price: '',
+        imageUrl: '',
+        adult: '',
+        child: '',
+        bed: '',
+        bath: '',
+        wifi: '',
+        parking: '',
+        description: '',
+        booked: '',
     }, onEditRoomSubmit, roomId);
+
+    useEffect(() => {
+        data.getRoom(roomId)
+            .then(result => {
+                changeValues(result);
+            });
+    }, [roomId]);
+
     return (
         <>
             <CommonHeader />
