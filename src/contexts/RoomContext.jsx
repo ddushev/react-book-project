@@ -2,14 +2,15 @@ import { createContext, useContext } from "react";
 import { useEffect, useState } from "react";
 import { dataFactory } from "../services/requests";
 import { useNavigate } from "react-router-dom";
+import { useAuthContext } from "./AuthContext";
 
 
 const RoomContext = createContext();
 
 export const RoomContextProvider = ({ children }) => {
-
+    const { token } = useAuthContext();
     const [rooms, setRooms] = useState([]);
-    const data = dataFactory(); 
+    const data = dataFactory(token);
     const navigate = useNavigate();
     useEffect(() => {
         data.getRooms()
