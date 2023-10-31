@@ -6,26 +6,26 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { dataFactory } from "../../services/requests";
 import { useEffect } from "react";
+import { formFields } from "../../utils/constants";
 
 export const EditRoom = () => {
     const { token } = useAuthContext();
     const data = dataFactory(token);
-
     const { roomId } = useParams();
     const { onEditRoomSubmit } = useRoomContext();
 
     const { values, onSubmit, onChangeHandler, changeValues } = useForm({
-        name: '',
-        price: '',
-        imageUrl: '',
-        adult: '',
-        child: '',
-        bed: '',
-        bath: '',
-        wifi: '',
-        parking: '',
-        description: '',
-        booked: '',
+        [formFields.name]: '',
+        [formFields.price]: '',
+        [formFields.imageUrl]: '',
+        [formFields.adult]: '',
+        [formFields.child]: '',
+        [formFields.bed]: '',
+        [formFields.bath]: '',
+        [formFields.wifi]: '',
+        [formFields.parking]: '',
+        [formFields.description]: '',
+        [formFields.booked]: '',
     }, onEditRoomSubmit, roomId);
 
     useEffect(() => {
@@ -61,7 +61,7 @@ export const EditRoom = () => {
                                                     className="form-control"
                                                     id="name"
                                                     placeholder="Property Name"
-                                                    name="name"
+                                                    name={formFields.name}
                                                     value={values.name}
                                                     onChange={onChangeHandler}
                                                 />
@@ -75,7 +75,7 @@ export const EditRoom = () => {
                                                     className="form-control"
                                                     id="price"
                                                     placeholder="Price per night"
-                                                    name="price"
+                                                    name={formFields.price}
                                                     value={values.price}
                                                     onChange={onChangeHandler}
                                                 />
@@ -89,7 +89,7 @@ export const EditRoom = () => {
                                                     className="form-control"
                                                     id="name"
                                                     placeholder="Image URL"
-                                                    name="imageUrl"
+                                                    name={formFields.imageUrl}
                                                     value={values.imageUrl}
                                                     onChange={onChangeHandler}
                                                 />
@@ -98,7 +98,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="adult" value={values.adult} onChange={onChangeHandler} className="form-select" id="select1">
+                                                <select name={formFields.adult} value={values.adult} onChange={onChangeHandler} className="form-select" id="select1">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -109,7 +109,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="child" value={values.child} onChange={onChangeHandler} className="form-select" id="select2">
+                                                <select name={formFields.child} value={values.child} onChange={onChangeHandler} className="form-select" id="select2">
                                                     <option>0</option>
                                                     <option>1</option>
                                                     <option>2</option>
@@ -121,7 +121,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="bed" value={values.bed} onChange={onChangeHandler} className="form-select" id="select3">
+                                                <select name={formFields.bed} value={values.bed} onChange={onChangeHandler} className="form-select" id="select3">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -132,7 +132,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name="bath" value={values.bath} onChange={onChangeHandler} className="form-select" id="select4">
+                                                <select name={formFields.bath} value={values.bath} onChange={onChangeHandler} className="form-select" id="select4">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -143,7 +143,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="form-floating" >
-                                                <select name="wifi" value={values.wifi} onChange={onChangeHandler} className="form-select" id="select5">
+                                                <select name={formFields.wifi} value={values.wifi} onChange={onChangeHandler} className="form-select" id="select5">
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
@@ -152,7 +152,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="form-floating" >
-                                                <select name="parking" value={values.parking} onChange={onChangeHandler} className="form-select" id="select6">
+                                                <select name={formFields.parking} value={values.parking} onChange={onChangeHandler} className="form-select" id="select6">
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
@@ -166,7 +166,7 @@ export const EditRoom = () => {
                                                     placeholder="Special Request"
                                                     id="description"
                                                     style={{ height: 100 }}
-                                                    name="description"
+                                                    name={formFields.description}
                                                     value={values.description}
                                                     onChange={onChangeHandler}
                                                 />
