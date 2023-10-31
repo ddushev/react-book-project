@@ -108,15 +108,28 @@ export const Header = () => {
                             </div>
                             {
                                 isAuthenticated ?
-                                    <Link
-                                        to="/logout"
-                                        className=""
-                                    >                                <img
-                                            className="img-fluid flex-shrink-0 rounded"
-                                            src={userImg}
-                                            style={{ width: 60, height: 60, margin: "20px" }}
-                                        />
-                                    </Link> :
+                                    <div className="nav-item dropdown">
+                                        <a
+                                            href="#"
+                                            className="nav-link dropdown-toggle"
+                                            data-bs-toggle="dropdown"
+                                        >
+                                            <img
+                                                className="img-fluid flex-shrink-0 rounded"
+                                                src={userImg}
+                                                style={{ width: 60, height: 60}}
+                                            />
+                                        </a>
+                                        <div className="dropdown-menu rounded-0 m-0">
+                                            <Link to="/testimonials" className="dropdown-item">
+                                                My rooms
+                                            </Link>
+                                            <Link to="/logout" className="dropdown-item">
+                                                Logout
+                                            </Link>
+                                        </div>
+                                    </div>
+                                    :
                                     <Link
                                         to="/sign-in"
                                         className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"

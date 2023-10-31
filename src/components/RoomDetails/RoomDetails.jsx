@@ -64,7 +64,7 @@ export const RoomDetails = () => {
                         </p>
                         {/* Owner buttons */}
                         {
-                            userId == roomData._ownerId &&
+                            userId == roomData?._ownerId &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
@@ -77,7 +77,7 @@ export const RoomDetails = () => {
                         }
                         {/* Not owner user buttons */}
                         {
-                            userId && userId != roomData._ownerId &&
+                            userId && userId != roomData?._ownerId &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/details`}>

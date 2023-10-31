@@ -18,4 +18,8 @@
         margin-right: 0;
         padding: 10px 0;
     }
+
+    .nav-link {
+        padding-left: 0;
+    }
 }
