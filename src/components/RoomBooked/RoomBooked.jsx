@@ -9,7 +9,7 @@ export const RoomBooked = () => {
     const { roomId } = useParams();
     const { getRoomFromState } = useRoomContext();
     const roomData = getRoomFromState(roomId);
-    const { userId } = useAuthContext();
+    const { userId, username } = useAuthContext();
     return (
         <>
             <CommonHeader />
@@ -59,7 +59,7 @@ export const RoomBooked = () => {
 
                         </div>
                         <div className="text-body mb-3">
-                            <p>Dear [Guest's Name],</p>
+                            <p>Dear {username},</p>
                             <p>We are delighted to confirm your booking. We look forward to welcoming you and ensuring your stay is a memorable one. If you have any special requests or need further assistance, please feel free to reach out to us.</p>
                             <p>Warm regards,</p>
                             <p>ReactBook's team</p>
