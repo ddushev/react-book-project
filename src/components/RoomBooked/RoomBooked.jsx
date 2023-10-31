@@ -60,7 +60,7 @@ export const RoomBooked = () => {
                         </div>
                         <div className="text-body mb-3">
                             <p>Dear {username},</p>
-                            <p>We are delighted to confirm your booking. We look forward to welcoming you and ensuring your stay is a memorable one. If you have any special requests or need further assistance, please feel free to reach out to us.</p>
+                            <p>We are delighted to confirm your booking. We look forward to welcoming you and ensuring your stay is a memorable one. If you have any special requests or need further assistance, please feel free to reach out to your host {roomData?.ownerName} @ {roomData?.ownerEmail}.</p>
                             {/*TODO Add booking owner details */}
                             <p>Warm regards,</p>
                             <p>ReactBook's team</p>
