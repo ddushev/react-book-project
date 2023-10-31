@@ -25,7 +25,6 @@ export const EditRoom = () => {
         [formFields.wifi]: '',
         [formFields.parking]: '',
         [formFields.description]: '',
-        [formFields.booked]: '',
     }, onEditRoomSubmit, roomId);
 
     useEffect(() => {

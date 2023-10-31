@@ -2,9 +2,11 @@ import useForm from "../../hooks/useForm";
 import { useRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { formFields } from "../../utils/constants";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export const AddRoom = () => {
     const { onAddRoomSubmit } = useRoomContext();
+    const { userEmail, username } = useAuthContext();
     const { values, onSubmit, onChangeHandler } = useForm({
         [formFields.name]: '',
         [formFields.price]: '',
@@ -17,6 +19,8 @@ export const AddRoom = () => {
         [formFields.parking]: 'Yes',
         [formFields.description]: '',
         [formFields.booked]: false,
+        [formFields.ownerName]: username,
+        [formFields.ownerEmail]: userEmail,
     }, onAddRoomSubmit);
     return (
         <>

@@ -89,20 +89,6 @@ export const RoomDetails = () => {
                             </div>
                         }
 
-                        {/* Not owner user buttons after booking */}
-                        {
-                            userId && userId != roomData?._ownerId && roomData?.booked &&
-
-                            <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomClick({...roomData, booked: true}, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to={`/booking-confirmation/${roomData?._id}/`}>
-                                    Thank you for Booking
-                                </Link>
-                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
-                                    Back to Catalog
-                                </Link>
-                            </div>
-                        }
-
                         {/* Guest */}
                         {
                             !userId &&

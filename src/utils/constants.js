@@ -12,4 +12,6 @@ export const formFields = {
     parking: 'parking',
     description: 'description',
     booked: 'booked',
+    ownerName: 'ownerName',
+    ownerEmail: 'ownerEmail'
 }
