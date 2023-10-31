@@ -14,7 +14,8 @@ export const AuthContextProvider = ({
     const data = dataFactory(auth.accessToken);
     async function onLoginSubmit(loginInfo) {
         try {
-            const loginData = await data.login(loginInfo);
+            const loginInfoResponse = await data.login(loginInfo);
+            const { password, _createdOn, ...loginData } = loginInfoResponse;
             setAuth(loginData);
             navigate('/available-rooms');
         } catch (error) {
