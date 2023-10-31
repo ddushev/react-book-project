@@ -19,7 +19,8 @@ export const EditRoom = () => {
         bath: currentRoom?.bath,
         wifi: currentRoom?.wifi,
         parking: currentRoom?.parking,
-        description: currentRoom?.description
+        description: currentRoom?.description,
+        booked: currentRoom?.booked
     }, onEditRoomSubmit, roomId);
     return (
         <>

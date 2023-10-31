@@ -32,6 +32,16 @@ export const RoomContextProvider = ({ children }) => {
         }
     }
 
+    async function onBookRoomClick(gameInfo, roomId) {
+        try {
+            const bookedRoom = await data.editRoom(gameInfo, roomId);
+            setRooms(state => state.map(room => room._id === roomId ? bookedRoom : room));
+            navigate(`/available-rooms`);
+        } catch (error) {
+            console.error(error.message);
+        }
+    }
+
     async function onDeleteRoomClick(e, roomId) {
         // TODO Add confirmation dialog when delete clicked
         e.preventDefault();
@@ -48,6 +58,7 @@ export const RoomContextProvider = ({ children }) => {
         rooms,
         onAddRoomSubmit,
         onEditRoomSubmit,
+        onBookRoomClick,
         onDeleteRoomClick,
         getRoomFromState
     }

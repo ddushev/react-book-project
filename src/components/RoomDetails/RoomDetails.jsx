@@ -8,7 +8,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 
 export const RoomDetails = () => {
     const { roomId } = useParams();
-    const { getRoomFromState, onDeleteRoomClick } = useRoomContext();
+    const { getRoomFromState, onDeleteRoomClick, onBookRoomClick } = useRoomContext();
     const roomData = getRoomFromState(roomId);
     const { userId } = useAuthContext();
     return (
@@ -80,7 +80,7 @@ export const RoomDetails = () => {
                             userId && userId != roomData?._ownerId &&
 
                             <div className="d-flex justify-content-between">
-                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/details`}>
+                                <Link onClick={() => onBookRoomClick({...roomData, booked: true}, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/details`}>
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">

@@ -14,7 +14,8 @@ export const AddRoom = () => {
         bath: '1',
         wifi: 'Yes',
         parking: 'Yes',
-        description: ''
+        description: '',
+        booked: false
     }, onAddRoomSubmit);
     return (
         <>

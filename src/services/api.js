@@ -33,7 +33,11 @@ function createOptions(method, data, token) {
         const persistedStateSerialized = localStorage.getItem('auth');
         const auth = JSON.parse(persistedStateSerialized);
         if (auth?.accessToken) {
-            options.headers['X-Authorization'] = auth.accessToken;
+            if(data?.booked) {
+                options.headers['X-Admin'] = auth.accessToken;
+            }else {
+                options.headers['X-Authorization'] = auth.accessToken;
+            }
         }
     }
 
