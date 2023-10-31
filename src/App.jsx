@@ -13,10 +13,10 @@ import { Testimonials } from "./components/Testimonials/Testimonials"
 import { Feedback } from "./components/Feedback/Feedback"
 import { Login } from "./components/Sign/Login/Login"
 import { Register } from "./components/Sign/Register/Register"
-import Logout from "./components/Logout/Logout"
+import { Logout } from "./components/Logout/Logout"
 import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
-import { RoomBooked } from "./components/RoomBooked/RoomBooked"
+import { BookedRoom } from "./components/BookedRoom/BookedRoom"
 
 import { Spinner } from "./components/Common/Spinner/Spinner"
 
@@ -34,7 +34,7 @@ function App() {
                         <Route path="/available-rooms" element={<RoomsCatalog />} />
                         <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
                         <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
-                        <Route path="/booking-confirmation/:roomId" element={<RoomBooked />} />
+                        <Route path="/booking-confirmation/:roomId" element={<BookedRoom />} />
                         <Route path="/add-room" element={<AddRoom />} />
                         <Route path="/testimonials" element={<Testimonials />} />
                         <Route path="/send-feedback" element={<Feedback />} />

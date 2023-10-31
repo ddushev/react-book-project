@@ -5,7 +5,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 
-export const RoomBooked = () => {
+export const BookedRoom = () => {
     const { roomId } = useParams();
     const { getRoomFromState } = useRoomContext();
     const roomData = getRoomFromState(roomId);
