@@ -122,7 +122,10 @@ export const RoomDetails = () => {
                         {
                             !userId &&
 
-                            <div className="button-center">
+                            <div className="d-flex justify-content-between">
+                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/sign-in">
+                                    Sign In to Book
+                                </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
                                     Back to Catalog
                                 </Link>
