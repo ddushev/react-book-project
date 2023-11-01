@@ -16,6 +16,7 @@ import { Register } from "./components/Sign/Register/Register"
 import { Logout } from "./components/Logout/Logout"
 import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
+import { NotFound } from "./components/NotFound/NotFound"
 
 import { Spinner } from "./components/Common/Spinner/Spinner"
 
@@ -43,6 +44,7 @@ function App() {
                         <Route path="/sign-in" element={<Login />} />
                         <Route path="/sign-up" element={<Register />} />
                         <Route path="/logout" element={<Logout />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
 
                     <Newsletter />
