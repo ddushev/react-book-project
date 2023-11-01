@@ -8,7 +8,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 export const RoomsCatalog = () => {
     let { rooms } = useRoomContext();
     const { userId } = useAuthContext()
-    rooms = rooms.filter(room => !room.booked && room._ownerId != userId);
+    // rooms = rooms.filter(room => !room.booked && room._ownerId != userId);
     return (
         <>
             <CommonHeader />
