@@ -1,7 +1,7 @@
 import useForm from "../../hooks/useForm";
 import { useRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
-import { formFields as roomFormFields } from "../../utils/constants";
+import { roomFormFields } from "../../utils/constants";
 import { useAuthContext } from "../../contexts/AuthContext";
 
 export const AddRoom = () => {

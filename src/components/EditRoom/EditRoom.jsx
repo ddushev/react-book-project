@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { dataFactory } from "../../services/requests";
 import { useEffect } from "react";
-import { formFields as roomFormFields } from "../../utils/constants";
+import { roomFormFields } from "../../utils/constants";
 
 export const EditRoom = () => {
     const { token } = useAuthContext();
