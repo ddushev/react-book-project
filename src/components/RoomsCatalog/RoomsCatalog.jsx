@@ -3,9 +3,12 @@ import { useRoomContext } from "../../contexts/RoomContext";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { RoomCard } from "../Common/RoomCard/RoomCard";
 import { Search } from "../Common/Search/Search";
+import { useAuthContext } from "../../contexts/AuthContext";
 
 export const RoomsCatalog = () => {
-    const { rooms } = useRoomContext();
+    let { rooms } = useRoomContext();
+    const { userId } = useAuthContext()
+    rooms = rooms.filter(room => !room.booked && room._ownerId != userId);
     return (
         <>
             <CommonHeader />
@@ -23,7 +26,7 @@ export const RoomsCatalog = () => {
                                 </h1>
                             </div>
                             <div className="row g-4">
-                                {rooms.filter(room => !room.booked).map(room => <RoomCard key={room._id} {...room} />)}
+                                {rooms.map(room => <RoomCard key={room._id} {...room} />)}
                             </div>
                         </> :
                         <>
@@ -32,9 +35,9 @@ export const RoomsCatalog = () => {
                                     No Available Rooms
                                 </h6>
                                 <h1 className="mb-5">
-                                    Be our first 
+                                    Host a 
                                     <Link to="/add-room">
-                                        <span className="text-primary text-uppercase"> Host</span>
+                                        <span className="text-primary text-uppercase"> Room</span>
                                     </Link>
                                 </h1>
                             </div>
