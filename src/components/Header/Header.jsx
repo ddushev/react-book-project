@@ -121,8 +121,14 @@ export const Header = () => {
                                             />
                                         </a>
                                         <div className="dropdown-menu rounded-0 m-0">
-                                            <Link to="/testimonials" className="dropdown-item">
-                                                My rooms
+                                            <Link to="/my-published-rooms" className="dropdown-item">
+                                                Published
+                                            </Link>
+                                            <Link to="/my-bookings" className="dropdown-item">
+                                                Bookings
+                                            </Link>
+                                            <Link to="/my-hosted-rooms" className="dropdown-item">
+                                                Hosted
                                             </Link>
                                             <Link to="/logout" className="dropdown-item">
                                                 Logout
