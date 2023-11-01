@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
@@ -21,12 +21,9 @@ export const RoomsCatalog = () => {
             mainHeadingSpan: '',
             secondaryHeading: '',
             to: ''
-        }
+        },
+        filterRooms: () => '',
     });
-
-    useEffect(() => {
-        setCurrentPageInfo(pageInfo.current[locationPathname]);
-    }, [locationPathname]);
 
     const pageInfo = useRef({
         "/available-rooms": {
@@ -40,7 +37,8 @@ export const RoomsCatalog = () => {
                 mainHeadingSpan: 'Room',
                 secondaryHeading: 'No Available Rooms',
                 to: '/add-room'
-            }
+            },
+            filterRooms: (rooms, userId) => rooms.filter(room => !room.booked && room._ownerId != userId),
         },
         "/my-published-rooms":  {
             roomsCatalog: {
@@ -53,7 +51,8 @@ export const RoomsCatalog = () => {
                 mainHeadingSpan: 'Room',
                 secondaryHeading: 'No Published Rooms',
                 to: '/add-room'
-            }
+            },
+            filterRooms: (rooms, userId) => rooms.filter(room => !room.booked && room._ownerId == userId),
         },
         "/my-bookings": {
             roomsCatalog: {
@@ -66,7 +65,8 @@ export const RoomsCatalog = () => {
                 mainHeadingSpan: 'Room',
                 secondaryHeading: 'No Booked Rooms',
                 to: '/available-rooms'
-            }
+            },
+            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room._ownerId != userId),
         },
         "/my-hosted-rooms": {
             roomsCatalog: {
@@ -79,14 +79,19 @@ export const RoomsCatalog = () => {
                 mainHeadingSpan: 'Room',
                 secondaryHeading: 'No Hosted Rooms',
                 to: '/add-room'
-            }
+            },
+            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room._ownerId == userId),
         },
 
     });
 
+    useEffect(() => {
+        setCurrentPageInfo(pageInfo.current[locationPathname]);
+    }, [locationPathname, pageInfo]);
+
     let { rooms } = useRoomContext();
     const { userId } = useAuthContext()
-    rooms = rooms.filter(room => !room.booked && room._ownerId != userId);
+    rooms = currentPageInfo.filterRooms(rooms, userId);
     return (
         <>
             <CommonHeader />
