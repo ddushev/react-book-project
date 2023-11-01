@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import useForm from "../../../hooks/useForm";
 import { useAuthContext } from "../../../contexts/AuthContext";
+import { signFormFields } from "../../../utils/constants";
+
 
 export const Login = () => {
     const { onLoginSubmit } = useAuthContext();
     const { values, onChangeHandler, onSubmit } = useForm({
-        email: '',
-        password: '',
+        [signFormFields.email]: '',
+        [signFormFields.password]: '',
     }, onLoginSubmit);
     return (
         <div className="container-xxl py-5">
@@ -42,7 +44,7 @@ export const Login = () => {
                                                 className="form-control"
                                                 id="email"
                                                 placeholder="Email"
-                                                name="email"
+                                                name={signFormFields.email}
                                                 value={values.email}
                                                 onChange={onChangeHandler}
                                             />
@@ -56,7 +58,7 @@ export const Login = () => {
                                                 className="form-control"
                                                 id="password"
                                                 placeholder="Password"
-                                                name="password"
+                                                name={signFormFields.password}
                                                 value={values.password}
                                                 onChange={onChangeHandler}
                                             />

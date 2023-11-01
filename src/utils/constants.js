@@ -1,6 +1,6 @@
 export const baseUrl = 'http://localhost:3030';
 
-export const formFields = {
+export const roomFormFields = {
     name: 'name',
     price: 'price',
     imageUrl: 'imageUrl',
@@ -14,4 +14,13 @@ export const formFields = {
     booked: 'booked',
     ownerName: 'ownerName',
     ownerEmail: 'ownerEmail'
+}
+
+export const signFormFields = {
+    firstName: 'firstName',
+    lastName: 'lastName',
+    email: 'email',
+    password: 'password',
+    repeatPassword: 'repeatPassword',
+    imageUrl: 'imageUrl',
 }

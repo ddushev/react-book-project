@@ -1,16 +1,18 @@
 import { Link } from "react-router-dom";
 import useForm from "../../../hooks/useForm";
 import { useAuthContext } from "../../../contexts/AuthContext";
+import { signFormFields } from "../../../utils/constants";
+
 
 export const Register = () => {
     const { onRegisterSubmit } = useAuthContext();
     const { values, onChangeHandler, onSubmit } = useForm({
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        repeatPassword: '',
-        imageUrl: '',
+        [signFormFields.firstName]: '',
+        [signFormFields.lastName]: '',
+        [signFormFields.email]: '',
+        [signFormFields.password]: '',
+        [signFormFields.repeatPassword]: '',
+        [signFormFields.imageUrl]: '',
     }, onRegisterSubmit);
     return (
         <div className="container-xxl py-5">
@@ -35,7 +37,7 @@ export const Register = () => {
                                                 className="form-control"
                                                 id="firstName"
                                                 placeholder="First Name"
-                                                name="firstName"
+                                                name={signFormFields.firstName}
                                                 value={values.firstName}
                                                 onChange={onChangeHandler}
                                             />
@@ -49,7 +51,7 @@ export const Register = () => {
                                                 className="form-control"
                                                 id="lastName"
                                                 placeholder="Last Name"
-                                                name="lastName"
+                                                name={signFormFields.lastName}
                                                 value={values.lastName}
                                                 onChange={onChangeHandler}
                                             />
@@ -63,7 +65,7 @@ export const Register = () => {
                                                 className="form-control"
                                                 id="email"
                                                 placeholder="Your Email"
-                                                name="email"
+                                                name={signFormFields.email}
                                                 value={values.email}
                                                 onChange={onChangeHandler}
                                             />
@@ -77,7 +79,7 @@ export const Register = () => {
                                                 className="form-control"
                                                 id="password"
                                                 placeholder="Password"
-                                                name="password"
+                                                name={signFormFields.password}
                                                 value={values.password}
                                                 onChange={onChangeHandler}
                                             />
@@ -91,7 +93,7 @@ export const Register = () => {
                                                 className="form-control"
                                                 id="repeatPassword"
                                                 placeholder="Repeat password"
-                                                name="repeatPassword"
+                                                name={signFormFields.repeatPassword}
                                                 value={values.repeatPassword}
                                                 onChange={onChangeHandler}
                                             />
@@ -105,7 +107,7 @@ export const Register = () => {
                                                 className="form-control"
                                                 id="imageUrl"
                                                 placeholder="Profile Image URL"
-                                                name="imageUrl"
+                                                name={signFormFields.imageUrl}
                                                 value={values.imageUrl}
                                                 onChange={onChangeHandler}
                                             />
