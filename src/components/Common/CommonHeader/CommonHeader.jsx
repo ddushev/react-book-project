@@ -7,10 +7,14 @@ export const CommonHeader = () => {
     const locationPathname = useLocation().pathname;
     const [currentPageInfo, setPageInfo] = useState({
         heading: '',
+        page: ''
     });
 
     const { roomId } = useParams();
+
+    //configure dynamic URLs
     const editUrl = `/available-rooms/${roomId}/edit`;
+    const detailsUrl = `/available-rooms/${roomId}/details`;
     const bookingConfirmationUrl = `/booking-confirmation/${roomId}`;
 
     useEffect(() => {
@@ -39,6 +43,10 @@ export const CommonHeader = () => {
             heading: 'Edit Room',
             page: 'Update details'
         },
+        [detailsUrl]: {
+            heading: 'Room Details',
+            page: 'Info'
+        },
         [bookingConfirmationUrl]: {
             heading: 'Booking Confirmed',
             page: 'Confirmation page'
@@ -60,7 +68,7 @@ export const CommonHeader = () => {
                                 <Link to="/">Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                                <Link to="/send-feedback">Feedback</Link>
+                                <Link to="/available-rooms">All Rooms</Link>
                             </li>
                             <li
                                 className="breadcrumb-item text-white active"

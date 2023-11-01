@@ -1,9 +1,9 @@
 import "./RoomDetails.css"
 import { Link, useParams } from "react-router-dom";
 import { Search } from "../Common/Search/Search";
-import { RoomDetailsHeader } from "./RoomDetailsHeader.jsx/RoomDetailsHeader";
 import { useRoomContext } from "../../contexts/RoomContext";
 import { useAuthContext } from "../../contexts/AuthContext";
+import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 
 export const RoomDetails = () => {
@@ -13,7 +13,7 @@ export const RoomDetails = () => {
     const { userId } = useAuthContext();
     return (
         <>
-            <RoomDetailsHeader />
+            <CommonHeader />
             <Search />
             <div className="room-details wow fadeInUp" data-wow-delay="0.1s">
                 <div className="room-item shadow rounded overflow-hidden">
@@ -80,7 +80,7 @@ export const RoomDetails = () => {
                             userId && userId != roomData?._ownerId && !roomData?.booked &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomClick({...roomData, booked: true}, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
+                                <Link onClick={() => onBookRoomClick({ ...roomData, booked: true }, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
