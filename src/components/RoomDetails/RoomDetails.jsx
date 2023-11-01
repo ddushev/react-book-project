@@ -1,5 +1,5 @@
 import "./RoomDetails.css"
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { Search } from "../Common/Search/Search";
 import { useRoomContext } from "../../contexts/RoomContext";
 import { useAuthContext } from "../../contexts/AuthContext";
@@ -7,10 +7,12 @@ import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 
 export const RoomDetails = () => {
+    const locationPathname = useLocation().pathname;
     const { roomId } = useParams();
     const { getRoomFromState, onDeleteRoomClick, onBookRoomClick } = useRoomContext();
     const roomData = getRoomFromState(roomId);
-    const { userId } = useAuthContext();
+    const { userId, username } = useAuthContext();
+
     return (
         <>
             <CommonHeader />
@@ -60,7 +62,18 @@ export const RoomDetails = () => {
 
                         </div>
                         <p className="text-body mb-3">
-                            {roomData?.description}
+                            {locationPathname == `/available-rooms/${roomId}/details` &&
+                                roomData?.description
+                            }
+
+                            {locationPathname == `/booking-confirmation/${roomId}` &&
+                                <>
+                                    <p>Dear {username},</p>
+                                    <p>We are delighted to confirm your booking. We look forward to welcoming you and ensuring your stay is a memorable one. If you have any special requests or need further assistance, please feel free to reach out to your host {roomData?.ownerName} @ {roomData?.ownerEmail}.</p>
+                                    <p>Warm regards,</p>
+                                    <p>ReactBook's team</p>
+                                </>
+                            }
                         </p>
                         {/* Owner buttons */}
                         {
@@ -89,6 +102,19 @@ export const RoomDetails = () => {
                             </div>
                         }
 
+                        {/* Not owner user buttons after booking */}
+                        {
+                            userId && userId != roomData?._ownerId && roomData?.booked &&
+
+                            <div className="d-flex justify-content-between">
+                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-bookings">
+                                    Check your bookings
+                                </Link>
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                    Back to Catalog
+                                </Link>
+                            </div>
+                        }
                         {/* Guest */}
                         {
                             !userId &&

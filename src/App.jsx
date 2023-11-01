@@ -32,9 +32,9 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/available-rooms" element={<RoomsCatalog />} />
-                        <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
                         <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
-                        <Route path="/booking-confirmation/:roomId" element={<BookedRoom />} />
+                        <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
+                        <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
                         <Route path="/add-room" element={<AddRoom />} />
                         <Route path="/testimonials" element={<Testimonials />} />
                         <Route path="/send-feedback" element={<Feedback />} />
