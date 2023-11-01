@@ -1,5 +1,5 @@
 import "./RoomCard.css"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const RoomCard = ({
     _id,
@@ -8,6 +8,7 @@ export const RoomCard = ({
     name,
     description
 }) => {
+    const locationPathname = useLocation().pathname;
     return (
         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${Math.random()}s`}>
             <div className="room-item shadow rounded overflow-hidden">
@@ -31,11 +32,13 @@ export const RoomCard = ({
                     <p className="text-body mb-3">
                         {description}
                     </p>
-                    <div className="button-center">
-                        <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${_id}/details`}>
-                            View Details
-                        </Link>
-                    </div>
+                    { (locationPathname == '/my-published-rooms' || locationPathname == '/available-rooms') &&
+                        <div className="button-center">
+                            <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${_id}/details`}>
+                                View Details
+                            </Link>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

@@ -70,7 +70,7 @@ export const RoomsCatalog = () => {
         },
         "/my-hosted-rooms": {
             roomsCatalog: {
-                mainHeading: 'Rooms You ',
+                mainHeading: 'Rooms you ',
                 mainHeadingSpan: 'Hosted',
                 secondaryHeading: 'Your Rooms',
             },
