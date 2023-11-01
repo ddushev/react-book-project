@@ -1,8 +1,11 @@
 import "./RoomDetails.css"
+
 import { Link, useLocation, useParams } from "react-router-dom";
-import { Search } from "../Common/Search/Search";
-import { useRoomContext } from "../../contexts/RoomContext";
+
 import { useAuthContext } from "../../contexts/AuthContext";
+import { useRoomContext } from "../../contexts/RoomContext";
+
+import { Search } from "../Common/Search/Search";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 

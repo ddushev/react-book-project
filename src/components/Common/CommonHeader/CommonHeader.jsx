@@ -1,35 +1,35 @@
-import { useEffect, useRef, useState } from "react";
 import "./CommonHeader.css";
 
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
 export const CommonHeader = () => {
     const locationPathname = useLocation().pathname;
-    const [currentPageInfo, setPageInfo] = useState({
+    const [currentPageInfo, setCurrentPageInfo] = useState({
         heading: '',
         page: ''
     });
 
-    const { roomId } = useParams();
-
+    
     //configure dynamic URLs
+    const { roomId } = useParams();
     const editUrl = `/available-rooms/${roomId}/edit`;
     const detailsUrl = `/available-rooms/${roomId}/details`;
     const bookingConfirmationUrl = `/booking-confirmation/${roomId}`;
 
     useEffect(() => {
-        setPageInfo(pageInfo.current[locationPathname]);
+        setCurrentPageInfo(pageInfo.current[locationPathname]);
     }, [locationPathname]);
 
     const pageInfo = useRef({
         "/about": {
-            heading: 'About Us',
-            page: 'About'
+            heading: 'About',
+            page: 'About Us'
 
         },
         "/available-rooms": {
-            heading: 'Rooms Catalog',
-            page: 'Available Rooms'
+            heading: 'Available Rooms',
+            page: 'Published by others'
         },
         "/add-room": {
             heading: 'Add Room',
@@ -38,6 +38,18 @@ export const CommonHeader = () => {
         "/testimonials": {
             heading: 'Testimonials',
             page: 'Customer feedback'
+        },
+        "/my-published-rooms": {
+            heading: 'Published Rooms',
+            page: 'Published by you'
+        },
+        "/my-bookings": {
+            heading: 'Booked Rooms',
+            page: 'Booked by you'
+        },
+        "/my-hosted-rooms": {
+            heading: 'Hosted Rooms',
+            page: 'Hosted by you'
         },
         [editUrl]: {
             heading: 'Edit Room',

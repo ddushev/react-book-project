@@ -16,7 +16,6 @@ import { Register } from "./components/Sign/Register/Register"
 import { Logout } from "./components/Logout/Logout"
 import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
-import { BookedRoom } from "./components/BookedRoom/BookedRoom"
 
 import { Spinner } from "./components/Common/Spinner/Spinner"
 
@@ -32,6 +31,9 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/available-rooms" element={<RoomsCatalog />} />
+                        <Route path="/my-published-rooms" element={<RoomsCatalog />} />
+                        <Route path="/my-bookings" element={<RoomsCatalog />} />
+                        <Route path="/my-hosted-rooms" element={<RoomsCatalog />} />
                         <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
                         <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
                         <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
