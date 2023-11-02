@@ -1378,7 +1378,7 @@
             },
             "92733f22-9486-4fa5-90cc-28804a96d2f1": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "name": "Double Room Sea View",
+                "name": "Double Sea View Room",
                 "price": "250",
                 "imageUrl": "/img/double-room-sea.jpg",
                 "adult": "2",
@@ -1440,7 +1440,7 @@
                 "bath": "3",
                 "wifi": "Yes",
                 "parking": "Yes",
-                "description": "Perched high above the captivating cityscape of Istanbul, this luxurious penthouse offers the pinnacle of urban opulence. With panoramic views of the Bosphorus and the city's iconic landmarks right in the middle of the Asian part you can find many fun and exciting things to do.",
+                "description": "Perched high above the bustling city of Istanbul, our penthouse offers an extraordinary retreat in the heart of this vibrant metropolis. With panoramic views of the Bosphorus, historic landmarks, and the city's dynamic skyline, this lavish penthouse is a sanctuary of luxury.",
                 "booked": false,
                 "ownerName": "Daniel2 Dushev2",
                 "ownerEmail": "danieldyshew2@gmail.com",
@@ -1449,7 +1449,7 @@
             },
             "a9d80ad3-a185-4257-9ced-b63eadb9e7fh": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "name": "Ski-in Ski-out",
+                "name": "Ski-in Ski-out Room",
                 "price": "350",
                 "imageUrl": "/img/ski-in-out-room.jpg",
                 "adult": "3",
@@ -1482,6 +1482,24 @@
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e8gi"
+            }, 
+            "a9d80ad3-a185-4257-9ced-b63eadb9e0hj": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "name": "Paris Double Room",
+                "price": "500",
+                "imageUrl": "/img/Eiffel-tower-room-view.jpg",
+                "adult": "2",
+                "child": "0",
+                "bed": "1",
+                "bath": "1",
+                "wifi": "Yes",
+                "parking": "Yes",
+                "description": "Discover a world of unparalleled luxury and sophistication in our meticulously designed Luxury Room, offering a mesmerizing Eiffel Tower view that unfurls before your eyes. Whether you're unwinding in modern comfort, savoring a glass of champagne, or simply gazing out at the nightly spectacle of the iconic Parisian landmark.",
+                "booked": false,
+                "ownerName": "Daniel2 Dushev2",
+                "ownerEmail": "danieldyshew2@gmail.com",
+                "_createdOn": 1698836269290,
+                "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e0hj"
             },
 
         },
