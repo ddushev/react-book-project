@@ -41,16 +41,22 @@ export const RoomDetails = () => {
                         </div>
                         <div className="d-flex mb-3">
                             <small className="border-end me-3 pe-3">
-                                <i className="fa fa-bed text-primary me-2" />{roomData?.bed} Bed
+                                <i className="fa fa-bed text-primary me-2" />{roomData?.bed} 
                             </small>
                             <small className="border-end me-3 pe-3">
-                                <i className="fa fa-bath text-primary me-2" />{roomData?.bath} Bath
+                                <i className="fa fa-bath text-primary me-2" />{roomData?.bath} 
+                            </small>
+                            <small className="border-end me-3 pe-3">
+                                <i className="fa fa-male text-primary me-2" />{roomData?.adult} 
+                            </small>
+                            <small className="border-end me-3 pe-3">
+                                <i className="fa fa-baby text-primary me-2" />{roomData?.child}
                             </small>
                             {
                                 roomData?.wifi == "Yes" &&
                                 <small className="border-end me-3 pe-3">
                                     <i className="fa fa-wifi text-primary me-2" />
-                                    Wifi
+                                    Yes
                                 </small>
                             }
 
@@ -58,7 +64,7 @@ export const RoomDetails = () => {
                                 roomData?.parking == "Yes" &&
                                 <small className="border-end me-3 pe-3">
                                     <i className="fa fa-parking text-primary me-2" />
-                                    Parking
+                                    Yes
                                 </small>
                             }
 
