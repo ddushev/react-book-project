@@ -50,10 +50,10 @@ export const Search = () => {
                                         onChange={onChangeHandler}
                                         className="form-select"
                                     >
-                                        <option>1 Adult</option>
-                                        <option>2 Adults</option>
-                                        <option>3 Adults</option>
-                                        <option>4 Adults</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
                                     </select>
                                 </div>
                                 <div className="col-md-3">

@@ -10,6 +10,7 @@ import { Search } from "../Common/Search/Search";
 
 export const RoomsCatalog = () => {
     const locationPathname = useLocation().pathname;
+    const locationSearch = useLocation().search;
     const [currentPageInfo, setCurrentPageInfo] = useState({
         roomsCatalog: {
             mainHeading: '',
@@ -86,8 +87,25 @@ export const RoomsCatalog = () => {
     });
 
     useEffect(() => {
-        setCurrentPageInfo(pageInfo.current[locationPathname]);
-    }, [locationPathname, pageInfo]);
+        if (!!locationSearch) {
+            setCurrentPageInfo({
+                roomsCatalog: {
+                    mainHeading: 'Your ',
+                    mainHeadingSpan: 'Criterias',
+                    secondaryHeading: 'Filtered Rooms',
+                },
+                noRooms: {
+                    mainHeading: 'Try other search ',
+                    mainHeadingSpan: 'Criterias',
+                    secondaryHeading: 'No Rooms Found',
+                    to: '/available-rooms'
+                },
+                filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room._ownerId == userId),
+            })
+        }else {
+            setCurrentPageInfo(pageInfo.current[locationPathname]);
+        }
+    }, [locationPathname, pageInfo, locationSearch]);
 
     let { rooms } = useRoomContext();
     const { userId } = useAuthContext()

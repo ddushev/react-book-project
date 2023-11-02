@@ -5,12 +5,13 @@ import { Link, useLocation, useParams } from "react-router-dom";
 
 export const CommonHeader = () => {
     const locationPathname = useLocation().pathname;
+    const locationSearch = useLocation().search;
     const [currentPageInfo, setCurrentPageInfo] = useState({
         heading: '',
         page: ''
     });
 
-    
+
     //configure dynamic URLs
     const { roomId } = useParams();
     const editUrl = `/available-rooms/${roomId}/edit`;
@@ -18,7 +19,14 @@ export const CommonHeader = () => {
     const bookingConfirmationUrl = `/booking-confirmation/${roomId}`;
 
     useEffect(() => {
-        setCurrentPageInfo(pageInfo.current[locationPathname]);
+        if (!!locationSearch) {
+            setCurrentPageInfo({
+                heading: 'Find Room',
+                page: 'Searching For A Room'
+            })
+        } else {
+            setCurrentPageInfo(pageInfo.current[locationPathname]);
+        }
     }, [locationPathname]);
 
     const pageInfo = useRef({
