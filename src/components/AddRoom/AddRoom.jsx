@@ -159,6 +159,7 @@ export const AddRoom = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select name={roomFormFields.adult} value={values.adult} onChange={onChangeHandler} className="form-select" id="select1">
+                                                    <option disabled>Select</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -170,6 +171,7 @@ export const AddRoom = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select name={roomFormFields.child} value={values.child} onChange={onChangeHandler} className="form-select" id="select2">
+                                                    <option disabled>Select</option>
                                                     <option>0</option>
                                                     <option>1</option>
                                                     <option>2</option>
@@ -182,6 +184,7 @@ export const AddRoom = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select name={roomFormFields.bed} value={values.bed} onChange={onChangeHandler} className="form-select" id="select3">
+                                                    <option disabled>Select</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -193,6 +196,7 @@ export const AddRoom = () => {
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select name={roomFormFields.bath} value={values.bath} onChange={onChangeHandler} className="form-select" id="select4">
+                                                    <option disabled>Select</option>
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -204,6 +208,7 @@ export const AddRoom = () => {
                                         <div className="col-6">
                                             <div className="form-floating" >
                                                 <select name={roomFormFields.wifi} value={values.wifi} onChange={onChangeHandler} className="form-select" id="select5">
+                                                    <option disabled>Select</option>
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
