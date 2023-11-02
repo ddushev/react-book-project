@@ -50,6 +50,7 @@ export const Search = () => {
                                         onChange={onChangeHandler}
                                         className="form-select"
                                     >
+                                        <option disabled>Adults</option>
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -62,6 +63,7 @@ export const Search = () => {
                                         onChange={onChangeHandler}
                                         className="form-select"
                                     >
+                                        <option disabled>Children</option>
                                         <option>0</option>
                                         <option>1</option>
                                         <option>2</option>
