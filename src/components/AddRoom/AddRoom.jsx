@@ -218,6 +218,7 @@ export const AddRoom = () => {
                                         <div className="col-6">
                                             <div className="form-floating" >
                                                 <select name={roomFormFields.parking} value={values.parking} onChange={onChangeHandler} className="form-select" id="select6">
+                                                    <option disabled>Select</option>
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
