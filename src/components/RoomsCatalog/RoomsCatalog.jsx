@@ -9,8 +9,13 @@ import { RoomCard } from "../RoomCard/RoomCard";
 import { Search } from "../Common/Search/Search";
 
 export const RoomsCatalog = () => {
+    let { rooms } = useRoomContext();
+    const { userId } = useAuthContext();
+
     const locationPathname = useLocation().pathname;
     const locationSearch = useLocation().search;
+
+    const [searchParams, setSearchParams] = useState([]);
     const [currentPageInfo, setCurrentPageInfo] = useState({
         roomsCatalog: {
             mainHeading: '',
@@ -41,7 +46,7 @@ export const RoomsCatalog = () => {
             },
             filterRooms: (rooms, userId) => rooms.filter(room => !room.booked && room._ownerId != userId),
         },
-        "/my-published-rooms":  {
+        "/my-published-rooms": {
             roomsCatalog: {
                 mainHeading: 'Rooms you ',
                 mainHeadingSpan: 'Published',
@@ -88,6 +93,7 @@ export const RoomsCatalog = () => {
 
     useEffect(() => {
         if (!!locationSearch) {
+            setSearchParams(locationSearch.split("&").map(s => s.slice(s.indexOf("=") + 1)));
             setCurrentPageInfo({
                 roomsCatalog: {
                     mainHeading: 'Your ',
@@ -100,16 +106,36 @@ export const RoomsCatalog = () => {
                     secondaryHeading: 'No Rooms Found',
                     to: '/available-rooms'
                 },
-                filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room._ownerId == userId),
+                filterRooms: (rooms, userId, search, price, adult, child) => {
+                    rooms = rooms.filter(room => !room.booked && room._ownerId != userId);
+                    
+                    const searchDecoded = decodeURIComponent(search);
+                    if (searchDecoded) {
+                        rooms = rooms.filter(room => room.name.toLowerCase().includes(searchDecoded.toLowerCase()));
+                    }
+
+                    if (price) {
+                        rooms = rooms.filter(room => room.price <= Number(price));
+                    }
+
+                    if (adult) {
+                        rooms = rooms.filter(room => room.adult >= Number(adult));
+                    }
+
+                    if (child) {
+                        rooms = rooms.filter(room => room.child >= Number(child));
+                    }
+
+
+                    return rooms;
+                },
             })
-        }else {
+        } else {
             setCurrentPageInfo(pageInfo.current[locationPathname]);
         }
-    }, [locationPathname, pageInfo, locationSearch]);
+    }, [locationPathname, locationSearch]);
 
-    let { rooms } = useRoomContext();
-    const { userId } = useAuthContext()
-    rooms = currentPageInfo.filterRooms(rooms, userId);
+    rooms = currentPageInfo.filterRooms(rooms, userId, searchParams[0], searchParams[1], searchParams[2], searchParams[3]);
     return (
         <>
             <CommonHeader />
@@ -123,7 +149,7 @@ export const RoomsCatalog = () => {
                                     {currentPageInfo.roomsCatalog?.secondaryHeading}
                                 </h6>
                                 <h1 className="mb-5">
-                                {currentPageInfo.roomsCatalog?.mainHeading} <span className="text-primary text-uppercase">{currentPageInfo.roomsCatalog?.mainHeadingSpan}</span>
+                                    {currentPageInfo.roomsCatalog?.mainHeading} <span className="text-primary text-uppercase">{currentPageInfo.roomsCatalog?.mainHeadingSpan}</span>
                                 </h1>
                             </div>
                             <div className="row g-4">
@@ -133,11 +159,11 @@ export const RoomsCatalog = () => {
                         <>
                             <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
                                 <h6 className="section-title text-center text-primary text-uppercase">
-                                {currentPageInfo.noRooms?.secondaryHeading}
+                                    {currentPageInfo.noRooms?.secondaryHeading}
 
                                 </h6>
                                 <h1 className="mb-5">
-                                {currentPageInfo.noRooms?.mainHeading}
+                                    {currentPageInfo.noRooms?.mainHeading}
                                     <Link to={currentPageInfo.noRooms?.to}>
                                         <span className="text-primary text-uppercase">{currentPageInfo.noRooms?.mainHeadingSpan}</span>
                                     </Link>

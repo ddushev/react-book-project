@@ -27,7 +27,7 @@ export const CommonHeader = () => {
         } else {
             setCurrentPageInfo(pageInfo.current[locationPathname]);
         }
-    }, [locationPathname]);
+    }, [locationPathname, locationSearch]);
 
     const pageInfo = useRef({
         "/about": {

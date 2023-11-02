@@ -58,7 +58,6 @@ export const RoomContextProvider = ({ children }) => {
     async function onRoomSearchClick(searchValues) {
         const {name, price , adult, child} = searchValues;
         const searchQuery = `search=${name}&price=${price}&adult=${adult}&child=${child}`
-        console.log(searchQuery);
         navigate(`/available-rooms?${searchQuery}`);
     }
 
