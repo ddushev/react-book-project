@@ -1,6 +1,17 @@
 import "./Search.css";
 
+import { useRoomContext } from "../../../contexts/RoomContext";
+import { searchFields } from "../../../utils/constants";
+import useForm from "../../../hooks/useForm";
+
 export const Search = () => {
+    const { onRoomSearchClick } = useRoomContext();
+    const { values, onChangeHandler, onSubmit } = useForm({
+        [searchFields.name]: '',
+        [searchFields.price]: '',
+        [searchFields.adult]: '1',
+        [searchFields.child]: '0',
+    }, onRoomSearchClick);
     return (
         <div
             className="container-fluid booking pb-5 wow fadeIn"
@@ -12,47 +23,56 @@ export const Search = () => {
                         <div className="col-md-10">
                             <div className="row g-2">
                                 <div className="col-md-3">
-                                    <div className="date" id="date1" data-target-input="nearest">
-                                        <input
-                                            type="text"
-                                            className="form-control datetimepicker-input"
-                                            placeholder="Check in"
-                                            data-target="#date1"
-                                            data-toggle="datetimepicker"
-                                        />
-                                    </div>
+                                    <input
+                                        type="text"
+                                        className="form-control"
+                                        id="name"
+                                        placeholder="Property Name"
+                                        name={searchFields.name}
+                                        value={values.name}
+                                        onChange={onChangeHandler}
+                                    />
                                 </div>
                                 <div className="col-md-3">
-                                    <div className="date" id="date2" data-target-input="nearest">
-                                        <input
-                                            type="text"
-                                            className="form-control datetimepicker-input"
-                                            placeholder="Check out"
-                                            data-target="#date2"
-                                            data-toggle="datetimepicker"
-                                        />
-                                    </div>
+                                    <input
+                                        type="number"
+                                        className="form-control"
+                                        id="price"
+                                        placeholder="Price per night"
+                                        name={searchFields.price}
+                                        value={values.price}
+                                        onChange={onChangeHandler}
+                                    />
                                 </div>
                                 <div className="col-md-3">
-                                    <select className="form-select">
-                                        <option >Adult</option>
-                                        <option value={1}>Adult 1</option>
-                                        <option value={2}>Adult 2</option>
-                                        <option value={3}>Adult 3</option>
+                                    <select name={searchFields.adult}
+                                        value={values.adult}
+                                        onChange={onChangeHandler}
+                                        className="form-select"
+                                    >
+                                        <option>1 Adult</option>
+                                        <option>2 Adults</option>
+                                        <option>3 Adults</option>
+                                        <option>4 Adults</option>
                                     </select>
                                 </div>
                                 <div className="col-md-3">
-                                    <select className="form-select">
-                                        <option >Child</option>
-                                        <option value={1}>Child 1</option>
-                                        <option value={2}>Child 2</option>
-                                        <option value={3}>Child 3</option>
+                                    <select name={searchFields.child}
+                                        value={values.child}
+                                        onChange={onChangeHandler}
+                                        className="form-select"
+                                    >
+                                        <option>0</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-2">
-                            <button className="btn btn-primary w-100">Submit</button>
+                            <button onClick={onSubmit} className="btn btn-primary w-100">Search</button>
                         </div>
                     </div>
                 </div>

@@ -55,13 +55,19 @@ export const RoomContextProvider = ({ children }) => {
         return rooms.find(game => game._id == roomId);
     }
 
+    async function onRoomSearchClick(searchValues) {
+        console.log(searchValues)
+        navigate('/available-rooms');
+    }
+
     const context = {
         rooms,
         onAddRoomSubmit,
         onEditRoomSubmit,
         onBookRoomClick,
         onDeleteRoomClick,
-        getRoomFromState
+        getRoomFromState,
+        onRoomSearchClick
     }
 
     return (

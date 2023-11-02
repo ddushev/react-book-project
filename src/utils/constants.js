@@ -24,3 +24,10 @@ export const signFormFields = {
     repeatPassword: 'repeatPassword',
     imageUrl: 'imageUrl',
 }
+
+export const searchFields = {
+    name: 'name',
+    price: 'price',
+    adult: 'adult',
+    child: 'child',
+}
