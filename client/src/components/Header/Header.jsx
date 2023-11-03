@@ -83,9 +83,11 @@ export const Header = () => {
                                         <Link to="available-rooms" className="dropdown-item">
                                             Catalog
                                         </Link>
-                                        <Link to="add-room" className="dropdown-item">
-                                            Add
-                                        </Link>
+                                        {isAuthenticated &&
+                                            <Link to="add-room" className="dropdown-item">
+                                                Add
+                                            </Link>
+                                        }
                                     </div>
                                 </div>
                                 <div className="nav-item dropdown">
@@ -100,9 +102,11 @@ export const Header = () => {
                                         <Link to="/testimonials" className="dropdown-item">
                                             Testimonials
                                         </Link>
-                                        <Link to="/send-feedback" className="dropdown-item">
-                                            Share your feedback
-                                        </Link>
+                                        {isAuthenticated &&
+                                            <Link to="/send-feedback" className="dropdown-item">
+                                                Share your feedback
+                                            </Link>
+                                        }
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +121,7 @@ export const Header = () => {
                                             <img
                                                 className="img-fluid flex-shrink-0 rounded"
                                                 src={userImg}
-                                                style={{ width: 60, height: 60}}
+                                                style={{ width: 60, height: 60 }}
                                             />
                                         </a>
                                         <div className="dropdown-menu rounded-0 m-0">
