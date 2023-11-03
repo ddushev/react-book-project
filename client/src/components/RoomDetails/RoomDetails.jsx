@@ -12,9 +12,9 @@ import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 export const RoomDetails = () => {
     const locationPathname = useLocation().pathname;
     const { roomId } = useParams();
+    const { userId, username } = useAuthContext();
     const { getRoomFromState, onDeleteRoomClick, onBookRoomClick } = useRoomContext();
     const roomData = getRoomFromState(roomId);
-    const { userId, username } = useAuthContext();
 
     return (
         <>

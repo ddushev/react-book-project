@@ -1,6 +1,11 @@
-import "./AboutMain.jsx";
+import "./AboutMain.css";
+
+import { Link } from "react-router-dom";
+
+import { useRoomContext } from "../../../contexts/RoomContext";
 
 export const AboutMain = () => {
+    const { rooms } = useRoomContext();
     return (
         <div className="container-xxl py-5">
             <div className="container">
@@ -14,9 +19,7 @@ export const AboutMain = () => {
                             <span className="text-primary text-uppercase">ReactBook</span>
                         </h1>
                         <p className="mb-4">
-                            Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
-                            diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
-                            lorem sit clita duo justo magna dolore erat amet
+                            We revolutionize the travel industry. Our services connects travelers with a myriad of accommodations offered by hosts and property owners worldwide. Whether you're looking for a chic urban apartment, a cozy countryside cottage, or an exotic villa, ReacBook's diverse listings cater to various tastes and budgets. Users can easily navigate through these options, read reviews from previous guests, and book their desired accommodations directly through the website, providing a seamless and personalized travel experience.
                         </p>
                         <div className="row g-3 pb-4">
                             <div className="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
@@ -24,20 +27,20 @@ export const AboutMain = () => {
                                     <div className="border rounded text-center p-4">
                                         <i className="fa fa-hotel fa-2x text-primary mb-2" />
                                         <h2 className="mb-1" data-toggle="counter-up">
-                                            1234
+                                            {rooms.filter(room => !room.booked).length}
                                         </h2>
-                                        <p className="mb-0">Rooms</p>
+                                        <p className="mb-0">Available Rooms</p>
                                     </div>
                                 </div>
                             </div>
                             <div className="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
                                 <div className="border rounded p-1">
                                     <div className="border rounded text-center p-4">
-                                        <i className="fa fa-users-cog fa-2x text-primary mb-2" />
+                                        <i className="fa fa-bed fa-2x text-primary mb-2" />
                                         <h2 className="mb-1" data-toggle="counter-up">
-                                            1234
+                                            {rooms.filter(room => room.booked).length}
                                         </h2>
-                                        <p className="mb-0">Staffs</p>
+                                        <p className="mb-0">Booked Rooms</p>
                                     </div>
                                 </div>
                             </div>
@@ -46,16 +49,16 @@ export const AboutMain = () => {
                                     <div className="border rounded text-center p-4">
                                         <i className="fa fa-users fa-2x text-primary mb-2" />
                                         <h2 className="mb-1" data-toggle="counter-up">
-                                            1234
+                                            15
                                         </h2>
-                                        <p className="mb-0">Clients</p>
+                                        <p className="mb-0">Happy Clients</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <a className="btn btn-primary py-3 px-5 mt-2" href="">
+                        <Link className="btn btn-primary py-3 px-5 mt-2" to="/available-rooms">
                             Explore More
-                        </a>
+                        </Link>
                     </div>
                     <div className="col-lg-6">
                         <div className="row g-3">
