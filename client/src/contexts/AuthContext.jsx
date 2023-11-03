@@ -4,6 +4,7 @@ import { createContext, useContext, useState } from "react";
 import { dataFactory } from "../services/requests"
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { errorParser } from "../utils/errorParser";
+import { validateRegister } from "../utils/validateRegister";
 
 
 export const AuthContext = createContext();
@@ -40,16 +41,15 @@ export const AuthContextProvider = ({
 
     async function onRegisterSubmit(registerInfo) {
         try {
+            validateRegister(registerInfo);
             const { repeatPassword, ...registerData } = registerInfo;
-            if (repeatPassword != registerData.password) {
-                throw new Error('Passwords don\'t match!');
-            }
             const registerdInfo = await data.register(registerData)
             const { password, _createdOn, ...registeredData } = registerdInfo;
             setAuth(registeredData);
             navigate('/available-rooms');
         } catch (error) {
-            console.error(error.message);
+            setAuthErrors(errorParser(error));
+            navigate('/sign-up');
         }
     }
 

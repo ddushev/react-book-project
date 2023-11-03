@@ -1,11 +1,13 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import useForm from "../../../hooks/useForm";
+
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { signFormFields } from "../../../utils/constants";
+import useForm from "../../../hooks/useForm";
 
 
 export const Register = () => {
-    const { onRegisterSubmit } = useAuthContext();
+    const { onRegisterSubmit, authErrors, setAuthErrors } = useAuthContext();
     const { values, onChangeHandler, onSubmit } = useForm({
         [signFormFields.firstName]: '',
         [signFormFields.lastName]: '',
@@ -14,6 +16,12 @@ export const Register = () => {
         [signFormFields.repeatPassword]: '',
         [signFormFields.imageUrl]: '',
     }, onRegisterSubmit);
+
+    useEffect(() => {
+        return () => {
+            setAuthErrors([]);
+        }
+    }, []);
     return (
         <div className="container-xxl py-5">
             <div className="container">
@@ -123,17 +131,24 @@ export const Register = () => {
                             </form>
                         </div>
                     </div>
-                    <div className="col-md-6 wow fadeInDown" data-wow-delay="0.1s">
-                        <img
-                            className="position-relative rounded w-100 h-100"
-                            src="/img/about-3.jpg"
-                            frameBorder={0}
-                            style={{ minHeight: 350, border: 0 }}
-                            allowFullScreen=""
-                            aria-hidden="false"
-                            tabIndex={0}
-                        />
-                    </div>
+                    {authErrors.length == 0 ?
+                        <div className="col-md-6 wow fadeInDown" data-wow-delay="0.1s">
+                            <img
+                                className="position-relative rounded w-100 h-100"
+                                src="/img/about-3.jpg"
+                                frameBorder={0}
+                                style={{ minHeight: 350, border: 0 }}
+                                allowFullScreen=""
+                                aria-hidden="false"
+                                tabIndex={0}
+                            />
+                        </div>
+                        :
+                        <div className="col-md-6 wow fadeInDown error-box">
+                            <h4>Errors</h4>
+                            {authErrors.map(error => <p key={error}>{error}</p>)}
+                        </div>
+                    }
                 </div>
             </div>
         </div>
