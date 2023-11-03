@@ -2,14 +2,21 @@ import { Link } from "react-router-dom";
 import useForm from "../../../hooks/useForm";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { signFormFields } from "../../../utils/constants";
+import { useEffect } from "react";
 
 
 export const Login = () => {
-    const { onLoginSubmit, authErrors } = useAuthContext();
+    const { onLoginSubmit, authErrors, setAuthErrors } = useAuthContext();
     const { values, onChangeHandler, onSubmit } = useForm({
         [signFormFields.email]: '',
         [signFormFields.password]: '',
     }, onLoginSubmit);
+
+    useEffect(() => {
+        return () => {
+            setAuthErrors([]);
+        }
+    }, [])
     return (
         <div className="container-xxl py-5">
             <div className="container">

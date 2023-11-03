@@ -23,7 +23,6 @@ export const AuthContextProvider = ({
             navigate('/available-rooms');
         } catch (error) {
             setAuthErrors(errorParser(error));
-            console.error(error.message);
             navigate('/sign-in');
         }
     }
@@ -56,6 +55,7 @@ export const AuthContextProvider = ({
 
     const context = {
         authErrors,
+        setAuthErrors,
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,
