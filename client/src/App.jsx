@@ -3,6 +3,9 @@ import { Route, Routes } from "react-router-dom"
 import { AuthContextProvider } from "./contexts/AuthContext"
 import { RoomContextProvider } from "./contexts/RoomContext"
 
+import { GuestRouteGuard } from "./components/Common/GuestRouteGuard/GuestRouteGuard"
+import { UserRouteGuard } from "./components/Common/UserRouteGuard/UserRouteGuard"
+
 import { Header } from "./components/Header/Header"
 import { Home } from "./components/Home/Home"
 import { Footer } from "./components/Footer/Footer"
@@ -21,8 +24,7 @@ import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
 
 import { Spinner } from "./components/Common/Spinner/Spinner"
-import { GuestRouteGuard } from "./components/Common/GuestRouteGuard/GuestRouteGuard"
-import { UserRouteGuard } from "./components/Common/UserRouteGuard/UserRouteGuard"
+import RoomOwnerGuard from "./components/Common/RoomOwnerGuard/RoomOwnerGuard"
 
 
 function App() {
@@ -38,14 +40,17 @@ function App() {
                         <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
                         <Route path="/testimonials" element={<Testimonials />} />
 
-
                         <Route element={<GuestRouteGuard />} >
                             <Route path="/sign-in" element={<Login />} />
                             <Route path="/sign-up" element={<Register />} />
                         </Route>
 
                         <Route element={<UserRouteGuard />}>
-                            <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
+                            
+                            <Route element={<RoomOwnerGuard/>}>
+                                <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
+                            </Route>
+
                             <Route path="/my-published-rooms" element={<RoomsCatalog />} />
                             <Route path="/my-bookings" element={<RoomsCatalog />} />
                             <Route path="/my-hosted-rooms" element={<RoomsCatalog />} />
