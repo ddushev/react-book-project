@@ -35,7 +35,9 @@ export const AuthContextProvider = ({
             setAuth({});
             navigate('/');
         } catch (error) {
-            console.error(error.message);
+            localStorage.removeItem('key');
+            setAuth({});
+            navigate('/');
         }
     }
 
