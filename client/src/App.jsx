@@ -5,6 +5,7 @@ import { RoomContextProvider } from "./contexts/RoomContext"
 
 import { GuestRouteGuard } from "./components/Common/GuestRouteGuard/GuestRouteGuard"
 import { UserRouteGuard } from "./components/Common/UserRouteGuard/UserRouteGuard"
+import RoomOwnerGuard from "./components/Common/RoomOwnerGuard/RoomOwnerGuard"
 
 import { Header } from "./components/Header/Header"
 import { Home } from "./components/Home/Home"
@@ -24,7 +25,7 @@ import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
 
 import { Spinner } from "./components/Common/Spinner/Spinner"
-import RoomOwnerGuard from "./components/Common/RoomOwnerGuard/RoomOwnerGuard"
+import NotRoomOwnerGuard from "./components/Common/NotRoomOwnerGuard/NotRoomOwnerGuard"
 
 
 function App() {
@@ -40,24 +41,26 @@ function App() {
                         <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
                         <Route path="/testimonials" element={<Testimonials />} />
 
-                        <Route element={<GuestRouteGuard />} >
-                            <Route path="/sign-in" element={<Login />} />
-                            <Route path="/sign-up" element={<Register />} />
-                        </Route>
-
                         <Route element={<UserRouteGuard />}>
-                            
-                            <Route element={<RoomOwnerGuard/>}>
-                                <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
-                            </Route>
-
                             <Route path="/my-published-rooms" element={<RoomsCatalog />} />
                             <Route path="/my-bookings" element={<RoomsCatalog />} />
                             <Route path="/my-hosted-rooms" element={<RoomsCatalog />} />
                             <Route path="/add-room" element={<AddRoom />} />
-                            <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
                             <Route path="/send-feedback" element={<Feedback />} />
                             <Route path="/logout" element={<Logout />} />
+
+                            <Route element={<RoomOwnerGuard />}>
+                                <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
+                            </Route>
+
+                            <Route element={<NotRoomOwnerGuard />}>
+                                <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
+                            </Route>
+                        </Route>
+
+                        <Route element={<GuestRouteGuard />} >
+                            <Route path="/sign-in" element={<Login />} />
+                            <Route path="/sign-up" element={<Register />} />
                         </Route>
 
                         <Route path="*" element={<NotFound />} />

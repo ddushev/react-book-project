@@ -70,7 +70,7 @@ export const RoomDetails = () => {
 
 
                         </div>
-                        <p className="text-body mb-3">
+                        <div className="text-body mb-3">
                             {locationPathname == `/available-rooms/${roomId}/details` &&
                                 roomData?.description
                             }
@@ -83,7 +83,7 @@ export const RoomDetails = () => {
                                     <p>ReactBook's team</p>
                                 </>
                             }
-                        </p>
+                        </div>
                         {/* Owner buttons */}
                         {
                             userId == roomData?._ownerId &&
