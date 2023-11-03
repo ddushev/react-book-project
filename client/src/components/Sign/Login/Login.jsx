@@ -5,7 +5,7 @@ import { signFormFields } from "../../../utils/constants";
 
 
 export const Login = () => {
-    const { onLoginSubmit } = useAuthContext();
+    const { onLoginSubmit, authErrors } = useAuthContext();
     const { values, onChangeHandler, onSubmit } = useForm({
         [signFormFields.email]: '',
         [signFormFields.password]: '',
@@ -22,17 +22,24 @@ export const Login = () => {
                     </h6>
                 </div>
                 <div className="row g-4">
-                    <div className="col-md-6 wow fadeInDown" data-wow-delay="0.1s">
-                        <img
-                            className="position-relative rounded w-100 h-100"
-                            src="/img/about-2.jpg"
-                            frameBorder={0}
-                            style={{ minHeight: 350, border: 0 }}
-                            allowFullScreen=""
-                            aria-hidden="false"
-                            tabIndex={0}
-                        />
-                    </div>
+                    {authErrors.length == 0 ?
+                        <div className="col-md-6 wow fadeInDown" data-wow-delay="0.1s">
+                            <img
+                                className="position-relative rounded w-100 h-100"
+                                src="/img/about-2.jpg"
+                                frameBorder={0}
+                                style={{ minHeight: 350, border: 0 }}
+                                allowFullScreen=""
+                                aria-hidden="false"
+                                tabIndex={0}
+                            />
+                        </div>
+                        :
+                        <div className="col-md-6 wow fadeInDown error-box">
+                            <h4>Errors</h4>
+                            {authErrors.map(error => <p key={error}>{error}</p>)}
+                        </div>
+                    }
                     <div className="col-md-6">
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
                             <form onSubmit={onSubmit}>

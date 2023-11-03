@@ -3,7 +3,7 @@ import { Navigate, Outlet, useParams } from "react-router-dom";
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { useRoomContext } from "../../../contexts/RoomContext";
 
-export default function RoomOwnerGuard() {
+export function RoomOwnerGuard() {
     const { roomId } = useParams();
     const { userId } = useAuthContext();
     const { getRoomFromState } = useRoomContext();

@@ -1,7 +1,9 @@
-import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { createContext, useContext, useState } from "react";
+
 import { dataFactory } from "../services/requests"
 import { useLocalStorage } from "../hooks/useLocalStorage";
+import { errorParser } from "../utils/errorParser";
 
 
 export const AuthContext = createContext();
@@ -10,6 +12,7 @@ export const AuthContextProvider = ({
     children
 }) => {
     const [auth, setAuth] = useLocalStorage('auth', {});
+    const [authErrors, setAuthErrors] = useState([]);
     const navigate = useNavigate();
     const data = dataFactory(auth.accessToken);
     async function onLoginSubmit(loginInfo) {
@@ -19,7 +22,9 @@ export const AuthContextProvider = ({
             setAuth(loginData);
             navigate('/available-rooms');
         } catch (error) {
-            console.error(error.message)
+            setAuthErrors(errorParser(error));
+            console.error(error.message);
+            navigate('/sign-in');
         }
     }
 
@@ -50,6 +55,7 @@ export const AuthContextProvider = ({
     }
 
     const context = {
+        authErrors,
         onLoginSubmit,
         onRegisterSubmit,
         onLogout,

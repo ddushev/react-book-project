@@ -177,14 +177,14 @@ export const EditRoom = () => {
                                                 Update
                                             </button>
                                         </div>
-                                        <div className="col-12">
+                                        {/* <div className="col-12">
                                             <Link className="btn btn-secondary w-50 py-3" to={`/available-rooms/${roomId}/details`}>
                                                 Back to Details
                                             </Link>
                                             <Link className="btn btn-dark w-50 py-3" to="/available-rooms">
                                                 Back to Catalog
                                             </Link>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </form>
                             </div>

@@ -1,3 +1,5 @@
+import "./App.css";
+
 import { Route, Routes } from "react-router-dom"
 
 import { AuthContextProvider } from "./contexts/AuthContext"
@@ -5,7 +7,8 @@ import { RoomContextProvider } from "./contexts/RoomContext"
 
 import { GuestRouteGuard } from "./components/Common/GuestRouteGuard/GuestRouteGuard"
 import { UserRouteGuard } from "./components/Common/UserRouteGuard/UserRouteGuard"
-import RoomOwnerGuard from "./components/Common/RoomOwnerGuard/RoomOwnerGuard"
+import { RoomOwnerGuard } from "./components/Common/RoomOwnerGuard/RoomOwnerGuard"
+import { NotRoomOwnerGuard } from "./components/Common/NotRoomOwnerGuard/NotRoomOwnerGuard"
 
 import { Header } from "./components/Header/Header"
 import { Home } from "./components/Home/Home"
@@ -25,7 +28,6 @@ import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
 
 import { Spinner } from "./components/Common/Spinner/Spinner"
-import NotRoomOwnerGuard from "./components/Common/NotRoomOwnerGuard/NotRoomOwnerGuard"
 
 
 function App() {
