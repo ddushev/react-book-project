@@ -22,8 +22,8 @@ export const AuthContextProvider = ({
             const { password, _createdOn, ...loginData } = loginInfoResponse;
             setAuth(loginData);
             navigate('/available-rooms');
-        } catch (error) {
-            setAuthErrors(errorParser(error));
+        } catch (errors) {
+            setAuthErrors(errorParser(errors));
             navigate('/sign-in');
         }
     }
@@ -34,7 +34,7 @@ export const AuthContextProvider = ({
             localStorage.removeItem('key');
             setAuth({});
             navigate('/');
-        } catch (error) {
+        } catch (errors) {
             localStorage.removeItem('key');
             setAuth({});
             navigate('/');
@@ -49,8 +49,8 @@ export const AuthContextProvider = ({
             const { password, _createdOn, ...registeredData } = registerdInfo;
             setAuth(registeredData);
             navigate('/available-rooms');
-        } catch (error) {
-            setAuthErrors(errorParser(error));
+        } catch (errors) {
+            setAuthErrors(errorParser(errors));
             navigate('/sign-up');
         }
     }

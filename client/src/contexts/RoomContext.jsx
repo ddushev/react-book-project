@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { dataFactory } from "../services/requests";
 import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./AuthContext";
+import { validateRoom } from "../utils/validateRoom";
 
 
 const RoomContext = createContext();
@@ -10,6 +11,7 @@ const RoomContext = createContext();
 export const RoomContextProvider = ({ children }) => {
     const { token } = useAuthContext();
     const [rooms, setRooms] = useState([]);
+    const [roomErrors, setRoomErrors] = useState([]);
     const data = dataFactory(token);
     const navigate = useNavigate();
     useEffect(() => {
@@ -18,9 +20,15 @@ export const RoomContextProvider = ({ children }) => {
     }, []);
 
     async function onAddRoomSubmit(roomInfo) {
-        const newRoom = await data.createRoom(roomInfo);
-        setRooms(state => [...state, newRoom]);
-        navigate('/my-published-rooms');
+        try {
+            validateRoom(roomInfo);
+            const newRoom = await data.createRoom(roomInfo);
+            setRooms(state => [...state, newRoom]);
+            navigate('/my-published-rooms');
+        } catch (errors) {
+            setRoomErrors(errors)
+            navigate('/add-room');
+        }
     }
 
     async function onEditRoomSubmit(gameInfo, roomId) {
@@ -28,8 +36,10 @@ export const RoomContextProvider = ({ children }) => {
             const editedRoom = await data.editRoom(gameInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? editedRoom : room));
             navigate(`/available-rooms/${roomId}/details`);
-        } catch (error) {
-            console.error(error.message);
+        } catch (errors) {
+            console.error(errors.message);
+            setRoomErrors(errors)
+            navigate(`/available-rooms/${roomId}/details`);
         }
     }
 
@@ -56,13 +66,15 @@ export const RoomContextProvider = ({ children }) => {
     }
 
     async function onRoomSearchClick(searchValues) {
-        const {name, price , adult, child} = searchValues;
+        const { name, price, adult, child } = searchValues;
         const searchQuery = `search=${name}&price=${price}&adult=${adult}&child=${child}`
         navigate(`/available-rooms?${searchQuery}`);
     }
 
     const context = {
         rooms,
+        roomErrors,
+        setRoomErrors,
         onAddRoomSubmit,
         onEditRoomSubmit,
         onBookRoomClick,
