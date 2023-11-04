@@ -1,18 +1,25 @@
-import useForm from "../../hooks/useForm";
-import { useRoomContext } from "../../contexts/RoomContext";
-import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
-import { useParams } from "react-router";
-import { Link } from "react-router-dom";
-import { useAuthContext } from "../../contexts/AuthContext";
-import { dataFactory } from "../../services/requests";
 import { useEffect } from "react";
+import { useParams } from "react-router";
+
+import { useAuthContext } from "../../contexts/AuthContext";
+import { useRoomContext } from "../../contexts/RoomContext";
+import { dataFactory } from "../../services/requests";
 import { roomFormFields } from "../../utils/constants";
+import useForm from "../../hooks/useForm";
+
+import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 export const EditRoom = () => {
     const { token } = useAuthContext();
     const data = dataFactory(token);
     const { roomId } = useParams();
-    const { onEditRoomSubmit } = useRoomContext();
+    const { onEditRoomSubmit, roomErrors, setRoomErrors } = useRoomContext();
+
+    useEffect(() => {
+        return () => {
+            setRoomErrors([]);
+        }
+    }, []);
 
     const { values, onSubmit, onChangeHandler, changeValues } = useForm({
         [roomFormFields.name]: '',
@@ -86,13 +93,13 @@ export const EditRoom = () => {
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    id="name"
-                                                    placeholder="Image URL"
+                                                    id="imageUrl"
+                                                    placeholder="Property image"
                                                     name={roomFormFields.imageUrl}
                                                     value={values.imageUrl}
                                                     onChange={onChangeHandler}
                                                 />
-                                                <label htmlFor="name">Image URL</label>
+                                                <label htmlFor="name">Property image</label>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -189,40 +196,46 @@ export const EditRoom = () => {
                                 </form>
                             </div>
                         </div>
-                        <div className="col-lg-6">
-                            <div className="row g-3">
-                                <div className="col-6 text-end">
-                                    <img
-                                        className="img-fluid rounded w-75 wow zoomIn"
-                                        data-wow-delay="0.1s"
-                                        src="/img/about-1.jpg"
-                                        style={{ marginTop: "25%" }}
-                                    />
-                                </div>
-                                <div className="col-6 text-start">
-                                    <img
-                                        className="img-fluid rounded w-100 wow zoomIn"
-                                        data-wow-delay="0.3s"
-                                        src="/img/about-2.jpg"
-                                    />
-                                </div>
-                                <div className="col-6 text-end">
-                                    <img
-                                        className="img-fluid rounded w-50 wow zoomIn"
-                                        data-wow-delay="0.5s"
-                                        src="/img/about-3.jpg"
-                                    />
-                                </div>
-                                <div className="col-6 text-start">
-                                    <img
-                                        className="img-fluid rounded w-75 wow zoomIn"
-                                        data-wow-delay="0.7s"
-                                        src="/img/about-4.jpg"
-                                    />
+                        {roomErrors.length == 0 ?
+                            <div className="col-lg-6">
+                                <div className="row g-3">
+                                    <div className="col-6 text-end">
+                                        <img
+                                            className="img-fluid rounded w-75 wow zoomIn"
+                                            data-wow-delay="0.1s"
+                                            src="/img/about-1.jpg"
+                                            style={{ marginTop: "25%" }}
+                                        />
+                                    </div>
+                                    <div className="col-6 text-start">
+                                        <img
+                                            className="img-fluid rounded w-100 wow zoomIn"
+                                            data-wow-delay="0.3s"
+                                            src="/img/about-2.jpg"
+                                        />
+                                    </div>
+                                    <div className="col-6 text-end">
+                                        <img
+                                            className="img-fluid rounded w-50 wow zoomIn"
+                                            data-wow-delay="0.5s"
+                                            src="/img/about-3.jpg"
+                                        />
+                                    </div>
+                                    <div className="col-6 text-start">
+                                        <img
+                                            className="img-fluid rounded w-75 wow zoomIn"
+                                            data-wow-delay="0.7s"
+                                            src="/img/about-4.jpg"
+                                        />
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
+                            :
+                            <div className="col-lg-6 error-box">
+                                <h4>Errors</h4>
+                                {roomErrors.map(error => <p key={error}>{error}</p>)}
+                            </div>
+                        }
                     </div>
                 </div>
             </div>

@@ -17,9 +17,13 @@ export function validateRegister (registerInfo) {
         errors.push('Passwords should match!');
     }
 
-    if (!/^(https?:\/\/)/.test(registerInfo.imageUrl)) {
-        errors.push('Profile Image should start with http:// or https://');
+    if (registerInfo.imageUrl.length < 1) {
+        errors.push('Profile image is required!');
     }
+
+    // if (!/^(https?:\/\/)/.test(registerInfo.imageUrl)) {
+    //     errors.push('Profile Image should start with http:// or https://');
+    // }
 
     if (errors.length > 0) {
         throw errors;

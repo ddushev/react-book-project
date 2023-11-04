@@ -32,14 +32,16 @@ export const RoomContextProvider = ({ children }) => {
         }
     }
 
-    async function onEditRoomSubmit(gameInfo, roomId) {
+    async function onEditRoomSubmit(roomInfo, roomId) {
         try {
-            const editedRoom = await data.editRoom(gameInfo, roomId);
+            validateRoom(roomInfo)
+            const editedRoom = await data.editRoom(roomInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? editedRoom : room));
+
             navigate(`/available-rooms/${roomId}/details`);
         } catch (errors) {
-            setRoomErrors(errors)
-            navigate(`/available-rooms/${roomId}/details`);
+            setRoomErrors(errors);
+            navigate(`/available-rooms/${roomId}/edit`);
         }
     }
 

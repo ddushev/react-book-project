@@ -9,8 +9,12 @@ export function validateRoom (roomInfo) {
         errors.push('Price should be positive number!');
     }
 
-    if (!/^(https?:\/\/)/.test(roomInfo.imageUrl)) {
-        errors.push('Image URL should start with http:// or https://');
+    // if (!/^(https?:\/\/)/.test(roomInfo.imageUrl)) {
+    //     errors.push('Image URL should start with http:// or https://');
+    // }
+
+    if (roomInfo.imageUrl.length < 5) {
+        errors.push('Property image is required!');
     }
 
     if (roomInfo.description.length < 20) {
