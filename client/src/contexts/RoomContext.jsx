@@ -1,8 +1,9 @@
-import { createContext, useContext } from "react";
 import { useEffect, useState } from "react";
-import { dataFactory } from "../services/requests";
+import { createContext, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { useAuthContext } from "./AuthContext";
+import { dataFactory } from "../services/requests";
 import { validateRoom } from "../utils/validateRoom";
 
 
@@ -37,7 +38,6 @@ export const RoomContextProvider = ({ children }) => {
             setRooms(state => state.map(room => room._id === roomId ? editedRoom : room));
             navigate(`/available-rooms/${roomId}/details`);
         } catch (errors) {
-            console.error(errors.message);
             setRoomErrors(errors)
             navigate(`/available-rooms/${roomId}/details`);
         }
@@ -48,17 +48,22 @@ export const RoomContextProvider = ({ children }) => {
             const bookedRoom = await data.editRoom(gameInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? bookedRoom : room));
             navigate(`/booking-confirmation/${roomId}`);
-        } catch (error) {
-            console.error(error.message);
+        } catch (errors) {
+            console.error(errors.message);
         }
     }
 
     async function onDeleteRoomClick(e, roomId) {
         // TODO Add confirmation dialog when delete clicked
-        e.preventDefault();
-        await data.deleteRoom(roomId);
-        setRooms(state => state.filter(room => room._id !== roomId));
-        navigate('/available-rooms');
+        try {
+            e.preventDefault();
+            await data.deleteRoom(roomId);
+            setRooms(state => state.filter(room => room._id !== roomId));
+            navigate('/available-rooms');
+        } catch (errors) {
+            console.error(errors.message);
+        }
+
     }
 
     function getRoomFromState(roomId) {
