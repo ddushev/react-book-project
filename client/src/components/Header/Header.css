@@ -13,6 +13,8 @@
     color: var(--primary);
 }
 
+
+
 @media (max-width: 991.98px) {
     .navbar-dark .navbar-nav .nav-link  {
         margin-right: 0;
@@ -21,5 +23,9 @@
 
     .nav-link {
         padding-left: 0;
+    }
+
+    .px-md-5-mobile {
+        padding: 0.5rem !important;
     }
 }

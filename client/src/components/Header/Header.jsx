@@ -109,6 +109,7 @@ export const Header = () => {
                                         }
                                     </div>
                                 </div>
+                                
                             </div>
                             {
                                 isAuthenticated ?
@@ -142,7 +143,7 @@ export const Header = () => {
                                     :
                                     <Link
                                         to="/sign-in"
-                                        className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
+                                        className="btn btn-primary rounded-0 py-4 px-md-5 px-md-5-mobile d-lg-block"
                                     >
                                         Sign
                                     </Link>
