@@ -25,3 +25,9 @@ dist-ssr
 
 #Firebase
 firebase.js
+firebase.json
+.firebaserc
+.firebase
+
+#Other
+templates
