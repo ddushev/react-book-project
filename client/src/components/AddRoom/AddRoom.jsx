@@ -120,7 +120,7 @@ export const AddRoom = () => {
                                                 <label htmlFor="email">Price per night </label>
                                             </div>
                                         </div>
-                                        <div className="col-md-12">
+                                        <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input
                                                     type="text"
@@ -132,6 +132,20 @@ export const AddRoom = () => {
                                                     onChange={onChangeHandler}
                                                 />
                                                 <label htmlFor="name">Property image</label>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="location"
+                                                    placeholder="Property image"
+                                                    name={roomFormFields.location}
+                                                    value={values.location}
+                                                    onChange={onChangeHandler}
+                                                />
+                                                <label htmlFor="name">Property location</label>
                                             </div>
                                         </div>
                                         {/* <div className="col-md-6">
