@@ -21,6 +21,7 @@ export const AddRoom = () => {
         [roomFormFields.name]: '',
         [roomFormFields.price]: '',
         [roomFormFields.imageUrl]: '',
+        [roomFormFields.location]: '',
         [roomFormFields.adult]: '1',
         [roomFormFields.child]: '0',
         [roomFormFields.bed]: '1',

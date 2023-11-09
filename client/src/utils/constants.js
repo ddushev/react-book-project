@@ -7,6 +7,7 @@ export const roomFormFields = {
     name: 'name',
     price: 'price',
     imageUrl: 'imageUrl',
+    location: 'location',
     adult: 'adult',
     child: 'child',
     bed: 'bed',
