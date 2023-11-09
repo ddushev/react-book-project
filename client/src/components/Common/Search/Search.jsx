@@ -7,7 +7,7 @@ import useForm from "../../../hooks/useForm";
 export const Search = () => {
     const { onRoomSearchClick } = useRoomContext();
     const { values, onChangeHandler, onSubmit } = useForm({
-        [searchFields.name]: '',
+        [searchFields.location]: '',
         [searchFields.price]: '',
         [searchFields.adult]: '1',
         [searchFields.child]: '0',
@@ -27,13 +27,13 @@ export const Search = () => {
                                         <input
                                             type="text"
                                             className="form-control"
-                                            id="search-name"
-                                            placeholder="Property Name"
-                                            name={searchFields.name}
-                                            value={values.name}
+                                            id="search-location"
+                                            placeholder="Property location"
+                                            name={searchFields.location}
+                                            value={values.location}
                                             onChange={onChangeHandler}
                                         />
-                                        <label htmlFor="search-name">Property name</label>
+                                        <label htmlFor="search-name">Location</label>
                                     </div>
                                 </div>
                                 <div className="col-md-3">

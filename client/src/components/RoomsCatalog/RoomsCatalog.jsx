@@ -14,7 +14,6 @@ export const RoomsCatalog = () => {
 
     const locationPathname = useLocation().pathname;
     const locationSearch = useLocation().search;
-
     const [searchParams, setSearchParams] = useState([]);
     const [currentPageInfo, setCurrentPageInfo] = useState({
         roomsCatalog: {
@@ -106,12 +105,12 @@ export const RoomsCatalog = () => {
                     secondaryHeading: 'No Rooms Found',
                     to: '/available-rooms'
                 },
-                filterRooms: (rooms, userId, search, price, adult, child) => {
+                filterRooms: (rooms, userId, location, price, adult, child) => {
                     rooms = rooms.filter(room => !room.booked && room._ownerId != userId);
                     
-                    const searchDecoded = decodeURIComponent(search);
+                    const searchDecoded = decodeURIComponent(location);
                     if (searchDecoded) {
-                        rooms = rooms.filter(room => room.name.toLowerCase().includes(searchDecoded.toLowerCase()));
+                        rooms = rooms.filter(room => room.location.toLowerCase().includes(searchDecoded.toLowerCase()));
                     }
 
                     if (price) {

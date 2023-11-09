@@ -30,7 +30,7 @@ export const signFormFields = {
 }
 
 export const searchFields = {
-    name: 'name',
+    location: 'location',
     price: 'price',
     adult: 'adult',
     child: 'child',
