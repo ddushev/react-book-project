@@ -1,22 +1,42 @@
-.room-details {
-    width: 35%;
-    margin: auto;
+.room-item {
+    display: flex;
+    flex-wrap: nowrap;
 }
+
+.room-details {
+    flex: 2 1 auto;
+}
+
+.room-img {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex: 1 0 auto;
+}
+
+.details-description {
+    margin-bottom: 3rem !important;
+}
+
+.contact-person{ 
+    font-weight: bold;
+}
+
 
 /*  Laptop */
 @media (max-width: 1024px) {
-    .room-details {
-        width: 45%;
-        margin: auto;
+    .room-item {
+        flex-wrap: wrap;
+    }
+
+    .room-img {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .room-img img {
+        object-fit: cover;
+        width: 100%;
     }
 }
-
-/*  Tablet */
-@media (max-width: 768px) {
-    .room-details {
-        width: 60%;
-        margin: auto;
-    }
-}
-
-

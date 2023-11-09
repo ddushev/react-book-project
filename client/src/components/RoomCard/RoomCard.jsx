@@ -12,7 +12,7 @@ export const RoomCard = ({
     const locationPathname = useLocation().pathname;
     return (
         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${Math.random()}s`}>
-            <div className="room-item shadow rounded overflow-hidden">
+            <div className="shadow rounded overflow-hidden">
                 <div className="position-relative">
                     <img className="img-fluid" src={imageUrl} alt="room image" />
                     <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
