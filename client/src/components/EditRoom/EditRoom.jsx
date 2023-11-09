@@ -25,6 +25,7 @@ export const EditRoom = () => {
         [roomFormFields.name]: '',
         [roomFormFields.price]: '',
         [roomFormFields.imageUrl]: '',
+        [roomFormFields.location]: '',
         [roomFormFields.adult]: '',
         [roomFormFields.child]: '',
         [roomFormFields.bed]: '',
@@ -65,7 +66,7 @@ export const EditRoom = () => {
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    id="name"
+                                                    id="edit-name"
                                                     placeholder="Property Name"
                                                     name={roomFormFields.name}
                                                     value={values.name}
@@ -79,7 +80,7 @@ export const EditRoom = () => {
                                                 <input
                                                     type="number"
                                                     className="form-control"
-                                                    id="price"
+                                                    id="edit-price"
                                                     placeholder="Price per night"
                                                     name={roomFormFields.price}
                                                     value={values.price}
@@ -88,12 +89,12 @@ export const EditRoom = () => {
                                                 <label htmlFor="email">Price per night </label>
                                             </div>
                                         </div>
-                                        <div className="col-md-12">
+                                        <div className="col-md-6">
                                             <div className="form-floating">
                                                 <input
                                                     type="text"
                                                     className="form-control"
-                                                    id="imageUrl"
+                                                    id="edit-imageUrl"
                                                     placeholder="Property image"
                                                     name={roomFormFields.imageUrl}
                                                     value={values.imageUrl}
@@ -104,7 +105,21 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.adult} value={values.adult} onChange={onChangeHandler} className="form-select" id="select1">
+                                                <input
+                                                    type="text"
+                                                    className="form-control"
+                                                    id="edit-location"
+                                                    placeholder="Property image"
+                                                    name={roomFormFields.location}
+                                                    value={values.location}
+                                                    onChange={onChangeHandler}
+                                                />
+                                                <label htmlFor="name">Property location</label>
+                                            </div>
+                                        </div>
+                                        <div className="col-md-6">
+                                            <div className="form-floating">
+                                                <select name={roomFormFields.adult} value={values.adult} onChange={onChangeHandler} className="form-select" id="edit-select1">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -115,7 +130,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.child} value={values.child} onChange={onChangeHandler} className="form-select" id="select2">
+                                                <select name={roomFormFields.child} value={values.child} onChange={onChangeHandler} className="form-select" id="edit-select2">
                                                     <option>0</option>
                                                     <option>1</option>
                                                     <option>2</option>
@@ -127,7 +142,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.bed} value={values.bed} onChange={onChangeHandler} className="form-select" id="select3">
+                                                <select name={roomFormFields.bed} value={values.bed} onChange={onChangeHandler} className="form-select" id="edit-select3">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -138,7 +153,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.bath} value={values.bath} onChange={onChangeHandler} className="form-select" id="select4">
+                                                <select name={roomFormFields.bath} value={values.bath} onChange={onChangeHandler} className="form-select" id="edit-select4">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -149,7 +164,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="form-floating" >
-                                                <select name={roomFormFields.wifi} value={values.wifi} onChange={onChangeHandler} className="form-select" id="select5">
+                                                <select name={roomFormFields.wifi} value={values.wifi} onChange={onChangeHandler} className="form-select" id="edit-select5">
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
@@ -158,7 +173,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="form-floating" >
-                                                <select name={roomFormFields.parking} value={values.parking} onChange={onChangeHandler} className="form-select" id="select6">
+                                                <select name={roomFormFields.parking} value={values.parking} onChange={onChangeHandler} className="form-select" id="edit-select6">
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
@@ -170,7 +185,7 @@ export const EditRoom = () => {
                                                 <textarea
                                                     className="form-control"
                                                     placeholder="Special Request"
-                                                    id="description"
+                                                    id="edit-description"
                                                     style={{ height: 100 }}
                                                     name={roomFormFields.description}
                                                     value={values.description}

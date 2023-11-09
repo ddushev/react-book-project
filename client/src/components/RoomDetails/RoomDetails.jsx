@@ -31,13 +31,7 @@ export const RoomDetails = () => {
                     <div className="p-4 mt-2">
                         <div className="d-flex justify-content-between mb-3">
                             <h5 className="mb-0">{roomData?.name}</h5>
-                            <div className="ps-2">
-                                <small className="fa fa-star text-primary" />
-                                <small className="fa fa-star text-primary" />
-                                <small className="fa fa-star text-primary" />
-                                <small className="fa fa-star text-primary" />
-                                <small className="fa fa-star text-primary" />
-                            </div>
+                            <h5 className="mb-0"><i className="fas fa-map-marker-alt text-primary me-2" />{roomData?.location}</h5>
                         </div>
                         <div className="d-flex mb-3">
                             <small className="border-end me-3 pe-3">
