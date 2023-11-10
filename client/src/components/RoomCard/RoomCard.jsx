@@ -63,8 +63,6 @@ export const RoomCard = ({
                                         </a>
                                     </div>
                                 }
-
-
                             </div>
                         </>
                         :

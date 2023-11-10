@@ -130,7 +130,7 @@ export const Header = () => {
                                                 Published
                                             </Link>
                                             <Link to="/my-bookings" className="dropdown-item">
-                                                Bookings
+                                                Booked
                                             </Link>
                                             <Link to="/my-hosted-rooms" className="dropdown-item">
                                                 Hosted

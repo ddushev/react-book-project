@@ -57,7 +57,7 @@ export const RoomsCatalog = () => {
                 secondaryHeading: 'No Published Rooms',
                 to: '/add-room'
             },
-            filterRooms: (rooms, userId) => rooms.filter(room => !room.booked && room._ownerId == userId),
+            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && !room.confirmed && room._ownerId == userId),
         },
         "/my-bookings": {
             roomsCatalog: {
@@ -85,7 +85,7 @@ export const RoomsCatalog = () => {
                 secondaryHeading: 'No Hosted Rooms',
                 to: '/add-room'
             },
-            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room._ownerId == userId),
+            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room.confirmed && room._ownerId == userId),
         },
 
     });
