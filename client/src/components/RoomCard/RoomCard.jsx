@@ -37,8 +37,8 @@ export const RoomCard = ({
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: locationPathname == '/my-published-rooms' ? 'Confirm booking' : 'View details',
                 secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking',
-                secondLinkCallback: locationPathname == '/my-published-rooms' ? () => console.log('Decline booking') : onBookRoomClick,
-                secondLinkTo: locationPathname == '/my-published-rooms' ? '/placeholder' : '/available-rooms'
+                secondLinkCallback: onBookRoomClick,
+                secondLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : '/available-rooms'
             })
         } else if (!roomData?.confirmed && !roomData?.bookedBy) {
             setCurrentPageInfo({
