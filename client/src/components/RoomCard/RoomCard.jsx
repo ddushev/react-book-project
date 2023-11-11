@@ -15,7 +15,7 @@ export const RoomCard = ({
         <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${Math.random()}s`}>
             <div className="shadow rounded overflow-hidden">
                 {
-                    locationPathname == '/my-bookings' ?
+                    locationPathname == '/my-bookings' || locationPathname == '/my-published-rooms' ?
                         <>
                             <div className="position-relative">
                                 <img className="img-fluid" src={imageUrl} alt="room image" />

@@ -90,10 +90,10 @@ export const RoomDetails = () => {
                         }
                         {/* Not owner user buttons before booking */}
                         {
-                            userId && userId != roomData?._ownerId && !roomData?.booked &&
+                            userId && userId != roomData?._ownerId && !roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomClick({ ...roomData, booked: true }, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
+                                <Link onClick={() => onBookRoomClick({ ...roomData, bookedBy: userId }, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
@@ -104,7 +104,7 @@ export const RoomDetails = () => {
 
                         {/* Not owner user buttons after booking */}
                         {
-                            userId && userId != roomData?._ownerId && roomData?.booked &&
+                            userId && userId != roomData?._ownerId && roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-bookings">

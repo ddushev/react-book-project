@@ -28,7 +28,7 @@ function createOptions(method, data, token) {
     }
 
     if (token) {
-        if (data?.booked) {
+        if (data?.bookedBy) {
             options.headers['X-Admin'] = token;
         } else {
             options.headers['X-Authorization'] = token;
@@ -40,7 +40,7 @@ function createOptions(method, data, token) {
     //     const persistedStateSerialized = localStorage.getItem('auth');
     //     const auth = JSON.parse(persistedStateSerialized);
     //     if (auth?.accessToken) {
-    //         if (data?.booked) {
+    //         if (data?.bookedBy) {
     //             options.headers['X-Admin'] = auth.accessToken;
     //         } else {
     //             options.headers['X-Authorization'] = auth.accessToken;

@@ -15,7 +15,7 @@ export const roomFormFields = {
     wifi: 'wifi',
     parking: 'parking',
     description: 'description',
-    booked: 'booked',
+    bookedBy: 'bookedBy',
     confirmed: 'confirmed',
     ownerName: 'ownerName',
     ownerEmail: 'ownerEmail'

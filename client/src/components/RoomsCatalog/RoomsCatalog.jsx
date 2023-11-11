@@ -43,7 +43,7 @@ export const RoomsCatalog = () => {
                 secondaryHeading: 'No Available Rooms',
                 to: '/add-room'
             },
-            filterRooms: (rooms, userId) => rooms.filter(room => !room.booked && room._ownerId != userId),
+            filterRooms: (rooms, userId) => rooms.filter(room => !room.bookedBy && room._ownerId != userId),
         },
         "/my-published-rooms": {
             roomsCatalog: {
@@ -57,7 +57,7 @@ export const RoomsCatalog = () => {
                 secondaryHeading: 'No Published Rooms',
                 to: '/add-room'
             },
-            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && !room.confirmed && room._ownerId == userId),
+            filterRooms: (rooms, userId) => rooms.filter(room => room._ownerId == userId),
         },
         "/my-bookings": {
             roomsCatalog: {
@@ -71,7 +71,7 @@ export const RoomsCatalog = () => {
                 secondaryHeading: 'No Booked Rooms',
                 to: '/available-rooms'
             },
-            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room._ownerId != userId),
+            filterRooms: (rooms, userId) => rooms.filter(room => room.bookedBy == userId),
         },
         "/my-hosted-rooms": {
             roomsCatalog: {
@@ -85,7 +85,7 @@ export const RoomsCatalog = () => {
                 secondaryHeading: 'No Hosted Rooms',
                 to: '/add-room'
             },
-            filterRooms: (rooms, userId) => rooms.filter(room => room.booked && room.confirmed && room._ownerId == userId),
+            filterRooms: (rooms, userId) => rooms.filter(room => room.bookedBy && room.confirmed && room._ownerId == userId),
         },
 
     });
@@ -106,7 +106,7 @@ export const RoomsCatalog = () => {
                     to: '/available-rooms'
                 },
                 filterRooms: (rooms, userId, location, price, adult, child) => {
-                    rooms = rooms.filter(room => !room.booked && room._ownerId != userId);
+                    rooms = rooms.filter(room => !room.bookedBy && room._ownerId != userId);
                     
                     const searchDecoded = decodeURIComponent(location);
                     if (searchDecoded) {
