@@ -28,7 +28,7 @@ function createOptions(method, data, token) {
     }
 
     if (token) {
-        if (data?.bookedBy) {
+        if (data?.bookedBy || data?.bookedBy === '') {
             options.headers['X-Admin'] = token;
         } else {
             options.headers['X-Authorization'] = token;

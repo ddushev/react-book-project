@@ -45,11 +45,15 @@ export const RoomContextProvider = ({ children }) => {
         }
     }
 
-    async function onBookRoomClick(gameInfo, roomId) {
+    async function onBookRoomClick(roomInfo, roomId, navigateTo) {
         try {
-            const bookedRoom = await data.editRoom(gameInfo, roomId);
+            const bookedRoom = await data.editRoom(roomInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? bookedRoom : room));
-            navigate(`/booking-confirmation/${roomId}`);
+            if (navigateTo) {
+                navigate(navigateTo);
+            } else {
+                navigate(`/booking-confirmation/${roomId}`);
+            }
         } catch (errors) {
             console.error(errors.message);
         }

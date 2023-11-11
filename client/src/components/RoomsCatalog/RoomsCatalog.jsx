@@ -152,7 +152,7 @@ export const RoomsCatalog = () => {
                                 </h1>
                             </div>
                             <div className="row g-4">
-                                {rooms.map(room => <RoomCard key={room._id} {...room} />)}
+                                {rooms.map(room => <RoomCard key={room._id} {...room} roomData={room} />)}
                             </div>
                         </> :
                         <>

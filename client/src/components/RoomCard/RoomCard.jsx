@@ -3,6 +3,8 @@ import "./RoomCard.css"
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+import { useRoomContext } from "../../contexts/RoomContext";
+
 export const RoomCard = ({
     _id,
     imageUrl,
@@ -11,15 +13,20 @@ export const RoomCard = ({
     confirmed,
     price,
     name,
-    description
+    description,
+    roomData
 }) => {
+    const { onBookRoomClick } = useRoomContext();
     const locationPathname = useLocation().pathname;
     const [currentPageInfo, setCurrentPageInfo] = useState({
         colorTypeClass: '',
         statusText: '',
         linksContainerClass: '',
         firstLink: '',
-        secondLink: ''
+        secondLink: '',
+        secondLinkCallback: '',
+        secondLinkTo: ''
+
     });
 
     useEffect(() => {
@@ -37,7 +44,9 @@ export const RoomCard = ({
                 statusText: 'Pending',
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: locationPathname == '/my-published-rooms' ? 'Confirm booking' : 'View details',
-                secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking'
+                secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking',
+                secondLinkCallback: locationPathname == '/my-published-rooms' ? () => console.log('Decline booking') : onBookRoomClick,
+                secondLinkTo: locationPathname == '/my-published-rooms' ? '/placeholder' : '/available-rooms'
             })
         } else if (!confirmed && !bookedBy) {
             setCurrentPageInfo({
@@ -84,8 +93,8 @@ export const RoomCard = ({
                                     <Link className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to={`/available-rooms/${_id}/details`}>
                                         {currentPageInfo?.firstLink}
                                     </Link>
-                                    { currentPageInfo?.secondLink &&
-                                        <Link className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to="#">
+                                    {currentPageInfo?.secondLink &&
+                                        <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: '' }, _id, currentPageInfo?.secondLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to="#">
                                             {currentPageInfo?.secondLink}
                                         </Link>
                                     }
