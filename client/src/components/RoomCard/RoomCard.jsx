@@ -8,13 +8,15 @@ import { useRoomContext } from "../../contexts/RoomContext";
 export const RoomCard = ({
     roomData
 }) => {
-    const { onBookRoomClick } = useRoomContext();
+    const { onBookRoomInteract, onConfirmRoomClick } = useRoomContext();
     const locationPathname = useLocation().pathname;
     const [currentPageInfo, setCurrentPageInfo] = useState({
         colorTypeClass: '',
         statusText: '',
         linksContainerClass: '',
         firstLink: '',
+        firstLinkCallback: '',
+        firstLinkTo: '',
         secondLink: '',
         secondLinkCallback: '',
         secondLinkTo: ''
@@ -28,6 +30,8 @@ export const RoomCard = ({
                 statusText: 'Confirmed',
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: 'View details',
+                firstLinkCallback: () => {return},
+                firstLinkTo: `/available-rooms/${roomData?._id}/details`,
                 secondLink: 'Send message'
             });
         } else if (!roomData?.confirmed && roomData?.bookedBy) {
@@ -36,8 +40,10 @@ export const RoomCard = ({
                 statusText: 'Pending',
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: locationPathname == '/my-published-rooms' ? 'Confirm booking' : 'View details',
+                firstLinkCallback: onConfirmRoomClick,
+                firstLinkTo: '/my-published-rooms',
                 secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking',
-                secondLinkCallback: onBookRoomClick,
+                secondLinkCallback: onBookRoomInteract,
                 secondLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : '/available-rooms'
             })
         } else if (!roomData?.confirmed && !roomData?.bookedBy) {
@@ -46,6 +52,8 @@ export const RoomCard = ({
                 statusText: 'Not Booked',
                 linksContainerClass: 'button-center',
                 firstLink: 'View details',
+                firstLinkCallback: () => {return},
+                firstLinkTo: `/available-rooms/${roomData?._id}/details`,
                 secondLink: ''
             });
         }
@@ -82,7 +90,7 @@ export const RoomCard = ({
                                     {roomData?.description}
                                 </p>
                                 <div className={currentPageInfo?.linksContainerClass}>
-                                    <Link className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to={`/available-rooms/${roomData?._id}/details`}>
+                                    <Link onClick={() => currentPageInfo?.firstLinkCallback({ ...roomData, confirmed: true }, roomData?._id, currentPageInfo?.firstLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to={currentPageInfo?.firstLinkTo}>
                                         {currentPageInfo?.firstLink}
                                     </Link>
                                     {currentPageInfo?.secondLink &&
@@ -91,18 +99,6 @@ export const RoomCard = ({
                                         </Link>
                                     }
                                 </div>
-
-
-                                {/* {!roomData?.confirmed &&
-                                    <div className="d-flex justify-content-between">
-                                        <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/details`}>
-                                            View Details
-                                        </Link>
-                                        <a onClick={() => console.log("Booking cancelled")} className="btn btn-sm btn-dark rounded py-2 px-4" href="#">
-                                            Cancel booking
-                                        </a>
-                                    </div>
-                                } */}
                             </div>
                         </>
                         :

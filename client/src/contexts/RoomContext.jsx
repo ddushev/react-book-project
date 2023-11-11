@@ -45,7 +45,7 @@ export const RoomContextProvider = ({ children }) => {
         }
     }
 
-    async function onBookRoomClick(roomInfo, roomId, navigateTo) {
+    async function onBookRoomInteract(roomInfo, roomId, navigateTo) {
         try {
             const bookedRoom = await data.editRoom(roomInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? bookedRoom : room));
@@ -54,6 +54,17 @@ export const RoomContextProvider = ({ children }) => {
             } else {
                 navigate(`/booking-confirmation/${roomId}`);
             }
+        } catch (errors) {
+            console.error(errors.message);
+        }
+    }
+
+    async function onConfirmRoomClick(roomInfo, roomId, navigateTo) {
+        try {
+            const confirmedRoom = await data.editRoom(roomInfo, roomId);
+            setRooms(state => state.map(room => room._id === roomId ? confirmedRoom : room));
+            navigate(navigateTo);
+
         } catch (errors) {
             console.error(errors.message);
         }
@@ -88,7 +99,8 @@ export const RoomContextProvider = ({ children }) => {
         setRoomErrors,
         onAddRoomSubmit,
         onEditRoomSubmit,
-        onBookRoomClick,
+        onBookRoomInteract,
+        onConfirmRoomClick,
         onDeleteRoomClick,
         getRoomFromState,
         onRoomSearchClick
