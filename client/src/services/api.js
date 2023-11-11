@@ -16,7 +16,7 @@ async function request(url, options) {
     }
 }
 
-function createOptions(method, data, token) {
+function createOptions(method, data, token, userId) {
     const options = {
         method,
         headers: {}
@@ -28,7 +28,7 @@ function createOptions(method, data, token) {
     }
 
     if (token) {
-        if (data?.bookedBy || data?.bookedBy === '') {
+        if ((data?.bookedBy && data?._ownerId !=userId) || data?.bookedBy === '') {
             console.log('X-Admin');
             options.headers['X-Admin'] = token;
         } else {
@@ -53,17 +53,17 @@ function createOptions(method, data, token) {
     return options;
 }
 
-export function requestFactory(token) {
+export function requestFactory(token, userId) {
     function get(endpoint) {
         return request(endpoint, createOptions('get', null, token));
     }
 
     function post(endpoint, data) {
-        return request(endpoint, createOptions('post', data, token));
+        return request(endpoint, createOptions('post', data, token, userId));
     }
 
     function update(endpoint, data) {
-        return request(endpoint, createOptions('put', data, token));
+        return request(endpoint, createOptions('put', data, token, userId));
     }
 
     function del(endpoint) {

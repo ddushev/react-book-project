@@ -10,10 +10,10 @@ import { validateRoom } from "../utils/validateRoom";
 const RoomContext = createContext();
 
 export const RoomContextProvider = ({ children }) => {
-    const { token } = useAuthContext();
+    const { token, userId } = useAuthContext();
     const [rooms, setRooms] = useState([]);
     const [roomErrors, setRoomErrors] = useState([]);
-    const data = dataFactory(token);
+    const data = dataFactory(token, userId);
     const navigate = useNavigate();
     useEffect(() => {
         data.getRooms()

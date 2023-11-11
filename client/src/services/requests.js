@@ -1,8 +1,8 @@
 import { requestFactory } from './api';
 import { baseUrl } from "../utils/constants"
 
-export function dataFactory(token) {
-    const api = requestFactory(token);
+export function dataFactory(token, userId) {
+    const api = requestFactory(token, userId);
 
     async function getRooms() {
         return api.get(`${baseUrl}/data/rooms`);

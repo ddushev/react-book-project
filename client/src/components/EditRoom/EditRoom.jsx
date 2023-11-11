@@ -10,8 +10,8 @@ import useForm from "../../hooks/useForm";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 
 export const EditRoom = () => {
-    const { token } = useAuthContext();
-    const data = dataFactory(token);
+    const { token, userId } = useAuthContext();
+    const data = dataFactory(token, userId);
     const { roomId } = useParams();
     const { onEditRoomSubmit, roomErrors, setRoomErrors } = useRoomContext();
 
