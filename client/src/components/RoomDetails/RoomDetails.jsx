@@ -13,7 +13,7 @@ export const RoomDetails = () => {
     const locationPathname = useLocation().pathname;
     const { roomId } = useParams();
     const { userId, username } = useAuthContext();
-    const { getRoomFromState, onDeleteRoomClick, onBookRoomClick } = useRoomContext();
+    const { getRoomFromState, onDeleteRoomClick, onBookRoomInteract } = useRoomContext();
     const roomData = getRoomFromState(roomId);
 
     return (
@@ -93,7 +93,7 @@ export const RoomDetails = () => {
                             userId && userId != roomData?._ownerId && !roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomClick({ ...roomData, bookedBy: userId }, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
+                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId }, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">

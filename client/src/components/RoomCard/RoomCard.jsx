@@ -19,7 +19,8 @@ export const RoomCard = ({
         firstLinkTo: '',
         secondLink: '',
         secondLinkCallback: '',
-        secondLinkTo: ''
+        secondLinkTo: '',
+        bookedBy: '',
 
     });
 
@@ -40,11 +41,12 @@ export const RoomCard = ({
                 statusText: 'Pending',
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: locationPathname == '/my-published-rooms' ? 'Confirm booking' : 'View details',
-                firstLinkCallback: onConfirmRoomClick,
-                firstLinkTo: '/my-published-rooms',
+                firstLinkCallback: locationPathname == '/my-published-rooms' ? onConfirmRoomClick : () => {return},
+                firstLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : `/available-rooms/${roomData?._id}/details`,
                 secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking',
                 secondLinkCallback: onBookRoomInteract,
-                secondLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : '/available-rooms'
+                secondLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : '/available-rooms',
+                bookedBy: locationPathname == '/my-published-rooms' ? false : ''
             })
         } else if (!roomData?.confirmed && !roomData?.bookedBy) {
             setCurrentPageInfo({
@@ -94,7 +96,7 @@ export const RoomCard = ({
                                         {currentPageInfo?.firstLink}
                                     </Link>
                                     {currentPageInfo?.secondLink &&
-                                        <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: '' }, roomData?._id, currentPageInfo?.secondLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to="#">
+                                        <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: currentPageInfo?.bookedBy }, roomData?._id, currentPageInfo?.secondLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to="#">
                                             {currentPageInfo?.secondLink}
                                         </Link>
                                     }

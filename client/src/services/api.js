@@ -8,9 +8,9 @@ async function request(url, options) {
         if (response.ok != true) {
             throw await response.json();
         }
-
+        
         return response.json();
-
+        
     } catch (error) {
         throw (error);
     }
@@ -29,8 +29,10 @@ function createOptions(method, data, token) {
 
     if (token) {
         if (data?.bookedBy || data?.bookedBy === '') {
+            console.log('X-Admin');
             options.headers['X-Admin'] = token;
         } else {
+            console.log('X-Authorization');
             options.headers['X-Authorization'] = token;
         }
         // options.headers['X-Authorization'] = token;

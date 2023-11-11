@@ -15,7 +15,6 @@ export const AddRoom = () => {
             setRoomErrors([]);
         }
     }, []);
-
     const { userEmail, username } = useAuthContext();
     const { values, onSubmit, onChangeHandler } = useForm({
         [roomFormFields.name]: '',
@@ -29,7 +28,7 @@ export const AddRoom = () => {
         [roomFormFields.wifi]: 'Yes',
         [roomFormFields.parking]: 'Yes',
         [roomFormFields.description]: '',
-        [roomFormFields.bookedBy]: '',
+        [roomFormFields.bookedBy]: false,
         [roomFormFields.confirmed]: false,
         [roomFormFields.ownerName]: username,
         [roomFormFields.ownerEmail]: userEmail,
@@ -86,7 +85,7 @@ export const AddRoom = () => {
                             :
                             <div className="col-lg-6 error-box">
                                 <h4>Errors</h4>
-                                {roomErrors.map(error => <p key={error}>{error}</p>)}
+                                {/* {roomErrors.map(error => <p key={error}>{error}</p>)} */}
                             </div>
                         }
 
