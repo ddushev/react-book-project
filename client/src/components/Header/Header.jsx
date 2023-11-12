@@ -132,9 +132,6 @@ export const Header = () => {
                                             <Link to="/my-bookings" className="dropdown-item">
                                                 Booked
                                             </Link>
-                                            <Link to="/my-hosted-rooms" className="dropdown-item">
-                                                Hosted
-                                            </Link>
                                             <Link to="/logout" className="dropdown-item">
                                                 Logout
                                             </Link>

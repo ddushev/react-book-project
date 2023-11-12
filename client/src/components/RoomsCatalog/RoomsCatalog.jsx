@@ -72,22 +72,7 @@ export const RoomsCatalog = () => {
                 to: '/available-rooms'
             },
             filterRooms: (rooms, userId) => rooms.filter(room => room.bookedBy == userId),
-        },
-        "/my-hosted-rooms": {
-            roomsCatalog: {
-                mainHeading: 'Rooms you ',
-                mainHeadingSpan: 'Hosted',
-                secondaryHeading: 'Your Rooms',
-            },
-            noRooms: {
-                mainHeading: 'Add a ',
-                mainHeadingSpan: 'Room',
-                secondaryHeading: 'No Hosted Rooms',
-                to: '/add-room'
-            },
-            filterRooms: (rooms, userId) => rooms.filter(room => room.bookedBy && room.confirmed && room._ownerId == userId),
-        },
-
+        }
     });
 
     useEffect(() => {
