@@ -33,7 +33,7 @@ export const RoomCard = ({
                 firstLink: 'View details',
                 firstLinkCallback: () => {return},
                 firstLinkTo: `/available-rooms/${roomData?._id}/details`,
-                secondLink: 'Send message'
+                secondLink: locationPathname == '/my-published-rooms' ? 'Message guest' : 'Message host'
             });
         } else if (!roomData?.confirmed && roomData?.bookedBy) {
             setCurrentPageInfo({

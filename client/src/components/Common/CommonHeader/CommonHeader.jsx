@@ -17,6 +17,7 @@ export const CommonHeader = () => {
     const editUrl = `/available-rooms/${roomId}/edit`;
     const detailsUrl = `/available-rooms/${roomId}/details`;
     const bookingConfirmationUrl = `/booking-confirmation/${roomId}`;
+    const pendingConfirmationUrl = `/pending-confirmation/${roomId}`;
 
     useEffect(() => {
         if (!!locationSearch) {
@@ -70,6 +71,10 @@ export const CommonHeader = () => {
         [bookingConfirmationUrl]: {
             heading: 'Booking Confirmed',
             page: 'Confirmation page'
+        },
+        [pendingConfirmationUrl]: {
+            heading: 'Confirmation Pending',
+            page: 'Pending confirmation page'
         }
     });
     return (

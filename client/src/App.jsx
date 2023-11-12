@@ -55,6 +55,7 @@ function App() {
 
                             <Route element={<NotRoomOwnerGuard />}>
                                 <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
+                                <Route path="/pending-confirmation/:roomId" element={<RoomDetails />} />
                             </Route>
                         </Route>
 

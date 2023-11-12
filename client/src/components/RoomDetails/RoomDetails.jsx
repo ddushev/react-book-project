@@ -32,13 +32,13 @@ export const RoomDetails = () => {
                         </div>
                         <div className="d-flex mb-3">
                             <small className="border-end me-3 pe-3">
-                                <i className="fa fa-bed text-primary me-2" />{roomData?.bed} 
+                                <i className="fa fa-bed text-primary me-2" />{roomData?.bed}
                             </small>
                             <small className="border-end me-3 pe-3">
-                                <i className="fa fa-bath text-primary me-2" />{roomData?.bath} 
+                                <i className="fa fa-bath text-primary me-2" />{roomData?.bath}
                             </small>
                             <small className="border-end me-3 pe-3">
-                                <i className="fa fa-male text-primary me-2" />{roomData?.adult} 
+                                <i className="fa fa-male text-primary me-2" />{roomData?.adult}
                             </small>
                             <small className="border-end me-3 pe-3">
                                 <i className="fa fa-baby text-primary me-2" />{roomData?.child}
@@ -74,6 +74,14 @@ export const RoomDetails = () => {
                                     <p>ReactBook's team</p>
                                 </>
                             }
+                            {locationPathname == `/pending-confirmation/${roomId}` &&
+                                <>
+                                    <p>Dear {username},</p>
+                                    <p>Thank you for your booking! Your request has been received, and we are currently liaising with the host <span className="contact-person">{roomData?.ownerName} @ {roomData?.ownerEmail} </span> to confirm your reservation. Please allow us a short period for confirmation, and we'll promptly update you once everything is finalized. Your patience is greatly appreciated.</p>
+                                    <p>Best regards,</p>
+                                    <p>ReactBook's team</p>
+                                </>
+                            }
                         </div>
                         {/* Owner buttons */}
                         {
@@ -93,7 +101,7 @@ export const RoomDetails = () => {
                             userId && userId != roomData?._ownerId && !roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId }, roomId)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
+                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">

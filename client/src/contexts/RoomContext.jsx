@@ -49,11 +49,8 @@ export const RoomContextProvider = ({ children }) => {
         try {
             const bookedRoom = await data.editRoom(roomInfo, roomId);
             setRooms(state => state.map(room => room._id === roomId ? bookedRoom : room));
-            if (navigateTo) {
-                navigate(navigateTo);
-            } else {
-                navigate(`/booking-confirmation/${roomId}`);
-            }
+            navigate(navigateTo);
+            
         } catch (errors) {
             console.error(errors.message);
         }
