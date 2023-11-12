@@ -27,7 +27,7 @@ export const AboutMain = () => {
                                     <div className="border rounded text-center p-4">
                                         <i className="fa fa-hotel fa-2x text-primary mb-2" />
                                         <h2 className="mb-1" data-toggle="counter-up">
-                                            {rooms.filter(room => !room.booked).length}
+                                            {rooms.filter(room => !room.confirmed && !room.bookedBy).length}
                                         </h2>
                                         <p className="mb-0">Available Rooms</p>
                                     </div>
@@ -38,7 +38,7 @@ export const AboutMain = () => {
                                     <div className="border rounded text-center p-4">
                                         <i className="fa fa-bed fa-2x text-primary mb-2" />
                                         <h2 className="mb-1" data-toggle="counter-up">
-                                            {rooms.filter(room => room.booked).length}
+                                            {rooms.filter(room => room.bookedBy && !room.confirmed).length}
                                         </h2>
                                         <p className="mb-0">Booked Rooms</p>
                                     </div>
@@ -47,11 +47,11 @@ export const AboutMain = () => {
                             <div className="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
                                 <div className="border rounded p-1">
                                     <div className="border rounded text-center p-4">
-                                        <i className="fa fa-users fa-2x text-primary mb-2" />
+                                        <i className="fas fa-calendar-check fa-2x text-primary mb-2" />
                                         <h2 className="mb-1" data-toggle="counter-up">
-                                            15
+                                            {rooms.filter(room => room.confirmed).length}
                                         </h2>
-                                        <p className="mb-0">Happy Clients</p>
+                                        <p className="mb-0">Confirmed Reservations</p>
                                     </div>
                                 </div>
                             </div>
