@@ -92,7 +92,7 @@ export const RoomCard = ({
                                     {roomData?.description}
                                 </p>
                                 <div className={currentPageInfo?.linksContainerClass}>
-                                    <Link onClick={() => currentPageInfo?.firstLinkCallback({ ...roomData, confirmed: true }, roomData?._id, currentPageInfo?.firstLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to="#">
+                                    <Link onClick={() => currentPageInfo?.firstLinkCallback({ ...roomData, confirmed: true }, roomData?._id, currentPageInfo?.firstLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to={currentPageInfo?.firstLinkTo}>
                                         {currentPageInfo?.firstLink}
                                     </Link>
                                     {currentPageInfo?.secondLink &&
