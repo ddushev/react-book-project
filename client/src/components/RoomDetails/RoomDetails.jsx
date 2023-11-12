@@ -32,6 +32,9 @@ export const RoomDetails = () => {
                         </div>
                         <div className="d-flex mb-3">
                             <small className="border-end me-3 pe-3">
+                                <i className="fas fa-dollar-sign text-primary me-2" />{roomData?.price}
+                            </small>
+                            <small className="border-end me-3 pe-3">
                                 <i className="fa fa-bed text-primary me-2" />{roomData?.bed}
                             </small>
                             <small className="border-end me-3 pe-3">
@@ -105,7 +108,7 @@ export const RoomDetails = () => {
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
-                                    Back to Catalog
+                                    Available Rooms
                                 </Link>
                             </div>
                         }
@@ -119,7 +122,7 @@ export const RoomDetails = () => {
                                     Check your bookings
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
-                                    Back to Catalog
+                                    Available Rooms
                                 </Link>
                             </div>
                         }
