@@ -42,7 +42,7 @@ export const RoomCard = ({
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: locationPathname == '/my-published-rooms' ? 'Confirm booking' : 'View details',
                 firstLinkCallback: locationPathname == '/my-published-rooms' ? onConfirmRoomClick : () => {return},
-                firstLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : `/available-rooms/${roomData?._id}/details`,
+                firstLinkTo: locationPathname == '/my-published-rooms' ? `/booking-confirmation/${roomData?._id}` : `/available-rooms/${roomData?._id}/details`,
                 secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking',
                 secondLinkCallback: onBookRoomInteract,
                 secondLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : '/available-rooms',
@@ -92,7 +92,7 @@ export const RoomCard = ({
                                     {roomData?.description}
                                 </p>
                                 <div className={currentPageInfo?.linksContainerClass}>
-                                    <Link onClick={() => currentPageInfo?.firstLinkCallback({ ...roomData, confirmed: true }, roomData?._id, currentPageInfo?.firstLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to={currentPageInfo?.firstLinkTo}>
+                                    <Link onClick={() => currentPageInfo?.firstLinkCallback({ ...roomData, confirmed: true }, roomData?._id, currentPageInfo?.firstLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to="#">
                                         {currentPageInfo?.firstLink}
                                     </Link>
                                     {currentPageInfo?.secondLink &&
