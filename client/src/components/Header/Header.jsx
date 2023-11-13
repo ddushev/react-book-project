@@ -1,7 +1,7 @@
 import { useAuthContext } from "../../contexts/AuthContext";
 import "./Header.css";
 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const Header = () => {
     const { isAuthenticated, userImg } = useAuthContext();
@@ -65,19 +65,19 @@ export const Header = () => {
                             id="navbarCollapse"
                         >
                             <div className="navbar-nav mr-auto py-0">
-                                <Link to="/" className="nav-item nav-link">
+                                <NavLink to="/" className="nav-item nav-link" activeClassName="active">
                                     Home
-                                </Link>
-                                <Link to="/about" className="nav-item nav-link">
+                                </NavLink>
+                                <NavLink to="/about" className="nav-item nav-link" activeClassName="active">
                                     About
-                                </Link>
-                                <Link to="available-rooms" className="nav-item nav-link">
+                                </NavLink>
+                                <NavLink to="available-rooms" className="nav-item nav-link" activeClassName="active">
                                     Rooms' Catalog
-                                </Link>
+                                </NavLink>
                                 {isAuthenticated &&
-                                    <Link to="add-room" className="nav-item nav-link">
+                                    <NavLink to="add-room" className="nav-item nav-link" activeClassName="active">
                                         Add Room
-                                    </Link>
+                                    </NavLink>
                                 }
                             </div>
                             {
