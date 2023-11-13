@@ -86,9 +86,9 @@ export const RoomDetails = () => {
                                 </>
                             }
                         </div>
-                        {/* Owner buttons */}
+                        {/* Owner buttons on available rooms page before cofirmation*/}
                         {
-                            userId == roomData?._ownerId &&
+                            userId == roomData?._ownerId && locationPathname == `/available-rooms/${roomId}/details` &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
@@ -99,12 +99,25 @@ export const RoomDetails = () => {
                                 </a>
                             </div>
                         }
+
+                        {
+                            userId == roomData?._ownerId && locationPathname == `/booking-confirmation/${roomId}` &&
+
+                            <div className="d-flex justify-content-between">
+                                <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-published-rooms">
+                                    Published Rooms
+                                </Link>
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                    Available Rooms
+                                </Link>
+                            </div>
+                        }
                         {/* Not owner user buttons before booking */}
                         {
                             userId && userId != roomData?._ownerId && !roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId, bookedByUsername: username}, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
+                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId, bookedByUsername: username }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
