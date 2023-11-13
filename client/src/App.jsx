@@ -45,7 +45,8 @@ function App() {
                             <Route path="/my-bookings" element={<RoomsCatalog />} />
                             <Route path="/add-room" element={<AddRoom />} />
                             <Route path="/reservation-confirmed/:roomId" element={<RoomDetails />} />
-                            <Route path="/reservation-confirmed/:roomId/send-message" element={<SendMessage />} />
+                            <Route path="/reservation-confirmed/:roomId/send-message-to-host" element={<SendMessage />} />
+                            <Route path="/reservation-confirmed/:roomId/send-message-to-guest" element={<SendMessage />} />
                             <Route path="/logout" element={<Logout />} />
 
                             <Route element={<RoomOwnerGuard />}>

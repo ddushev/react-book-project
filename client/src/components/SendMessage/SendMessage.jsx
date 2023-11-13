@@ -4,7 +4,7 @@ export const SendMessage = () => {
             <div className="container">
                 <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h6 className="section-title text-center text-primary text-uppercase">
-                        Share your feedback
+                        Send message
                     </h6>
                     <h1 className="mb-5">
                         <span className="text-primary text-uppercase">YOUR</span> voice matters
