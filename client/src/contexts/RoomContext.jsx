@@ -68,7 +68,6 @@ export const RoomContextProvider = ({ children }) => {
     }
 
     async function onDeleteRoomClick(e, roomId) {
-        // TODO Add confirmation dialog when delete clicked
         try {
             e.preventDefault();
             await data.deleteRoom(roomId);

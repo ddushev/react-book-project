@@ -24,11 +24,15 @@ export function dataFactory(token, userId) {
         return api.del(`${baseUrl}/data/rooms/${roomId}`);
     }
 
-    async function createComment(commentInfo) {
+    async function createMessage(commentInfo) {
         return api.post(`${baseUrl}/data/comments/`, commentInfo);
     }
 
-    async function getComments(roomId) {
+    async function getAllMessages() {
+        return api.get(`${baseUrl}/data/comments`);
+    }
+
+    async function getMessagesPerRoom(roomId) {
         const match = encodeURIComponent(`roomId="${roomId}"`);
         const relations = encodeURIComponent(`author=_ownerId:users`)
         return api.get(`${baseUrl}/data/comments?where=${match}&load=${relations}`);
@@ -52,8 +56,9 @@ export function dataFactory(token, userId) {
         createRoom,
         editRoom,
         deleteRoom,
-        createComment,
-        getComments,
+        createMessage,
+        getAllMessages,
+        getMessagesPerRoom,
         login,
         register,
         logout
