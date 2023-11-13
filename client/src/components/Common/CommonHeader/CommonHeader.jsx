@@ -18,12 +18,13 @@ export const CommonHeader = () => {
     const detailsUrl = `/available-rooms/${roomId}/details`;
     const bookingConfirmationUrl = `/booking-confirmation/${roomId}`;
     const pendingConfirmationUrl = `/pending-confirmation/${roomId}`;
+    const reservationConfirmedUrl = `/reservation-confirmed/${roomId}`;
 
     useEffect(() => {
         if (!!locationSearch) {
             setCurrentPageInfo({
                 heading: 'Find Room',
-                page: 'Searching For A Room'
+                page: 'Searching for a room'
             })
         } else {
             setCurrentPageInfo(pageInfo.current[locationPathname]);
@@ -33,7 +34,7 @@ export const CommonHeader = () => {
     const pageInfo = useRef({
         "/about": {
             heading: 'About',
-            page: 'About Us'
+            page: 'About us'
 
         },
         "/available-rooms": {
@@ -42,7 +43,7 @@ export const CommonHeader = () => {
         },
         "/add-room": {
             heading: 'Add Room',
-            page: 'Host a Room'
+            page: 'Host a room'
         },
         "/testimonials": {
             heading: 'Testimonials',
@@ -69,12 +70,16 @@ export const CommonHeader = () => {
             page: 'Info'
         },
         [bookingConfirmationUrl]: {
-            heading: 'Booking Confirmed',
-            page: 'Confirmation page'
+            heading: 'Booking Confirmation',
+            page: 'Confirmation details'
         },
         [pendingConfirmationUrl]: {
             heading: 'Confirmation Pending',
             page: 'Pending confirmation page'
+        },
+        [reservationConfirmedUrl]: {
+            heading: 'Reseravtion Confirmed',
+            page: 'Room confirmed'
         }
     });
     return (

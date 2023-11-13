@@ -65,7 +65,8 @@ export const RoomDetails = () => {
 
                         </div>
                         <div className="text-body mb-3 details-description">
-                            {locationPathname == `/available-rooms/${roomId}/details` &&
+                            {(locationPathname == `/available-rooms/${roomId}/details` ||
+                                locationPathname == `/reservation-confirmed/${roomId}`) &&
                                 roomData?.description
                             }
 
@@ -86,9 +87,10 @@ export const RoomDetails = () => {
                                 </>
                             }
                         </div>
-                        {/* Owner buttons on available rooms page before cofirmation*/}
+                        {/* Owner buttons on available rooms page before room is booked*/}
                         {
-                            userId == roomData?._ownerId && locationPathname == `/available-rooms/${roomId}/details` &&
+                            userId == roomData?._ownerId &&
+                            locationPathname == `/available-rooms/${roomId}/details` &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to={`/available-rooms/${roomData?._id}/edit`}>
@@ -99,9 +101,12 @@ export const RoomDetails = () => {
                                 </a>
                             </div>
                         }
+                        {/* Owner buttons on booking confirmation page or reservation confirmed page */}
 
                         {
-                            userId == roomData?._ownerId && locationPathname == `/booking-confirmation/${roomId}` &&
+                            userId == roomData?._ownerId &&
+                            (locationPathname == `/booking-confirmation/${roomId}` ||
+                            locationPathname == `/reservation-confirmed/${roomId}`) &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-published-rooms">
@@ -114,7 +119,9 @@ export const RoomDetails = () => {
                         }
                         {/* Not owner user buttons before booking */}
                         {
-                            userId && userId != roomData?._ownerId && !roomData?.bookedBy &&
+                            userId &&
+                            userId != roomData?._ownerId &&
+                            !roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
                                 <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId, bookedByUsername: username }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
@@ -128,7 +135,9 @@ export const RoomDetails = () => {
 
                         {/* Not owner user buttons after booking */}
                         {
-                            userId && userId != roomData?._ownerId && roomData?.bookedBy &&
+                            userId &&
+                            userId != roomData?._ownerId &&
+                            roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-bookings">

@@ -32,7 +32,7 @@ export const RoomCard = ({
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: 'View details',
                 firstLinkCallback: () => {return},
-                firstLinkTo: `/available-rooms/${roomData?._id}/details`,
+                firstLinkTo: `/reservation-confirmed/${roomData?._id}`,
                 secondLink: locationPathname == '/my-published-rooms' ? 'Message guest' : 'Message host'
             });
         } else if (!roomData?.confirmed && roomData?.bookedBy) {
