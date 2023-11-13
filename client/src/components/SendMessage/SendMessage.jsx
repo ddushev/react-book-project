@@ -1,8 +1,16 @@
 import { useLocation, useParams } from "react-router-dom";
 
+import useForm from "../../hooks/useForm";
+import { messageFormFields } from "../../utils/constants";
+
 export const SendMessage = () => {
     const locationPathname = useLocation().pathname;
     const { roomId } = useParams();
+    const { values, onChangeHandler, onSubmit } = useForm({
+        [messageFormFields.subject]: '',
+        [messageFormFields.message]: '',
+    });
+
     return (
         <div className="container-xxl py-5">
             {locationPathname == `/reservation-confirmed/${roomId}/send-message-to-host` ?
@@ -18,7 +26,7 @@ export const SendMessage = () => {
                     <div className="row g-4">
                         <div className="col-md-6">
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
-                                <form>
+                                <form onSubmit={onSubmit}>
                                     <div className="row g-3">
                                         {/* <div className="col-md-6">
                                         <div className="form-floating">
@@ -49,6 +57,9 @@ export const SendMessage = () => {
                                                     className="form-control"
                                                     id="subject"
                                                     placeholder="Subject"
+                                                    name={messageFormFields.subject}
+                                                    onChange={onChangeHandler}
+                                                    value={values.subject}
                                                 />
                                                 <label htmlFor="subject">Subject</label>
                                             </div>
@@ -60,7 +71,9 @@ export const SendMessage = () => {
                                                     placeholder="Leave a message here"
                                                     id="message"
                                                     style={{ height: 150 }}
-                                                    defaultValue={""}
+                                                    name={messageFormFields.message}
+                                                    onChange={onChangeHandler}
+                                                    value={values.message}
                                                 />
                                                 <label htmlFor="message">Message</label>
                                             </div>
@@ -98,7 +111,7 @@ export const SendMessage = () => {
                         </h1>
                     </div>
                     <div className="row g-4">
-                    <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                        <div className="col-md-6 wow fadeIn" data-wow-delay="0.1s">
                             <img
                                 className="position-relative rounded w-100 h-100"
                                 src="/img/about-1.jpg"
@@ -111,7 +124,7 @@ export const SendMessage = () => {
                         </div>
                         <div className="col-md-6">
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
-                                <form>
+                                <form onSubmit={onSubmit}>
                                     <div className="row g-3">
                                         <div className="col-12">
                                             <div className="form-floating">
@@ -120,6 +133,9 @@ export const SendMessage = () => {
                                                     className="form-control"
                                                     id="subject"
                                                     placeholder="Subject"
+                                                    name={messageFormFields.subject}
+                                                    onChange={onChangeHandler}
+                                                    value={values.subject}
                                                 />
                                                 <label htmlFor="subject">Subject</label>
                                             </div>
@@ -131,7 +147,9 @@ export const SendMessage = () => {
                                                     placeholder="Leave a message here"
                                                     id="message"
                                                     style={{ height: 150 }}
-                                                    defaultValue={""}
+                                                    name={messageFormFields.message}
+                                                    onChange={onChangeHandler}
+                                                    value={values.message}
                                                 />
                                                 <label htmlFor="message">Message</label>
                                             </div>

@@ -31,6 +31,11 @@ export const signFormFields = {
     imageUrl: 'imageUrl',
 }
 
+export const messageFormFields = {
+    subject: 'subject',
+    message: 'message'
+}
+
 export const searchFields = {
     location: 'location',
     price: 'price',
