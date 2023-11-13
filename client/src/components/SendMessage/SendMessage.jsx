@@ -1,15 +1,22 @@
 import { useLocation, useParams } from "react-router-dom";
 
+import { useMessageContext } from "../../contexts/MessageContext";
+
 import useForm from "../../hooks/useForm";
 import { messageFormFields } from "../../utils/constants";
 
 export const SendMessage = () => {
     const locationPathname = useLocation().pathname;
     const { roomId } = useParams();
+
+    const { onSendMessageSubmit } = useMessageContext();
+
+    useMessageContext
     const { values, onChangeHandler, onSubmit } = useForm({
         [messageFormFields.subject]: '',
         [messageFormFields.message]: '',
-    });
+        [messageFormFields.roomId]: roomId
+    }, onSendMessageSubmit);
 
     return (
         <div className="container-xxl py-5">
@@ -20,7 +27,7 @@ export const SendMessage = () => {
                             Send message
                         </h6>
                         <h1 className="mb-5">
-                            <span className="text-primary text-uppercase">Message</span> your guest
+                            <span className="text-primary text-uppercase">Message</span> your host
                         </h1>
                     </div>
                     <div className="row g-4">
@@ -107,7 +114,7 @@ export const SendMessage = () => {
                             Send message
                         </h6>
                         <h1 className="mb-5">
-                            <span className="text-primary text-uppercase">Message</span> your host
+                            <span className="text-primary text-uppercase">Message</span> your guest
                         </h1>
                     </div>
                     <div className="row g-4">

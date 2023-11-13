@@ -34,9 +34,10 @@ export const RoomCard = ({
                 firstLinkCallback: () => { return },
                 firstLinkTo: `/reservation-confirmed/${roomData?._id}`,
                 secondLink: locationPathname == '/my-published-rooms' ? 'Message guest' : 'Message host',
+                secondLinkCallback: () => { return },
                 secondLinkTo: locationPathname == '/my-published-rooms' ?
-                 `/reservation-confirmed/${roomData?._id}/send-message-to-host` :
-                 `/reservation-confirmed/${roomData?._id}/send-message-to-guest`,
+                 `/reservation-confirmed/${roomData?._id}/send-message-to-guest` :
+                 `/reservation-confirmed/${roomData?._id}/send-message-to-host`,
             });
         } else if (!roomData?.confirmed && roomData?.bookedBy) {
             setCurrentPageInfo({

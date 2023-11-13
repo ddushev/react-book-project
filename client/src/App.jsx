@@ -53,12 +53,12 @@ function App() {
                                 <Route element={<RoomOwnerGuard />}>
                                     <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
                                     <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
-                                    <Route path="/reservation-confirmed/:roomId/send-message-to-host" element={<SendMessage />} />
+                                    <Route path="/reservation-confirmed/:roomId/send-message-to-guest" element={<SendMessage />} />
                                 </Route>
 
                                 <Route element={<NotRoomOwnerGuard />}>
                                     <Route path="/pending-confirmation/:roomId" element={<RoomDetails />} />
-                                    <Route path="/reservation-confirmed/:roomId/send-message-to-guest" element={<SendMessage />} />
+                                    <Route path="/reservation-confirmed/:roomId/send-message-to-host" element={<SendMessage />} />
                                 </Route>
                             </Route>
 

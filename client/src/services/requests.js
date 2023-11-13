@@ -24,18 +24,18 @@ export function dataFactory(token, userId) {
         return api.del(`${baseUrl}/data/rooms/${roomId}`);
     }
 
-    async function createMessage(commentInfo) {
-        return api.post(`${baseUrl}/data/comments/`, commentInfo);
+    async function createMessage(messageInfo) {
+        return api.post(`${baseUrl}/data/messages`, messageInfo);
     }
 
     async function getAllMessages() {
-        return api.get(`${baseUrl}/data/comments`);
+        return api.get(`${baseUrl}/data/messages`);
     }
 
     async function getMessagesPerRoom(roomId) {
         const match = encodeURIComponent(`roomId="${roomId}"`);
         const relations = encodeURIComponent(`author=_ownerId:users`)
-        return api.get(`${baseUrl}/data/comments?where=${match}&load=${relations}`);
+        return api.get(`${baseUrl}/data/messages?where=${match}&load=${relations}`);
     }
 
     async function login(loginData) {

@@ -27,7 +27,7 @@ export const RoomContextProvider = ({ children }) => {
             setRooms(state => [...state, newRoom]);
             navigate('/my-published-rooms');
         } catch (errors) {
-            setRoomErrors(errors)
+            setRoomErrors(errors);
             navigate('/add-room');
         }
     }

@@ -19,8 +19,19 @@ export const MessageContextProvider = ({ children }) => {
             .then(data => setMessages(Object.values(data)));
     }, []);
 
+    async function onSendMessageSubmit(messageInfo) {
+        try {
+            const newMessage = await data.createMessage(messageInfo);
+            setMessages(state => [...state, newMessage]);
+            navigate(`/reservation-confirmed/${messageInfo.roomId}`);
+        } catch (errors) {
+            console.log(errors)
+        }
+    }
+
     const context = {
-        messages
+        messages,
+        onSendMessageSubmit
     }
 
     return (

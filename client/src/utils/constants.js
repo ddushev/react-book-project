@@ -33,7 +33,8 @@ export const signFormFields = {
 
 export const messageFormFields = {
     subject: 'subject',
-    message: 'message'
+    message: 'message',
+    roomId: 'roomId',
 }
 
 export const searchFields = {
