@@ -31,7 +31,7 @@ export const RoomCard = ({
                 statusText: 'Confirmed',
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: 'View details',
-                firstLinkCallback: () => {return},
+                firstLinkCallback: () => { return },
                 firstLinkTo: `/reservation-confirmed/${roomData?._id}`,
                 secondLink: locationPathname == '/my-published-rooms' ? 'Message guest' : 'Message host'
             });
@@ -41,7 +41,7 @@ export const RoomCard = ({
                 statusText: 'Pending',
                 linksContainerClass: 'd-flex justify-content-between',
                 firstLink: locationPathname == '/my-published-rooms' ? 'Confirm booking' : 'View details',
-                firstLinkCallback: locationPathname == '/my-published-rooms' ? onConfirmRoomClick : () => {return},
+                firstLinkCallback: locationPathname == '/my-published-rooms' ? onConfirmRoomClick : () => { return },
                 firstLinkTo: locationPathname == '/my-published-rooms' ? `/booking-confirmation/${roomData?._id}` : `/available-rooms/${roomData?._id}/details`,
                 secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking',
                 secondLinkCallback: onBookRoomInteract,
@@ -54,7 +54,7 @@ export const RoomCard = ({
                 statusText: 'Not Booked',
                 linksContainerClass: 'button-center',
                 firstLink: 'View details',
-                firstLinkCallback: () => {return},
+                firstLinkCallback: () => { return },
                 firstLinkTo: `/available-rooms/${roomData?._id}/details`,
                 secondLink: ''
             });
@@ -92,11 +92,15 @@ export const RoomCard = ({
                                     {roomData?.description}
                                 </p>
                                 <div className={currentPageInfo?.linksContainerClass}>
-                                    <Link onClick={() => currentPageInfo?.firstLinkCallback({ ...roomData, confirmed: true }, roomData?._id, currentPageInfo?.firstLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to={currentPageInfo?.firstLinkTo}>
+                                    <Link onClick={() => currentPageInfo?.firstLinkCallback({ ...roomData, confirmed: true }, roomData?._id, currentPageInfo?.firstLinkTo)}
+                                        className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`}
+                                        to={currentPageInfo?.firstLinkTo}>
                                         {currentPageInfo?.firstLink}
                                     </Link>
                                     {currentPageInfo?.secondLink &&
-                                        <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: currentPageInfo?.bookedBy, bookedByUsername: "" }, roomData?._id, currentPageInfo?.secondLinkTo)} className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`} to="#">
+                                        <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: currentPageInfo?.bookedBy, bookedByUsername: "" }, roomData?._id, currentPageInfo?.secondLinkTo)}
+                                            className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`}
+                                            to="#">
                                             {currentPageInfo?.secondLink}
                                         </Link>
                                     }

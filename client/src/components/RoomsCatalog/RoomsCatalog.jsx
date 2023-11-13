@@ -92,7 +92,7 @@ export const RoomsCatalog = () => {
                 },
                 filterRooms: (rooms, userId, location, price, adult, child) => {
                     rooms = rooms.filter(room => !room.bookedBy && room._ownerId != userId);
-                    
+
                     const searchDecoded = decodeURIComponent(location);
                     if (searchDecoded) {
                         rooms = rooms.filter(room => room.location.toLowerCase().includes(searchDecoded.toLowerCase()));
@@ -133,11 +133,14 @@ export const RoomsCatalog = () => {
                                     {currentPageInfo.roomsCatalog?.secondaryHeading}
                                 </h6>
                                 <h1 className="mb-5">
-                                    {currentPageInfo.roomsCatalog?.mainHeading} <span className="text-primary text-uppercase">{currentPageInfo.roomsCatalog?.mainHeadingSpan}</span>
+                                    {currentPageInfo.roomsCatalog?.mainHeading}
+                                    <span className="text-primary text-uppercase">
+                                        {currentPageInfo.roomsCatalog?.mainHeadingSpan}
+                                    </span>
                                 </h1>
                             </div>
                             <div className="row g-4">
-                                {rooms.map(room => <RoomCard key={room._id} {...room} roomData={room} />)}
+                                {rooms.map(room => <RoomCard key={room._id} roomData={room} />)}
                             </div>
                         </> :
                         <>
