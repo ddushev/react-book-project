@@ -33,7 +33,8 @@ export const RoomCard = ({
                 firstLink: 'View details',
                 firstLinkCallback: () => { return },
                 firstLinkTo: `/reservation-confirmed/${roomData?._id}`,
-                secondLink: locationPathname == '/my-published-rooms' ? 'Message guest' : 'Message host'
+                secondLink: locationPathname == '/my-published-rooms' ? 'Message guest' : 'Message host',
+                secondLinkTo: `/reservation-confirmed/${roomData?._id}/send-message`,
             });
         } else if (!roomData?.confirmed && roomData?.bookedBy) {
             setCurrentPageInfo({
@@ -100,7 +101,7 @@ export const RoomCard = ({
                                     {currentPageInfo?.secondLink &&
                                         <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: currentPageInfo?.bookedBy, bookedByUsername: "" }, roomData?._id, currentPageInfo?.secondLinkTo)}
                                             className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`}
-                                            to="#">
+                                            to={currentPageInfo?.secondLinkTo}>
                                             {currentPageInfo?.secondLink}
                                         </Link>
                                     }

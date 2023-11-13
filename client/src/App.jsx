@@ -17,7 +17,7 @@ import { About } from "./components/About/About"
 import { RoomsCatalog } from "./components/RoomsCatalog/RoomsCatalog"
 import { AddRoom } from "./components/AddRoom/AddRoom"
 import { Testimonials } from "./components/Testimonials/Testimonials"
-import { Feedback } from "./components/Feedback/Feedback"
+import { SendMessage } from "./components/SendMessage/SendMessage"
 import { Login } from "./components/Sign/Login/Login"
 import { Register } from "./components/Sign/Register/Register"
 import { Logout } from "./components/Logout/Logout"
@@ -43,11 +43,10 @@ function App() {
                         <Route element={<UserRouteGuard />}>
                             <Route path="/my-published-rooms" element={<RoomsCatalog />} />
                             <Route path="/my-bookings" element={<RoomsCatalog />} />
-                            <Route path="/my-hosted-rooms" element={<RoomsCatalog />} />
                             <Route path="/add-room" element={<AddRoom />} />
-                            <Route path="/send-message" element={<Feedback />} />
-                            <Route path="/logout" element={<Logout />} />
                             <Route path="/reservation-confirmed/:roomId" element={<RoomDetails />} />
+                            <Route path="/reservation-confirmed/:roomId/send-message" element={<SendMessage />} />
+                            <Route path="/logout" element={<Logout />} />
 
                             <Route element={<RoomOwnerGuard />}>
                                 <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />

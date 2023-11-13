@@ -1,4 +1,4 @@
-export const Feedback = () => {
+export const SendMessage = () => {
     return (
         <div className="container-xxl py-5">
             <div className="container">
