@@ -48,11 +48,11 @@ function App() {
                             <Route path="/add-room" element={<AddRoom />} />
                             <Route path="/send-feedback" element={<Feedback />} />
                             <Route path="/logout" element={<Logout />} />
-
+                            <Route path="/reservation-confirmed/:roomId" element={<RoomDetails />} />
+                            
                             <Route element={<RoomOwnerGuard />}>
                                 <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
                                 <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
-                                <Route path="/reservation-confirmed/:roomId" element={<RoomDetails />} />
                             </Route>
 
                             <Route element={<NotRoomOwnerGuard />}>
