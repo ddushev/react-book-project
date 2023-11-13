@@ -65,51 +65,20 @@ export const Header = () => {
                             id="navbarCollapse"
                         >
                             <div className="navbar-nav mr-auto py-0">
-                                <Link to="/" className="nav-item nav-link active">
+                                <Link to="/" className="nav-item nav-link">
                                     Home
                                 </Link>
                                 <Link to="/about" className="nav-item nav-link">
                                     About
                                 </Link>
-                                <div className="nav-item dropdown">
-                                    <a
-                                        href="#"
-                                        className="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                    >
-                                        Rooms
-                                    </a>
-                                    <div className="dropdown-menu rounded-0 m-0">
-                                        <Link to="available-rooms" className="dropdown-item">
-                                            Catalog
-                                        </Link>
-                                        {isAuthenticated &&
-                                            <Link to="add-room" className="dropdown-item">
-                                                Add
-                                            </Link>
-                                        }
-                                    </div>
-                                </div>
-                                <div className="nav-item dropdown">
-                                    <a
-                                        href="#"
-                                        className="nav-link dropdown-toggle"
-                                        data-bs-toggle="dropdown"
-                                    >
-                                        Feedback
-                                    </a>
-                                    <div className="dropdown-menu rounded-0 m-0">
-                                        <Link to="/testimonials" className="dropdown-item">
-                                            Testimonials
-                                        </Link>
-                                        {isAuthenticated &&
-                                            <Link to="/send-feedback" className="dropdown-item">
-                                                Share your feedback
-                                            </Link>
-                                        }
-                                    </div>
-                                </div>
-                                
+                                <Link to="available-rooms" className="nav-item nav-link">
+                                    Rooms' Catalog
+                                </Link>
+                                {isAuthenticated &&
+                                    <Link to="add-room" className="nav-item nav-link">
+                                        Add Room
+                                    </Link>
+                                }
                             </div>
                             {
                                 isAuthenticated ?

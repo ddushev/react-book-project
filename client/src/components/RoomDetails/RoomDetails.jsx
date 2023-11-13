@@ -7,6 +7,7 @@ import { useRoomContext } from "../../contexts/RoomContext";
 
 import { Search } from "../Common/Search/Search";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
+import { Testimonials } from "../Testimonials/Testimonials";
 
 
 export const RoomDetails = () => {
@@ -165,6 +166,7 @@ export const RoomDetails = () => {
                     </div>
                 </div>
             </div>
+            <Testimonials />
         </>
     );
 }

@@ -25,7 +25,6 @@ import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
 
-import { Spinner } from "./components/Common/Spinner/Spinner"
 
 
 function App() {
@@ -46,10 +45,10 @@ function App() {
                             <Route path="/my-bookings" element={<RoomsCatalog />} />
                             <Route path="/my-hosted-rooms" element={<RoomsCatalog />} />
                             <Route path="/add-room" element={<AddRoom />} />
-                            <Route path="/send-feedback" element={<Feedback />} />
+                            <Route path="/send-message" element={<Feedback />} />
                             <Route path="/logout" element={<Logout />} />
                             <Route path="/reservation-confirmed/:roomId" element={<RoomDetails />} />
-                            
+
                             <Route element={<RoomOwnerGuard />}>
                                 <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
                                 <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />

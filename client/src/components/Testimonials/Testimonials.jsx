@@ -4,7 +4,6 @@ import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 export const Testimonials = function () {
     return (
         <>
-            <CommonHeader />
             <div
                 className="container-xxl testimonial my-5 py-5 bg-dark wow zoomIn"
                 data-wow-delay="0.1s"
@@ -20,7 +19,7 @@ export const Testimonials = function () {
                             <div className="d-flex align-items-center">
                                 <img
                                     className="img-fluid flex-shrink-0 rounded"
-                                    src="img/testimonial-1.jpg"
+                                    src="/img/testimonial-1.jpg"
                                     style={{ width: 45, height: 45 }}
                                 />
                                 <div className="ps-3">
@@ -39,7 +38,7 @@ export const Testimonials = function () {
                             <div className="d-flex align-items-center">
                                 <img
                                     className="img-fluid flex-shrink-0 rounded"
-                                    src="img/testimonial-2.jpg"
+                                    src="/img/testimonial-2.jpg"
                                     style={{ width: 45, height: 45 }}
                                 />
                                 <div className="ps-3">
@@ -58,7 +57,7 @@ export const Testimonials = function () {
                             <div className="d-flex align-items-center">
                                 <img
                                     className="img-fluid flex-shrink-0 rounded"
-                                    src="img/testimonial-3.jpg"
+                                    src="/img/testimonial-3.jpg"
                                     style={{ width: 45, height: 45 }}
                                 />
                                 <div className="ps-3">
