@@ -87,7 +87,7 @@ export const AddRoom = () => {
                             :
                             <div className="col-lg-6 error-box">
                                 <h4>Errors</h4>
-                                {/* {roomErrors.map(error => <p key={error}>{error}</p>)} */}
+                                {roomErrors.map(error => <p key={error}>{error}</p>)}
                             </div>
                         }
 
