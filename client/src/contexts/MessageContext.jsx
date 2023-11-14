@@ -6,6 +6,7 @@ import { useAuthContext } from "./AuthContext";
 import { dataFactory } from "../services/requests";
 import { validateMessages } from "../utils/validateMessages";
 import { useRoomContext } from "./RoomContext";
+import { errorParser } from "../utils/errorParser";
 
 
 const MessageContext = createContext();
@@ -13,23 +14,18 @@ const MessageContext = createContext();
 export const MessageContextProvider = ({ children }) => {
     const { token, userId } = useAuthContext();
     const { getRoomFromState } = useRoomContext();
-    const [messages, setMessages] = useState([]);
     const [messageErrors, setMessageErrors] = useState([]);
     const data = dataFactory(token, userId);
     const navigate = useNavigate();
-    useEffect(() => {
-        data.getAllMessages()
-            .then(data => setMessages(Object.values(data)));
-    }, []);
 
     async function onSendMessageSubmit(messageInfo) {
         try {
             validateMessages(messageInfo);
             const newMessage = await data.createMessage(messageInfo);
-            setMessages(state => [...state, newMessage]);
+            setAllMessages(state => [...state, newMessage]);
             navigate(`/reservation-confirmed/${messageInfo.roomId}`);
         } catch (errors) {
-            setMessageErrors(errors);
+            setMessageErrors(errorParser(errors));
             const room = getRoomFromState(messageInfo.roomId);
             if (room._ownerId == userId) {
                 navigate(`/reservation-confirmed/${messageInfo.roomId}/send-message-to-guest`);
@@ -39,11 +35,20 @@ export const MessageContextProvider = ({ children }) => {
         }
     }
 
+    async function getRoomMessages(roomId) {
+        try {
+            const roomMessages = await data.getMessagesPerRoom(roomId);
+            return roomMessages;
+        } catch (errors) {
+            console.error(errors.message);
+        }
+    }
+
     const context = {
-        messages,
         messageErrors,
         setMessageErrors,
-        onSendMessageSubmit
+        onSendMessageSubmit,
+        getRoomMessages
     }
 
     return (

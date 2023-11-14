@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "./AuthContext";
 import { dataFactory } from "../services/requests";
 import { validateRoom } from "../utils/validateRoom";
+import { errorParser } from "../utils/errorParser";
 
 
 const RoomContext = createContext();
@@ -27,7 +28,7 @@ export const RoomContextProvider = ({ children }) => {
             setRooms(state => [...state, newRoom]);
             navigate('/my-published-rooms');
         } catch (errors) {
-            setRoomErrors(errors);
+            setRoomErrors(errorParser(errors));
             navigate('/add-room');
         }
     }
@@ -40,7 +41,7 @@ export const RoomContextProvider = ({ children }) => {
 
             navigate(`/available-rooms/${roomId}/details`);
         } catch (errors) {
-            setRoomErrors(errors);
+            setRoomErrors(errorParser(errors));
             navigate(`/available-rooms/${roomId}/edit`);
         }
     }

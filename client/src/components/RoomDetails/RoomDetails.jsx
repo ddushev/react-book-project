@@ -1,9 +1,11 @@
 import "./RoomDetails.css"
 
+import { useEffect, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
+import { useMessageContext } from "../../contexts/MessageContext";
 
 import { Search } from "../Common/Search/Search";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
@@ -14,9 +16,17 @@ export const RoomDetails = () => {
     const locationPathname = useLocation().pathname;
     const { roomId } = useParams();
     const { userId, username } = useAuthContext();
+    const [roomMessages, setRoomMessages] = useState([]);
+
     const { getRoomFromState, onDeleteRoomClick, onBookRoomInteract } = useRoomContext();
+    const { getRoomMessages } = useMessageContext();
     const roomData = getRoomFromState(roomId);
 
+    useEffect(() => {
+        getRoomMessages(roomId)
+            .then(data => setRoomMessages(data));
+    },[roomId]);
+    console.log(roomMessages);
     return (
         <>
             <CommonHeader />
@@ -107,7 +117,7 @@ export const RoomDetails = () => {
                         {
                             userId == roomData?._ownerId &&
                             (locationPathname == `/booking-confirmation/${roomId}` ||
-                            locationPathname == `/reservation-confirmed/${roomId}`) &&
+                                locationPathname == `/reservation-confirmed/${roomId}`) &&
 
                             <div className="d-flex justify-content-between">
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-published-rooms">

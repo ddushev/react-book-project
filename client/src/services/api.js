@@ -29,10 +29,8 @@ function createOptions(method, data, token, userId) {
 
     if (token) {
         if ((data?.bookedBy && data?._ownerId != userId) || data?.bookedBy === '') {
-            console.log('X-Admin');
             options.headers['X-Admin'] = token;
         } else {
-            console.log('X-Authorization');
             options.headers['X-Authorization'] = token;
         }
     }
