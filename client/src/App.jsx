@@ -17,7 +17,6 @@ import { Newsletter } from "./components/Newsletter/Newsletter"
 import { About } from "./components/About/About"
 import { RoomsCatalog } from "./components/RoomsCatalog/RoomsCatalog"
 import { AddRoom } from "./components/AddRoom/AddRoom"
-import { Testimonials } from "./components/Testimonials/Testimonials"
 import { SendMessage } from "./components/SendMessage/SendMessage"
 import { Login } from "./components/Sign/Login/Login"
 import { Register } from "./components/Sign/Register/Register"
@@ -41,7 +40,6 @@ function App() {
                             <Route path="/about" element={<About />} />
                             <Route path="/available-rooms" element={<RoomsCatalog />} />
                             <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
-                            <Route path="/testimonials" element={<Testimonials />} />
 
                             <Route element={<UserRouteGuard />}>
                                 <Route path="/my-published-rooms" element={<RoomsCatalog />} />

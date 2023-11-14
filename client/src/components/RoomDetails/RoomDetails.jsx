@@ -9,7 +9,7 @@ import { useMessageContext } from "../../contexts/MessageContext";
 
 import { Search } from "../Common/Search/Search";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
-import { Testimonials } from "../Testimonials/Testimonials";
+import { MessagesCatalog } from "../MessagesCatalog/MessagesCatalog";
 
 
 export const RoomDetails = () => {
@@ -25,8 +25,7 @@ export const RoomDetails = () => {
     useEffect(() => {
         getRoomMessages(roomId)
             .then(data => setRoomMessages(data));
-    },[roomId]);
-    console.log(roomMessages);
+    }, [roomId]);
     return (
         <>
             <CommonHeader />
@@ -176,7 +175,11 @@ export const RoomDetails = () => {
                     </div>
                 </div>
             </div>
-            <Testimonials />
+            {
+                roomMessages.length > 0 ?
+                    <MessagesCatalog roomMessages={roomMessages} roomOwner={roomData?._ownerId}/> :
+                    null
+            }
         </>
     );
 }

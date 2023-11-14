@@ -21,8 +21,7 @@ export const MessageContextProvider = ({ children }) => {
     async function onSendMessageSubmit(messageInfo) {
         try {
             validateMessages(messageInfo);
-            const newMessage = await data.createMessage(messageInfo);
-            setAllMessages(state => [...state, newMessage]);
+            await data.createMessage(messageInfo);
             navigate(`/reservation-confirmed/${messageInfo.roomId}`);
         } catch (errors) {
             setMessageErrors(errorParser(errors));
