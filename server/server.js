@@ -1532,28 +1532,28 @@
         },
         messages: {
             "9cc17db5-88a9-462b-a97d-277bba74cf58": {
-                "message": "Message from guest to host",
+                "message": "Hello! I was wondering if it's possible to bring my dog along during my stay. He's well-behaved, and we'd love to explore the area together.",
                 "roomId": "72554f24-e650-4837-8631-84518fcfa7d4",
                 "_createdOn": 1699951869115,
                 "_id": "9cc17db5-88a9-462b-a97d-277bba74cf58",
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8"
             },
             "7a1ddd1-c4ab-4cfe-b06a-746ee3988493": {
-                "message": "Message from host to guest",
+                "message": "Hi there! We're pet-friendly, and we'd be happy to welcome your well-behaved dog. Just let us know any specific arrangements or requirements. See you soon!",
                 "roomId": "72554f24-e650-4837-8631-84518fcfa7d4",
                 "_createdOn": 1699952177064,
                 "_id": "7a1ddd1-c4ab-4cfe-b06a-746ee3988493",
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a"
             },
             "67412224-04a0-4a16-9477-1ed03cd725d7": {
-                "message": "Message from host to guest 2",
+                "message": "We look forward to welcome you. If there's anything specific you'd like to arrange or inquire about before your arrival, please don't hesitate to let us know. Safe travels!",
                 "roomId": "941651bc-70d9-4157-afeb-aadcdd352c17",
                 "_createdOn": 1699953467124,
                 "_id": "67412224-04a0-4a16-9477-1ed03cd725d7",
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8"
             },
             "2fd16f4d-b767-4c40-a5b1-4f34fcbcb2e6": {
-                "message": "Message from guest to host 2",
+                "message": "Thank you for your warm welcome! I appreciate it. Looking forward to my stay!",
                 "roomId": "941651bc-70d9-4157-afeb-aadcdd352c17",
                 "_createdOn": 1699954208106,
                 "_id": "2fd16f4d-b767-4c40-a5b1-4f34fcbcb2e6",
