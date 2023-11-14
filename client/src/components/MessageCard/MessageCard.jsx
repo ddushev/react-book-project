@@ -9,10 +9,8 @@ export const MessageCard = function ({
 }) {
     return (
         <div className="testimonial-item position-relative bg-white rounded overflow-hidden">
-            <p>
-                {message}
-            </p>
-            <div className="d-flex align-items-center">
+
+            <div className="d-flex align-items-center message-details">
                 <img
                     className="img-fluid flex-shrink-0 rounded"
                     src={author?.imageUrl}
@@ -23,7 +21,10 @@ export const MessageCard = function ({
                     <small>{roomOwner == _ownerId ? 'Host' : 'Guest'}</small>
                 </div>
             </div>
-            <i className="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1" />
+            <p>
+                {message}
+            </p>
+            {/* <i className="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1" /> */}
         </div>
     );
 }
