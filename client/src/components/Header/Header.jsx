@@ -65,17 +65,17 @@ export const Header = () => {
                             id="navbarCollapse"
                         >
                             <div className="navbar-nav mr-auto py-0">
-                                <NavLink to="/" className="nav-item nav-link" activeClassName="active">
+                                <NavLink to="/" className="nav-item nav-link" activeclassname="active">
                                     Home
                                 </NavLink>
-                                <NavLink to="/about" className="nav-item nav-link" activeClassName="active">
+                                <NavLink to="/about" className="nav-item nav-link" activeclassname="active">
                                     About
                                 </NavLink>
-                                <NavLink to="available-rooms" className="nav-item nav-link" activeClassName="active">
+                                <NavLink to="available-rooms" className="nav-item nav-link" activeclassname="active">
                                     Rooms' Catalog
                                 </NavLink>
                                 {isAuthenticated &&
-                                    <NavLink to="add-room" className="nav-item nav-link" activeClassName="active">
+                                    <NavLink to="add-room" className="nav-item nav-link" activeclassname="active">
                                         Add Room
                                     </NavLink>
                                 }

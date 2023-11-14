@@ -8,9 +8,9 @@ async function request(url, options) {
         if (response.ok != true) {
             throw await response.json();
         }
-        
+
         return response.json();
-        
+
     } catch (error) {
         throw (error);
     }
@@ -28,27 +28,14 @@ function createOptions(method, data, token, userId) {
     }
 
     if (token) {
-        if ((data?.bookedBy && data?._ownerId !=userId) || data?.bookedBy === '') {
+        if ((data?.bookedBy && data?._ownerId != userId) || data?.bookedBy === '') {
             console.log('X-Admin');
             options.headers['X-Admin'] = token;
         } else {
             console.log('X-Authorization');
             options.headers['X-Authorization'] = token;
         }
-        // options.headers['X-Authorization'] = token;
-    } 
-    // else {
-
-    //     const persistedStateSerialized = localStorage.getItem('auth');
-    //     const auth = JSON.parse(persistedStateSerialized);
-    //     if (auth?.accessToken) {
-    //         if (data?.bookedBy) {
-    //             options.headers['X-Admin'] = auth.accessToken;
-    //         } else {
-    //             options.headers['X-Authorization'] = auth.accessToken;
-    //         }
-    //     }
-    // }
+    }
 
     return options;
 }
