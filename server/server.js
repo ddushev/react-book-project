@@ -1506,7 +1506,7 @@
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e8gi"
-            }, 
+            },
             "a9d80ad3-a185-4257-9ced-b63eadb9e0hj": {
                 "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "name": "Paris Double Room",
@@ -1530,8 +1530,35 @@
             },
 
         },
-        comments: {
-
+        messages: {
+            "9cc17db5-88a9-462b-a97d-277bba74cf58": {
+                "message": "Message from guest to host",
+                "roomId": "72554f24-e650-4837-8631-84518fcfa7d4",
+                "_createdOn": 1699951869115,
+                "_id": "9cc17db5-88a9-462b-a97d-277bba74cf58",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8"
+            },
+            "7a1ddd1-c4ab-4cfe-b06a-746ee3988493": {
+                "message": "Message from host to guest",
+                "roomId": "72554f24-e650-4837-8631-84518fcfa7d4",
+                "_createdOn": 1699952177064,
+                "_id": "7a1ddd1-c4ab-4cfe-b06a-746ee3988493",
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a"
+            },
+            "67412224-04a0-4a16-9477-1ed03cd725d7": {
+                "message": "Message from host to guest 2",
+                "roomId": "941651bc-70d9-4157-afeb-aadcdd352c17",
+                "_createdOn": 1699953467124,
+                "_id": "67412224-04a0-4a16-9477-1ed03cd725d7",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8"
+            },
+            "2fd16f4d-b767-4c40-a5b1-4f34fcbcb2e6": {
+                "message": "Message from guest to host 2",
+                "roomId": "941651bc-70d9-4157-afeb-aadcdd352c17",
+                "_createdOn": 1699954208106,
+                "_id": "2fd16f4d-b767-4c40-a5b1-4f34fcbcb2e6",
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a"
+            }
         }
     };
     var rules$1 = {
