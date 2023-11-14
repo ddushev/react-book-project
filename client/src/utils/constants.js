@@ -32,7 +32,6 @@ export const signFormFields = {
 }
 
 export const messageFormFields = {
-    subject: 'subject',
     message: 'message',
     roomId: 'roomId',
 }

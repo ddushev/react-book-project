@@ -19,7 +19,6 @@ export const SendMessage = () => {
     }, []);
 
     const { values, onChangeHandler, onSubmit } = useForm({
-        [messageFormFields.subject]: '',
         [messageFormFields.message]: '',
         [messageFormFields.roomId]: roomId
     }, onSendMessageSubmit);
@@ -42,49 +41,13 @@ export const SendMessage = () => {
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
                                 <form onSubmit={onSubmit}>
                                     <div className="row g-3">
-                                        {/* <div className="col-md-6">
-                                        <div className="form-floating">
-                                            <input
-                                                type="text"
-                                                className="form-control"
-                                                id="name"
-                                                placeholder="Your Name"
-                                            />
-                                            <label htmlFor="name">Your Name</label>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-6">
-                                        <div className="form-floating">
-                                            <input
-                                                type="email"
-                                                className="form-control"
-                                                id="email"
-                                                placeholder="Your Email"
-                                            />
-                                            <label htmlFor="email">Your Email</label>
-                                        </div>
-                                    </div> */}
-                                        <div className="col-12">
-                                            <div className="form-floating">
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="subject"
-                                                    placeholder="Subject"
-                                                    name={messageFormFields.subject}
-                                                    onChange={onChangeHandler}
-                                                    value={values.subject}
-                                                />
-                                                <label htmlFor="subject">Subject</label>
-                                            </div>
-                                        </div>
                                         <div className="col-12">
                                             <div className="form-floating">
                                                 <textarea
                                                     className="form-control"
                                                     placeholder="Leave a message here"
                                                     id="message"
-                                                    style={{ height: 150 }}
+                                                    style={{ height: 300 }}
                                                     name={messageFormFields.message}
                                                     onChange={onChangeHandler}
                                                     value={values.message}
@@ -156,25 +119,11 @@ export const SendMessage = () => {
                                     <div className="row g-3">
                                         <div className="col-12">
                                             <div className="form-floating">
-                                                <input
-                                                    type="text"
-                                                    className="form-control"
-                                                    id="subject"
-                                                    placeholder="Subject"
-                                                    name={messageFormFields.subject}
-                                                    onChange={onChangeHandler}
-                                                    value={values.subject}
-                                                />
-                                                <label htmlFor="subject">Subject</label>
-                                            </div>
-                                        </div>
-                                        <div className="col-12">
-                                            <div className="form-floating">
                                                 <textarea
                                                     className="form-control"
                                                     placeholder="Leave a message here"
                                                     id="message"
-                                                    style={{ height: 150 }}
+                                                    style={{ height: 300 }}
                                                     name={messageFormFields.message}
                                                     onChange={onChangeHandler}
                                                     value={values.message}
