@@ -1354,7 +1354,7 @@
                 "parking": "No",
                 "description": "This cozy studio, nestled in a serene neighborhood, is a small yet inviting space designed for ultimate comfort. With warm decor, ample natural light, and thoughtful details, it offers a perfect retreat for those seeking a snug and intimate atmosphere.",
                 "bookedBy": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "bookedByUsername": 'Daniel2 Dushev2',
+                "bookedByUsername": "Daniel2 Dushev2",
                 "confirmed": true,
                 "ownerName": "Daniel Dushev",
                 "ownerEmail": "danieldyshew@gmail.com",
