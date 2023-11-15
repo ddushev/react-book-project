@@ -20,9 +20,22 @@ ReactBook is a Singe Page Application  that allows users to register login and l
 2. CSS
 3. ReactJS
 
-
 # To install locally
 1. Clone the repo locally.
 2. Open the server folder in the terminal and type "node server". Don't close the terminal just minimize it and leave the server working.
 3. Open the client folder in the terminal and type "npm run dev".
 4. Open the app at the address pointed out - most likely that would be "Local:   http://127.0.0.1:5173/"
+
+# Architecture
+1. Project structure
+   - Using Vite for React building tool
+   - The "public" folder holds the bootstrap CSS, images, JS, and SASS files required for this template
+   - The "src" folder holds the components, context, hooks, services, and utilities for the app
+   - The index.html file is the entry point of the app and it loads the necessary fonts, stylesheets, javascript libraries, and the main jsx module.
+2. Component hierarchy
+   -
+4.  Routing
+5. State management
+6. API integration
+7. Styling
+8. Deployment
