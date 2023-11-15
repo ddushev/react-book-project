@@ -177,7 +177,7 @@ export const RoomDetails = () => {
             </div>
             {
                 roomMessages.length > 0 ?
-                    <MessagesCatalog roomMessages={roomMessages} roomOwner={roomData?._ownerId}/> :
+                    <MessagesCatalog roomMessages={roomMessages} roomData={roomData}/> :
                     null
             }
         </>

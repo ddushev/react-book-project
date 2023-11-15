@@ -14,7 +14,7 @@ export const Footer = () => {
                             <h1 className="text-white text-uppercase mb-3">ReactBook</h1>
                         </Link>
                         <p className="text-white mb-0">
-                            Your opinnion is very important to us so please do not forget to <Link to="/send-feedback" className="text-dark fw-medium">share</Link> it with us and leave a like on our
+                            Your opinnion is very important to us so please do not forget to share it with us and leave a like on our
                             <a
                                 className="text-dark fw-medium"
                                 href="#"
