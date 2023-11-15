@@ -4,6 +4,7 @@
 }
 
 .room-details {
+    width: 100%;
     flex: 2 1 auto;
 }
 
