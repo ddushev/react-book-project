@@ -1328,11 +1328,11 @@
                 imageUrl: "/img/profile-3.jpg"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "danieldyshew2@gmail.com",
-                firstName: "Daniel2",
-                lastName: "Dushev2",
+                email: "maria@gmail.com",
+                firstName: "Maria",
+                lastName: "Georgieva",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
-                imageUrl: "/img/profile-2.jpg"
+                imageUrl: "/img/profile-1.jpg"
             }
         },
         sessions: {
