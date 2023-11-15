@@ -1,6 +1,5 @@
-# DISCLAIMER: This is not a real-world app and you should not disclose personal
-information and/or passwords. The app uses a practice server that does not keep track of
-the changes made after a couple of minutes of inactivity.
+# DISCLAIMER: 
+This is not a real-world app and you should not disclose personal information and/or passwords. The app uses a practice server that does not keep track of the changes made after a couple of minutes of inactivity.
 
 # ReactBook app
 Client hosted on Firebase - https://reactbook-app.firebaseapp.com/
