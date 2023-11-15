@@ -6,7 +6,7 @@ This is not a real-world app and you should not disclose personal information an
 - Server hosted on Glitch - https://spiky-sudden-digit.glitch.me/data (needs to be awakened if not used in the past 5 minutes)
 
 # Overview
-ReactBook is a Singe Page Application  that allows users to register login and logout into a system. Logged-in users can create/update/delete rooms and also book rooms other users have published. After a booking is made the host(user who published it) of that room can either confirm or decline the reservation. In the meantime, the guest(the user who booked it) can also cancel his request. After the booking is confirmed both parties can send messages to each other discussing details for that particular booking. Another functionality of the app is to search for available rooms by certain criteria(location, price per night, or occupancy). Functionalities available for not logged-in users are only to browse and search for available rooms and to register in the app.
+ReactBook is a Singe Page Application  that allows users to register login and logout into a system. Logged-in users can create/read/update/delete rooms and also book rooms other users have published. After a booking is made the host(user who published it) of that room can either confirm or decline the reservation. In the meantime, the guest(the user who booked it) can also cancel his request. After the booking is confirmed both parties can send messages to each other discussing details for that particular booking. Another functionality of the app is to search for available rooms by certain criteria(location, price per night, or occupancy). Functionalities available for not logged-in users are only to browse and search for available rooms and to register in the app.
 
 # Pre-seed data(other data can be added after the server and the app are started but it will be lost once the server is closed/asleep)
 1. Users - there are two users which can be used to login into the app
@@ -28,16 +28,22 @@ ReactBook is a Singe Page Application  that allows users to register login and l
 
 # Architecture
 1. Project structure
-   - Using Vite for React building tool
-   - The "public" folder holds the bootstrap CSS, images, JS, and SASS files required for this template
-   - The "src" folder holds the components, context, hooks, services, and utilities for the app
+   - Using Vite for React building tool.
+   - The "public" folder holds the bootstrap CSS, images, JS, and SASS files required for this template.
+   - The "src" folder holds the components, context, hooks, services, and utilities for the app.
    - The index.html file is the entry point of the app and it loads the necessary fonts, stylesheets, javascript libraries, and the main JSX module.
 2. Component hierarchy
-   - The App.jsx component is the main component loaded by the main JSX module which holds the context and routing for the rest of the components
-   - Header, Footer, Newsletter, and BackToTop are the components that are loaded no matter the route. The rest of the components are loaded when a particular route is navigated
-   - Most used components are RoomsCatalog, RoomDetails RoomCard, and CommonHeader which based on the current route and other criteria display different information
-3. Routing 
-5. State management
+   - The App.jsx component is the main component loaded by the main JSX module which holds the context and routing for the rest of the components.
+   - Header, Footer, Newsletter, and BackToTop are the components that are loaded no matter the route. The rest of the components are loaded when a particular route is navigated.
+   - Most used components are RoomsCatalog, RoomDetails RoomCard, and CommonHeader which based on the current route and other criteria display different information.
+3. Routing
+   - The app uses routing via the "react-router-dom" library.
+   - All routes can be found in the App.jsx component.
+   - Some of the routes are protected depending on whether the user is logged in/logged out or the relation between the user and the particular resource(owner or not).
+   - If the user tries to access an invalid route he is shown the NotFound page.
+4. State management
+   - The app uses the built-in React Context API to create context and along with useEffect and useState hooks to manage state
+   - The AuthContext, RoomContext, and MessageContext hold the state for the particular resources and wrap all app components in order to share it
 6. API integration
 7. Styling
 8. Deployment
