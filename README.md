@@ -1,9 +1,9 @@
 # DISCLAIMER: 
 This is not a real-world app and you should not disclose personal information and/or passwords. The app uses a practice server that does not keep track of the changes made after a couple of minutes of inactivity.
 
-# ReactBook app
-Client hosted on Firebase - https://reactbook-app.firebaseapp.com/
-Server hosted on Glitch - https://spiky-sudden-digit.glitch.me/data (needs to be awakened if not used in the past 5 minutes)
+# ReactBook app 
+- Client hosted on Firebase - https://reactbook-app.firebaseapp.com/
+- Server hosted on Glitch - https://spiky-sudden-digit.glitch.me/data (needs to be awakened if not used in the past 5 minutes)
 
 # Overview
 ReactBook is an app that allows users to register log and logout into a system. 
