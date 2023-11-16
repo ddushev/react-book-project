@@ -176,7 +176,7 @@ export const RoomDetails = () => {
                 </div>
             </div>
             {
-                roomMessages.length > 0 ?
+                roomMessages?.length > 0 ?
                     <MessagesCatalog roomMessages={roomMessages} roomData={roomData}/> :
                     null
             }

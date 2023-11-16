@@ -5,6 +5,11 @@ async function request(url, options) {
             return response;
         }
 
+        if (response.status == 403) {
+            localStorage.removeItem('auth');
+            window.location.href= '/';
+        }
+
         if (response.ok != true) {
             throw await response.json();
         }
