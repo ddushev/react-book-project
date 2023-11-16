@@ -49,5 +49,12 @@
 }
 
 .send-message {
-    width: 50%; 
+    width: 50%;
+}
+
+@media (max-width: 1024px) {
+    .testimonial-carousel {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
