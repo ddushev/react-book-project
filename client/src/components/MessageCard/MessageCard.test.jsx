@@ -1,36 +1,65 @@
 import { BrowserRouter } from 'react-router-dom'
 import { render, screen } from '@testing-library/react';
-
-import { AuthContextProvider } from '../../contexts/AuthContext';
+import { AuthContext } from '../../contexts/AuthContext';
 
 import { MessageCard } from './MessageCard';
+import { beforeEach } from 'vitest';
 
-
-describe('MessageCard', () => {
+describe('MessageCard when roomOwner match comment owner and current userId', () => {
     const roomOwner = 'testid';
     const _ownerId = 'testid';
+    const context = {
+        userId: 'testid',
+    };
 
+    beforeEach(async () => {
+        render(
+            <BrowserRouter>
+                <AuthContext.Provider value={context}>
+                    <MessageCard message="Test message" roomOwner={roomOwner} _ownerId={_ownerId} />
+                </AuthContext.Provider>
+            </BrowserRouter>);
+    });
     it('message', () => {
-        render(
-            <BrowserRouter>
-                <AuthContextProvider>
-                    <MessageCard message="Test message" />
-                </AuthContextProvider>
-            </BrowserRouter>);
-        expect(screen.getByText('Test message')).toBeDefined();
+        expect(screen.getByText('Test message')).toBeInTheDocument();
     });
 
-    it('host or guest ', () => {
+    it('host', () => {
+        expect(screen.getByText('Host')).toBeInTheDocument();
+    });
+
+    it('You', () => {
+        expect(screen.getByText('You')).toBeInTheDocument();
+    });
+
+});
+
+describe('MessageCard when roomOwner doesnt match comment owner which doesnt match current userId', () => {
+    const roomOwner = 'testid1';
+    const _ownerId = 'testid2';
+    const author = {
+        firstName: 'John',
+        lastName: 'Doe'
+    }
+    const context = {
+        userId: 'testid3',
+    };
+
+    beforeEach(() => {
         render(
             <BrowserRouter>
-                <AuthContextProvider>
-                    <MessageCard roomOwner={roomOwner} _ownerId={_ownerId}/>
-                </AuthContextProvider>
+                <AuthContext.Provider value={context}>
+                    <MessageCard message="Test message" author={author} roomOwner={roomOwner} _ownerId={_ownerId} />
+                </AuthContext.Provider>
             </BrowserRouter>);
-        if (roomOwner == _ownerId) {
-            expect(screen.getByText('Host')).toBeDefined();
-        }else {
-            expect(screen.getByText('Guest')).toBeDefined();
-        }
     });
+
+    it('host', () => {
+        expect(screen.getByText('Guest')).toBeInTheDocument();
+    });
+
+    it('John Doe', () => {
+        expect(screen.getByText('John Doe')).toBeInTheDocument();
+    });
+
 });
