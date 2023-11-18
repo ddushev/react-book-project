@@ -1,9 +1,10 @@
 import { BrowserRouter } from 'react-router-dom'
 import { render, screen } from '@testing-library/react';
+import { beforeEach } from 'vitest';
+
 import { AuthContext } from '../../contexts/AuthContext';
 
 import { MessageCard } from './MessageCard';
-import { beforeEach } from 'vitest';
 
 describe('MessageCard when roomOwner match comment owner and current userId', () => {
     const roomOwner = 'testid';
@@ -20,15 +21,15 @@ describe('MessageCard when roomOwner match comment owner and current userId', ()
                 </AuthContext.Provider>
             </BrowserRouter>);
     });
-    it('message', () => {
+    test('message', () => {
         expect(screen.getByText('Test message')).toBeDefined();
     });
 
-    it('host', () => {
+    test('host', () => {
         expect(screen.getByText('Host')).toBeDefined();
     });
 
-    it('You', () => {
+    test('You', () => {
         expect(screen.getByText('You')).toBeDefined();
     });
 
@@ -54,11 +55,11 @@ describe('MessageCard when roomOwner doesnt match comment owner which doesnt mat
             </BrowserRouter>);
     });
 
-    it('host', () => {
+    test('host', () => {
         expect(screen.getByText('Guest')).toBeDefined();
     });
 
-    it('John Doe', () => {
+    test('John Doe', () => {
         expect(screen.getByText('John Doe')).toBeDefined();
     });
 

@@ -92,6 +92,7 @@ export const Header = () => {
                                                 className="img-fluid flex-shrink-0 rounded"
                                                 src={userImg}
                                                 style={{ width: 60, height: 60 }}
+                                                alt="User Image"
                                             />
                                         </a>
                                         <div className="dropdown-menu rounded-0 m-0">
