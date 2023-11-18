@@ -21,15 +21,15 @@ describe('MessageCard when roomOwner match comment owner and current userId', ()
             </BrowserRouter>);
     });
     it('message', () => {
-        expect(screen.getByText('Test message')).toBeInTheDocument();
+        expect(screen.getByText('Test message')).toBeDefined();
     });
 
     it('host', () => {
-        expect(screen.getByText('Host')).toBeInTheDocument();
+        expect(screen.getByText('Host')).toBeDefined();
     });
 
     it('You', () => {
-        expect(screen.getByText('You')).toBeInTheDocument();
+        expect(screen.getByText('You')).toBeDefined();
     });
 
 });
@@ -55,11 +55,11 @@ describe('MessageCard when roomOwner doesnt match comment owner which doesnt mat
     });
 
     it('host', () => {
-        expect(screen.getByText('Guest')).toBeInTheDocument();
+        expect(screen.getByText('Guest')).toBeDefined();
     });
 
     it('John Doe', () => {
-        expect(screen.getByText('John Doe')).toBeInTheDocument();
+        expect(screen.getByText('John Doe')).toBeDefined();
     });
 
 });
