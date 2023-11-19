@@ -6,6 +6,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 import { Header } from "./Header";
 
+
+
 describe('Header when user is logged-in', () => {
     const context = {
         isAuthenticated: true,
@@ -26,8 +28,12 @@ describe('Header when user is logged-in', () => {
 
     test('User img is shown with proper img', () => {
         const userAvatar = screen.getByAltText('User Image');
-        expect(userAvatar).toBeTruthy(); 
-        expect(userAvatar.getAttribute('src')).toContain(context.userImg); 
+        expect(userAvatar).toBeTruthy();
+        expect(userAvatar.getAttribute('src')).toContain(context.userImg);
+    });
+
+    test('Published rooms link is available', () => {
+        expect(screen.getByText('Published')).toBeDefined();
     });
 
 
@@ -50,10 +56,11 @@ describe('Header when user is not logged-in', () => {
     test('Add Room link not shown', () => {
         expect(screen.queryByText('Add Room')).toBeNull();
     });
-    
+
     test('User img is shown with proper img', () => {
         expect(screen.queryByText('User Image')).toBeNull();
     });
 
 
 });
+
