@@ -19,6 +19,10 @@ ReactBook is a Singe Page Application  that allows users to register login and l
 1. HTML
 2. CSS
 3. ReactJS
+4. ReactRouter
+5. React testing library
+6. Vite
+7. Vitest
 
 # To install locally
 1. Clone the repo locally.
