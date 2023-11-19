@@ -21,15 +21,15 @@ describe('MessageCard when roomOwner match comment owner and current userId', ()
                 </AuthContext.Provider>
             </BrowserRouter>);
     });
-    test('message', () => {
+    it('message', () => {
         expect(screen.getByText('Test message')).toBeDefined();
     });
 
-    test('host', () => {
+    it('host', () => {
         expect(screen.getByText('Host')).toBeDefined();
     });
 
-    test('You', () => {
+    it('You', () => {
         expect(screen.getByText('You')).toBeDefined();
     });
 
@@ -55,11 +55,11 @@ describe('MessageCard when roomOwner doesnt match comment owner which doesnt mat
             </BrowserRouter>);
     });
 
-    test('host', () => {
+    it('host', () => {
         expect(screen.getByText('Guest')).toBeDefined();
     });
 
-    test('John Doe', () => {
+    it('John Doe', () => {
         expect(screen.getByText('John Doe')).toBeDefined();
     });
 

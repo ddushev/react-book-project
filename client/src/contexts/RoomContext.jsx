@@ -8,7 +8,7 @@ import { validateRoom } from "../utils/validateRoom";
 import { errorParser } from "../utils/errorParser";
 
 
-const RoomContext = createContext();
+export const RoomContext = createContext();
 
 export const RoomContextProvider = ({ children }) => {
     const { token, userId } = useAuthContext();

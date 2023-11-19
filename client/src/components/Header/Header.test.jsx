@@ -22,17 +22,17 @@ describe('Header when user is logged-in', () => {
             </BrowserRouter>);
     });
 
-    test('Add Room link shown', () => {
+    it('Add Room link shown', () => {
         expect(screen.getByText('Add Room')).toBeDefined();
     });
 
-    test('User img is shown with proper img', () => {
+    it('User img is shown with proper img', () => {
         const userAvatar = screen.getByAltText('User Image');
         expect(userAvatar).toBeTruthy();
         expect(userAvatar.getAttribute('src')).toContain(context.userImg);
     });
 
-    test('Published rooms link is available', () => {
+    it('Published rooms link is available', () => {
         expect(screen.getByText('Published')).toBeDefined();
     });
 
@@ -53,11 +53,11 @@ describe('Header when user is not logged-in', () => {
             </BrowserRouter>);
     });
 
-    test('Add Room link not shown', () => {
+    it('Add Room link not shown', () => {
         expect(screen.queryByText('Add Room')).toBeNull();
     });
 
-    test('User img is shown with proper img', () => {
+    it('User img is shown with proper img', () => {
         expect(screen.queryByText('User Image')).toBeNull();
     });
 

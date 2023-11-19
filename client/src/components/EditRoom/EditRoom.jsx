@@ -71,6 +71,7 @@ export const EditRoom = () => {
                                                     name={roomFormFields.name}
                                                     value={values.name}
                                                     onChange={onChangeHandler}
+                                                    data-testid="name"
                                                 />
                                                 <label htmlFor="name">Property Name</label>
                                             </div>
@@ -190,6 +191,7 @@ export const EditRoom = () => {
                                                     name={roomFormFields.description}
                                                     value={values.description}
                                                     onChange={onChangeHandler}
+                                                    data-testid="textarea"
                                                 />
                                                 <label htmlFor="description">Description</label>
                                             </div>
