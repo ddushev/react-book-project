@@ -35,6 +35,7 @@ ReactBook is a Singe Page Application  that allows users to register login and l
    - Using Vite for React building tool.
    - The public folder holds the bootstrap CSS, images, JS, and SASS files required for this template.
    - The src folder holds the components, context, hooks, services, and utilities for the app.
+   - The test folder holds setup.js which is the configuration file for Vitest library used for unit-testing.
    - The index.html file is the entry point of the app and it loads the necessary fonts, stylesheets, javascript libraries, and the main JSX module.
 2. Component hierarchy
    - The App.jsx component is the main component loaded by the main JSX module which holds the context and routing for the rest of the components.
@@ -48,13 +49,17 @@ ReactBook is a Singe Page Application  that allows users to register login and l
 4. State management
    - The app uses the built-in React Context API to create context and along with useEffect and useState hooks to manage state
    - The AuthContext, RoomContext, and MessageContext hold the state for the particular resources and wrap all app components in order to share it
-6. API integration
+5. API integration
    - The app uses REST API to asynchronously send requests
    - The api.js file in the services folder contains methods for abstracting the request and the options object. It then exports wrapper functions for all CRUD requests.
    - The requests.js uses these functions to build all endpoints needed to work with the available resources.
-8. Styling
+6. Styling
    - The app uses Bootstrap which is located in the public folder.
    - There are also components that have additional CSS written and placed and loaded in the component itself e.g Header, Footer, Carousel, RoomDetails, MessagesCatalog  etc.
-10. Deployment
+7. Testing
+   - Several components and hooks are tested using Vitest and React testing library (Header, EditRoom, RoomCard, MessageCard and useForm hook)
+   - Run npm run test to execute tests
+8. Deployment
     - The server is hosted via Glitch(https://glitch.com/) and can be accessed at: https://spiky-sudden-digit.glitch.me/data. After several minutes of inactivity, it falls asleep.
     - The client is deployed via Firebase(https://firebase.google.com/) and can be access at https://reactbook-app.firebaseapp.com/
+      
