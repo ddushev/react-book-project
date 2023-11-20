@@ -50,7 +50,7 @@ export const Login = () => {
                     }
                     <div className="col-md-6">
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
-                            <form onSubmit={onSubmit}>
+                            <form onSubmit={onSubmit} data-testid="form">
                                 <div className="row g-3">
                                     <div className="col-md-12">
                                         <div className="form-floating">
@@ -62,6 +62,7 @@ export const Login = () => {
                                                 name={signFormFields.email}
                                                 value={values.email}
                                                 onChange={onChangeHandler}
+                                                data-testid="email"
                                             />
                                             <label htmlFor="email">Email</label>
                                         </div>
@@ -76,6 +77,7 @@ export const Login = () => {
                                                 name={signFormFields.password}
                                                 value={values.password}
                                                 onChange={onChangeHandler}
+                                                data-testid="password"
                                             />
                                             <label htmlFor="password">Password</label>
                                         </div>
