@@ -35,6 +35,7 @@ ReactBook is a Singe Page Application  that allows users to register login and l
    - Using Vite for React building tool.
    - The public folder holds the bootstrap CSS, images, JS, and SASS files required for this template.
    - The src folder holds the components, context, hooks, services, and utilities for the app.
+   - The test folder holds setup.js which is the configuration file for Vitest library used for unit-testing.
    - The index.html file is the entry point of the app and it loads the necessary fonts, stylesheets, javascript libraries, and the main JSX module.
 2. Component hierarchy
    - The App.jsx component is the main component loaded by the main JSX module which holds the context and routing for the rest of the components.
