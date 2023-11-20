@@ -24,7 +24,7 @@ describe('RoomCard in available rooms catalog', () => {
         bath: "1",
         wifi: "Yes",
         parking: "No",
-        description: "This cozy studio, nestled in a serene neighborhood, is a small yet inviting space designed for ultimate comfort. With warm decor, ample natural light, and thoughtful details, it offers a perfect retreat for those seeking a snug and intimate atmosphere.",
+        description: "This cozy studio...",
         bookedBy: false,
         bookedByUsername: "",
         confirmed: false,
@@ -40,11 +40,15 @@ describe('RoomCard in available rooms catalog', () => {
         expect(screen.getByText('Cozy studio')).toBeDefined();
     });
 
-    it('name price', () => {
+    it('price value', () => {
         expect(screen.getByText('$100/Night')).toBeDefined();
     });
 
-    it('name location', () => {
+    it('location value', () => {
         expect(screen.getByText('Borovetz')).toBeDefined();
+    });
+
+    it('description value', () => {
+        expect(screen.getByText('This cozy studio...')).toBeDefined();
     });
 });
