@@ -46,15 +46,15 @@ vi.mock('../../hooks/useForm', () => ({
   default: () => ({
     values: {
       name: 'Mocked Room Name',
-      price: '',
-      imageUrl: '',
-      location: '',
-      adult: '',
-      child: '',
-      bed: '',
-      bath: '',
-      wifi: '',
-      parking: '',
+      price: '1',
+      imageUrl: 'Mocked Room ImageUrl',
+      location: 'Mocked Room Location',
+      adult: 'Mocked Room Adult',
+      child: 'Mocked Room Child',
+      bed: 'Mocked Room Bed',
+      bath: 'Mocked Room Bath',
+      wifi: 'Mocked Room Wifi',
+      parking: 'Mocked Room Parking',
       description: 'Mocked Room Description',
     },
     onSubmit: vi.fn(),
@@ -77,6 +77,13 @@ describe('EditRoom initial render', async () => {
     expect(screen.getByTestId('textarea').value).toBe('Mocked Room Description');
   });
 
+  it('price value', () => {
+    expect(screen.getByTestId('price').value).toBe('1');
+  });
+
+  it('imageUrl value', () => {
+    expect(screen.getByTestId('imageUrl').value).toBe('Mocked Room ImageUrl');
+  });
 });
 
 
