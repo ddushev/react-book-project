@@ -1,3 +1,4 @@
+import './SendMessage.css'
 import { useLocation, useParams } from "react-router-dom";
 
 import { useMessageContext } from "../../contexts/MessageContext";
@@ -37,7 +38,7 @@ export const SendMessage = () => {
                         </h1>
                     </div>
                     <div className="row g-4">
-                        <div className="col-md-6">
+                        <div className="col-md-6 message-box">
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
                                 <form onSubmit={onSubmit}>
                                     <div className="row g-3">
@@ -113,7 +114,7 @@ export const SendMessage = () => {
                                     {messageErrors.map(error => <p key={error}>{error}</p>)}
                                 </div>
                         }
-                        <div className="col-md-6">
+                        <div className="col-md-6 message-box">
                             <div className="wow fadeInUp" data-wow-delay="0.2s">
                                 <form onSubmit={onSubmit}>
                                     <div className="row g-3">

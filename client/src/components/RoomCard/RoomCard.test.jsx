@@ -1,7 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { RoomCard } from "./RoomCard";
 import { BrowserRouter } from "react-router-dom";
 import { beforeEach } from "vitest";
+
+import { RoomCard } from "./RoomCard";
 
 // Mock the useRoomContext hook
 vi.mock('../../contexts/RoomContext', () => ({
