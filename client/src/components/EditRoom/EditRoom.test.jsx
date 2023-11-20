@@ -96,6 +96,14 @@ describe('EditRoom initial render form values', async () => {
   it('child value', () => {
     expect(screen.getByTestId('child').value).toBe('1');
   });
+
+  it('bed value', () => {
+    expect(screen.getByTestId('bed').value).toBe('1');
+  });
+
+  it('bath value', () => {
+    expect(screen.getByTestId('bath').value).toBe('1');
+  });
 });
 
 
