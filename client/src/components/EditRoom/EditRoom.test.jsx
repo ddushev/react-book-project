@@ -49,10 +49,10 @@ vi.mock('../../hooks/useForm', () => ({
       price: '1',
       imageUrl: 'Mocked Room ImageUrl',
       location: 'Mocked Room Location',
-      adult: 'Mocked Room Adult',
-      child: 'Mocked Room Child',
-      bed: 'Mocked Room Bed',
-      bath: 'Mocked Room Bath',
+      adult: '1',
+      child: '1',
+      bed: '1',
+      bath: '1',
       wifi: 'Mocked Room Wifi',
       parking: 'Mocked Room Parking',
       description: 'Mocked Room Description',
@@ -63,7 +63,7 @@ vi.mock('../../hooks/useForm', () => ({
   }),
 }));
 
-describe('EditRoom initial render', async () => {
+describe('EditRoom initial render form values', async () => {
 
   beforeEach(() => {
     render(<EditRoom />);
@@ -83,6 +83,18 @@ describe('EditRoom initial render', async () => {
 
   it('imageUrl value', () => {
     expect(screen.getByTestId('imageUrl').value).toBe('Mocked Room ImageUrl');
+  });
+
+  it('location value', () => {
+    expect(screen.getByTestId('location').value).toBe('Mocked Room Location');
+  });
+
+  it('adult value', () => {
+    expect(screen.getByTestId('adult').value).toBe('1');
+  });
+
+  it('child value', () => {
+    expect(screen.getByTestId('child').value).toBe('1');
   });
 });
 
