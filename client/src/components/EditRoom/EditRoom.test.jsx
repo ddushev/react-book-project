@@ -46,15 +46,15 @@ vi.mock('../../hooks/useForm', () => ({
   default: () => ({
     values: {
       name: 'Mocked Room Name',
-      price: '1',
+      price: '100',
       imageUrl: 'Mocked Room ImageUrl',
       location: 'Mocked Room Location',
       adult: '1',
-      child: '1',
-      bed: '1',
-      bath: '1',
-      wifi: 'Mocked Room Wifi',
-      parking: 'Mocked Room Parking',
+      child: '2',
+      bed: '3',
+      bath: '4',
+      wifi: 'No',
+      parking: 'No',
       description: 'Mocked Room Description',
     },
     onSubmit: vi.fn(),
@@ -78,7 +78,7 @@ describe('EditRoom initial render form values', async () => {
   });
 
   it('price value', () => {
-    expect(screen.getByTestId('price').value).toBe('1');
+    expect(screen.getByTestId('price').value).toBe('100');
   });
 
   it('imageUrl value', () => {
@@ -94,15 +94,23 @@ describe('EditRoom initial render form values', async () => {
   });
 
   it('child value', () => {
-    expect(screen.getByTestId('child').value).toBe('1');
+    expect(screen.getByTestId('child').value).toBe('2');
   });
 
   it('bed value', () => {
-    expect(screen.getByTestId('bed').value).toBe('1');
+    expect(screen.getByTestId('bed').value).toBe('3');
   });
 
   it('bath value', () => {
-    expect(screen.getByTestId('bath').value).toBe('1');
+    expect(screen.getByTestId('bath').value).toBe('4');
+  });
+
+  it('wifi value', () => {
+    expect(screen.getByTestId('wifi').value).toBe('No');
+  });
+
+  it('parking value', () => {
+    expect(screen.getByTestId('parking').value).toBe('No');
   });
 });
 
