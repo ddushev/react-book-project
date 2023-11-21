@@ -1,7 +1,7 @@
 // Server URLs
 // Production Server hosted on Glitch 'https://spiky-sudden-digit.glitch.me'
 // Local development server 'http://localhost:3030'
-export const baseUrl = 'http://localhost:3030';
+export const BASE_URL = 'http://localhost:3030';
 
 export const roomFormFields = {
     name: 'name',

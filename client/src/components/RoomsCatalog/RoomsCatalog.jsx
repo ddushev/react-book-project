@@ -14,7 +14,6 @@ export const RoomsCatalog = () => {
 
     const locationPathname = useLocation().pathname;
     const locationSearch = useLocation().search;
-    //TODO useSearchParams
     // const [searchParams, setSearchParams] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const [currentPageInfo, setCurrentPageInfo] = useState({
