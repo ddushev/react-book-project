@@ -1,16 +1,25 @@
 import "./Search.css";
 
+import { useSearchParams } from "react-router-dom";
+
 import { useRoomContext } from "../../../contexts/RoomContext";
 import { searchFields } from "../../../utils/constants";
 import useForm from "../../../hooks/useForm";
 
 export const Search = () => {
+    const [searchParams, setSearchParams] = useSearchParams();
     const { onRoomSearchClick } = useRoomContext();
+
+    const location = searchParams.get('location') ? searchParams.get('location') : '';
+    const price = searchParams.get('price') ? searchParams.get('price') : '';
+    const adult = searchParams.get('adult') ? searchParams.get('adult') : '1';
+    const child = searchParams.get('child') ? searchParams.get('child') : '0';
+
     const { values, onChangeHandler, onSubmit } = useForm({
-        [searchFields.location]: '',
-        [searchFields.price]: '',
-        [searchFields.adult]: '1',
-        [searchFields.child]: '0',
+        [searchFields.location]: location,
+        [searchFields.price]: price,
+        [searchFields.adult]: adult,
+        [searchFields.child]: child,
     }, onRoomSearchClick);
     return (
         <div

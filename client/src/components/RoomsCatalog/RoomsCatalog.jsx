@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
@@ -14,7 +14,9 @@ export const RoomsCatalog = () => {
 
     const locationPathname = useLocation().pathname;
     const locationSearch = useLocation().search;
-    const [searchParams, setSearchParams] = useState([]);
+    //TODO useSearchParams
+    // const [searchParams, setSearchParams] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
     const [currentPageInfo, setCurrentPageInfo] = useState({
         roomsCatalog: {
             mainHeading: '',
@@ -77,7 +79,7 @@ export const RoomsCatalog = () => {
 
     useEffect(() => {
         if (!!locationSearch) {
-            setSearchParams(locationSearch.split("&").map(s => s.slice(s.indexOf("=") + 1)));
+            // setSearchParams(locationSearch.split("&").map(s => s.slice(s.indexOf("=") + 1)));
             setCurrentPageInfo({
                 roomsCatalog: {
                     mainHeading: 'Your ',
@@ -93,9 +95,9 @@ export const RoomsCatalog = () => {
                 filterRooms: (rooms, userId, location, price, adult, child) => {
                     rooms = rooms.filter(room => !room.bookedBy && room._ownerId != userId);
 
-                    const searchDecoded = decodeURIComponent(location);
-                    if (searchDecoded) {
-                        rooms = rooms.filter(room => room.location.toLowerCase().includes(searchDecoded.toLowerCase()));
+                    const locationDecoded = decodeURIComponent(location);
+                    if (locationDecoded) {
+                        rooms = rooms.filter(room => room.location.toLowerCase().includes(locationDecoded.toLowerCase()));
                     }
 
                     if (price) {
@@ -119,7 +121,12 @@ export const RoomsCatalog = () => {
         }
     }, [locationPathname, locationSearch]);
 
-    rooms = currentPageInfo.filterRooms(rooms, userId, searchParams[0], searchParams[1], searchParams[2], searchParams[3]);
+    rooms = currentPageInfo.filterRooms(rooms,
+        userId,
+        searchParams.get('location'),
+        searchParams.get('price'),
+        searchParams.get('adult'),
+        searchParams.get('child'));
     return (
         <>
             <CommonHeader />

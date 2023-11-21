@@ -9,6 +9,8 @@ import { validateRegister } from "../utils/validateRegister";
 
 export const AuthContext = createContext();
 
+AuthContext.displayName = 'AuthContext';
+
 export const AuthContextProvider = ({
     children
 }) => {
