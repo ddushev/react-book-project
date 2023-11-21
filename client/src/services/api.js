@@ -5,7 +5,7 @@ async function request(url, options) {
             return response;
         }
 
-        if (response.status == 403) {
+        if (response.status == 403 && window.location.pathname != '/sign-in') {
             localStorage.removeItem('auth');
             window.location.href= '/sign-in';
         }
