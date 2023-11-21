@@ -4,7 +4,7 @@ import { useParams } from "react-router";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
 import { dataFactory } from "../../services/requests";
-import { roomFormFields } from "../../utils/constants";
+import { ROOM_FORM_FIELDS } from "../../utils/constants";
 import useForm from "../../hooks/useForm";
 
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
@@ -22,17 +22,17 @@ export const EditRoom = () => {
     }, []);
 
     const { values, onSubmit, onChangeHandler, changeValues } = useForm({
-        [roomFormFields.name]: '',
-        [roomFormFields.price]: '',
-        [roomFormFields.imageUrl]: '',
-        [roomFormFields.location]: '',
-        [roomFormFields.adult]: '',
-        [roomFormFields.child]: '',
-        [roomFormFields.bed]: '',
-        [roomFormFields.bath]: '',
-        [roomFormFields.wifi]: '',
-        [roomFormFields.parking]: '',
-        [roomFormFields.description]: '',
+        [ROOM_FORM_FIELDS.NAME]: '',
+        [ROOM_FORM_FIELDS.PRICE]: '',
+        [ROOM_FORM_FIELDS.IMAGE_URL]: '',
+        [ROOM_FORM_FIELDS.LOCATION]: '',
+        [ROOM_FORM_FIELDS.ADULT]: '',
+        [ROOM_FORM_FIELDS.CHILD]: '',
+        [ROOM_FORM_FIELDS.BED]: '',
+        [ROOM_FORM_FIELDS.BATH]: '',
+        [ROOM_FORM_FIELDS.WIFI]: '',
+        [ROOM_FORM_FIELDS.PARKING]: '',
+        [ROOM_FORM_FIELDS.DESCRIPTION]: '',
     }, onEditRoomSubmit, roomId);
 
     useEffect(() => {
@@ -68,7 +68,7 @@ export const EditRoom = () => {
                                                     className="form-control"
                                                     id="edit-name"
                                                     placeholder="Property Name"
-                                                    name={roomFormFields.name}
+                                                    name={ROOM_FORM_FIELDS.NAME}
                                                     value={values.name}
                                                     onChange={onChangeHandler}
                                                     data-testid="name"
@@ -83,7 +83,7 @@ export const EditRoom = () => {
                                                     className="form-control"
                                                     id="edit-price"
                                                     placeholder="Price per night"
-                                                    name={roomFormFields.price}
+                                                    name={ROOM_FORM_FIELDS.PRICE}
                                                     value={values.price}
                                                     onChange={onChangeHandler}
                                                     data-testid="price"
@@ -98,7 +98,7 @@ export const EditRoom = () => {
                                                     className="form-control"
                                                     id="edit-imageUrl"
                                                     placeholder="Property image"
-                                                    name={roomFormFields.imageUrl}
+                                                    name={ROOM_FORM_FIELDS.IMAGE_URL}
                                                     value={values.imageUrl}
                                                     onChange={onChangeHandler}
                                                     data-testid="imageUrl"
@@ -113,7 +113,7 @@ export const EditRoom = () => {
                                                     className="form-control"
                                                     id="edit-location"
                                                     placeholder="Property image"
-                                                    name={roomFormFields.location}
+                                                    name={ROOM_FORM_FIELDS.LOCATION}
                                                     value={values.location}
                                                     onChange={onChangeHandler}
                                                     data-testid="location"
@@ -123,7 +123,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.adult} value={values.adult} onChange={onChangeHandler} className="form-select" id="edit-select1" data-testid="adult">
+                                                <select name={ROOM_FORM_FIELDS.ADULT} value={values.adult} onChange={onChangeHandler} className="form-select" id="edit-select1" data-testid="adult">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -134,7 +134,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.child} value={values.child} onChange={onChangeHandler} className="form-select" id="edit-select2" data-testid="child">
+                                                <select name={ROOM_FORM_FIELDS.CHILD} value={values.child} onChange={onChangeHandler} className="form-select" id="edit-select2" data-testid="child">
                                                     <option>0</option>
                                                     <option>1</option>
                                                     <option>2</option>
@@ -146,7 +146,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.bed} value={values.bed} onChange={onChangeHandler} className="form-select" id="edit-select3" data-testid="bed">
+                                                <select name={ROOM_FORM_FIELDS.BED} value={values.bed} onChange={onChangeHandler} className="form-select" id="edit-select3" data-testid="bed">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -157,7 +157,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-md-6">
                                             <div className="form-floating">
-                                                <select name={roomFormFields.bath} value={values.bath} onChange={onChangeHandler} className="form-select" id="edit-select4" data-testid="bath">
+                                                <select name={ROOM_FORM_FIELDS.BATH} value={values.bath} onChange={onChangeHandler} className="form-select" id="edit-select4" data-testid="bath">
                                                     <option>1</option>
                                                     <option>2</option>
                                                     <option>3</option>
@@ -168,7 +168,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="form-floating" >
-                                                <select name={roomFormFields.wifi} value={values.wifi} onChange={onChangeHandler} className="form-select" id="edit-select5" data-testid="wifi">
+                                                <select name={ROOM_FORM_FIELDS.WIFI} value={values.wifi} onChange={onChangeHandler} className="form-select" id="edit-select5" data-testid="wifi">
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
@@ -177,7 +177,7 @@ export const EditRoom = () => {
                                         </div>
                                         <div className="col-6">
                                             <div className="form-floating" >
-                                                <select name={roomFormFields.parking} value={values.parking} onChange={onChangeHandler} className="form-select" id="edit-select6" data-testid="parking">
+                                                <select name={ROOM_FORM_FIELDS.PARKING} value={values.parking} onChange={onChangeHandler} className="form-select" id="edit-select6" data-testid="parking">
                                                     <option>Yes</option>
                                                     <option>No</option>
                                                 </select>
@@ -191,7 +191,7 @@ export const EditRoom = () => {
                                                     placeholder="Special Request"
                                                     id="edit-description"
                                                     style={{ height: 100 }}
-                                                    name={roomFormFields.description}
+                                                    name={ROOM_FORM_FIELDS.DESCRIPTION}
                                                     value={values.description}
                                                     onChange={onChangeHandler}
                                                     data-testid="textarea"

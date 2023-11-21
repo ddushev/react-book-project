@@ -3,23 +3,23 @@
 // Local development server 'http://localhost:3030'
 export const BASE_URL = 'http://localhost:3030';
 
-export const roomFormFields = {
-    name: 'name',
-    price: 'price',
-    imageUrl: 'imageUrl',
-    location: 'location',
-    adult: 'adult',
-    child: 'child',
-    bed: 'bed',
-    bath: 'bath',
-    wifi: 'wifi',
-    parking: 'parking',
-    description: 'description',
-    bookedBy: 'bookedBy',
-    bookedByUsername: 'bookedByUsername',
-    confirmed: 'confirmed',
-    ownerName: 'ownerName',
-    ownerEmail: 'ownerEmail'
+export const ROOM_FORM_FIELDS = {
+    NAME: 'name',
+    PRICE: 'price',
+    IMAGE_URL: 'imageUrl',
+    LOCATION: 'location',
+    ADULT: 'adult',
+    CHILD: 'child',
+    BED: 'bed',
+    BATH: 'bath',
+    WIFI: 'wifi',
+    PARKING: 'parking',
+    DESCRIPTION: 'description',
+    BOOKED_BY: 'bookedBy',
+    BOOKED_BY_USERNAME: 'bookedByUsername',
+    CONFIRMED: 'confirmed',
+    OWNER_NAME: 'ownerName',
+    OWNER_EMAIL: 'ownerEmail'
 }
 
 export const signFormFields = {
