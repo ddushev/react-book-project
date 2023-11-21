@@ -1,3 +1,5 @@
+import { centerLoginFields } from './Login.module.css';
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -48,7 +50,7 @@ export const Login = () => {
                             {authErrors.map(error => <p key={error}>{error}</p>)}
                         </div>
                     }
-                    <div className="col-md-6">
+                    <div className={`col-md-6 ${centerLoginFields}`}>
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
                             <form onSubmit={onSubmit} data-testid="form">
                                 <div className="row g-3">
