@@ -1,3 +1,5 @@
+import { centerRegisterFields } from './Register.module.css';
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -34,7 +36,7 @@ export const Register = () => {
                     </h6>
                 </div>
                 <div className="row g-4">
-                    <div className="col-md-6">
+                    <div className={`col-md-6 ${centerRegisterFields}`}>
                         <div className="wow fadeInUp" data-wow-delay="0.2s">
                             <form onSubmit={onSubmit}>
                                 <div className="row g-3">
