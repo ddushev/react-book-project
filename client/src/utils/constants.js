@@ -31,9 +31,9 @@ export const SIGN_FORM_FIELDS = {
     IMAGE_URL: 'imageUrl',
 }
 
-export const messageFormFields = {
-    message: 'message',
-    roomId: 'roomId',
+export const MESSAGE_FORM_FIELDS = {
+    MESSAGE: 'message',
+    ROOM_ID: 'roomId',
 }
 
 export const searchFields = {

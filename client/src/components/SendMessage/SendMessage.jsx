@@ -4,7 +4,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { useMessageContext } from "../../contexts/MessageContext";
 
 import useForm from "../../hooks/useForm";
-import { messageFormFields } from "../../utils/constants";
+import { MESSAGE_FORM_FIELDS } from "../../utils/constants";
 import { useEffect } from "react";
 
 export const SendMessage = () => {
@@ -20,8 +20,8 @@ export const SendMessage = () => {
     }, []);
 
     const { values, onChangeHandler, onSubmit } = useForm({
-        [messageFormFields.message]: '',
-        [messageFormFields.roomId]: roomId
+        [MESSAGE_FORM_FIELDS.MESSAGE]: '',
+        [MESSAGE_FORM_FIELDS.ROOM_ID]: roomId
     }, onSendMessageSubmit);
 
     return (
@@ -49,7 +49,7 @@ export const SendMessage = () => {
                                                     placeholder="Leave a message here"
                                                     id="message"
                                                     style={{ height: 300 }}
-                                                    name={messageFormFields.message}
+                                                    name={MESSAGE_FORM_FIELDS.MESSAGE}
                                                     onChange={onChangeHandler}
                                                     value={values.message}
                                                 />
@@ -125,7 +125,7 @@ export const SendMessage = () => {
                                                     placeholder="Leave a message here"
                                                     id="message"
                                                     style={{ height: 300 }}
-                                                    name={messageFormFields.message}
+                                                    name={MESSAGE_FORM_FIELDS.MESSAGE}
                                                     onChange={onChangeHandler}
                                                     value={values.message}
                                                 />
