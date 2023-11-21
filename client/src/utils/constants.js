@@ -22,13 +22,13 @@ export const ROOM_FORM_FIELDS = {
     OWNER_EMAIL: 'ownerEmail'
 }
 
-export const signFormFields = {
-    firstName: 'firstName',
-    lastName: 'lastName',
-    email: 'email',
-    password: 'password',
-    repeatPassword: 'repeatPassword',
-    imageUrl: 'imageUrl',
+export const SIGN_FORM_FIELDS = {
+    FIRST_NAME: 'firstName',
+    LAST_NAME: 'lastName',
+    EMAIL: 'email',
+    PASSWORD: 'password',
+    REPEAT_PASSWORD: 'repeatPassword',
+    IMAGE_URL: 'imageUrl',
 }
 
 export const messageFormFields = {

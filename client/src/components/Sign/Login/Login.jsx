@@ -2,15 +2,15 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useAuthContext } from "../../../contexts/AuthContext";
-import { signFormFields } from "../../../utils/constants";
+import { SIGN_FORM_FIELDS } from "../../../utils/constants";
 import useForm from "../../../hooks/useForm";
 
 
 export const Login = () => {
     const { onLoginSubmit, authErrors, setAuthErrors } = useAuthContext();
     const { values, onChangeHandler, onSubmit } = useForm({
-        [signFormFields.email]: '',
-        [signFormFields.password]: '',
+        [SIGN_FORM_FIELDS.EMAIL]: '',
+        [SIGN_FORM_FIELDS.PASSWORD]: '',
     }, onLoginSubmit);
 
     useEffect(() => {
@@ -59,7 +59,7 @@ export const Login = () => {
                                                 className="form-control"
                                                 id="email"
                                                 placeholder="Email"
-                                                name={signFormFields.email}
+                                                name={SIGN_FORM_FIELDS.EMAIL}
                                                 value={values.email}
                                                 onChange={onChangeHandler}
                                                 data-testid="email"
@@ -74,7 +74,7 @@ export const Login = () => {
                                                 className="form-control"
                                                 id="password"
                                                 placeholder="Password"
-                                                name={signFormFields.password}
+                                                name={SIGN_FORM_FIELDS.PASSWORD}
                                                 value={values.password}
                                                 onChange={onChangeHandler}
                                                 data-testid="password"
