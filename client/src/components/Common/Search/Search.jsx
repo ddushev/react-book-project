@@ -3,7 +3,7 @@ import "./Search.css";
 import { useSearchParams } from "react-router-dom";
 
 import { useRoomContext } from "../../../contexts/RoomContext";
-import { searchFields } from "../../../utils/constants";
+import { SEARCH_FIELDS } from "../../../utils/constants";
 import useForm from "../../../hooks/useForm";
 
 export const Search = () => {
@@ -16,10 +16,10 @@ export const Search = () => {
     const child = searchParams.get('child') ? searchParams.get('child') : '0';
 
     const { values, onChangeHandler, onSubmit } = useForm({
-        [searchFields.location]: location,
-        [searchFields.price]: price,
-        [searchFields.adult]: adult,
-        [searchFields.child]: child,
+        [SEARCH_FIELDS.LOCATION]: location,
+        [SEARCH_FIELDS.PRICE]: price,
+        [SEARCH_FIELDS.ADULT]: adult,
+        [SEARCH_FIELDS.CHILD]: child,
     }, onRoomSearchClick);
     return (
         <div
@@ -38,7 +38,7 @@ export const Search = () => {
                                             className="form-control"
                                             id="search-location"
                                             placeholder="Property location"
-                                            name={searchFields.location}
+                                            name={SEARCH_FIELDS.LOCATION}
                                             value={values.location}
                                             onChange={onChangeHandler}
                                         />
@@ -52,7 +52,7 @@ export const Search = () => {
                                             className="form-control"
                                             id="search-price"
                                             placeholder="Price per night"
-                                            name={searchFields.price}
+                                            name={SEARCH_FIELDS.PRICE}
                                             value={values.price}
                                             onChange={onChangeHandler}
                                         />
@@ -61,7 +61,7 @@ export const Search = () => {
                                 </div>
                                 <div className="col-md-3">
                                     <div className="form-floating">
-                                        <select name={searchFields.adult}
+                                        <select name={SEARCH_FIELDS.ADULT}
                                             value={values.adult}
                                             onChange={onChangeHandler}
                                             className="form-select"
@@ -78,7 +78,7 @@ export const Search = () => {
                                 </div>
                                 <div className="col-md-3">
                                     <div className="form-floating">
-                                        <select name={searchFields.child}
+                                        <select name={SEARCH_FIELDS.CHILD}
                                             value={values.child}
                                             onChange={onChangeHandler}
                                             className="form-select"

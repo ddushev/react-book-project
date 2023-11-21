@@ -36,9 +36,9 @@ export const MESSAGE_FORM_FIELDS = {
     ROOM_ID: 'roomId',
 }
 
-export const searchFields = {
-    location: 'location',
-    price: 'price',
-    adult: 'adult',
-    child: 'child',
+export const SEARCH_FIELDS = {
+    LOCATION: 'location',
+    PRICE: 'price',
+    ADULT: 'adult',
+    CHILD: 'child',
 }
