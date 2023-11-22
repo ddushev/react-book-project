@@ -38,7 +38,7 @@ export const RoomDetails = () => {
                     </div>
                     <div className="p-4 mt-2 room-details">
                         <div className="d-flex justify-content-between mb-3">
-                            <h5 className="mb-0">{roomData?.name} Details</h5>
+                            <h5 className="mb-0">{roomData?.name} details</h5>
                             <h5 className="mb-0"><i className="fas fa-map-marker-alt text-primary me-2" />{roomData?.location}</h5>
                         </div>
                         <div className="d-flex mb-3">
