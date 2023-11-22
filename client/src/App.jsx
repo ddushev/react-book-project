@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom"
 
 import { AuthContextProvider } from "./contexts/AuthContext"
 import { RoomContextProvider } from "./contexts/RoomContext"
+import { MessageContextProvider } from "./contexts/MessageContext"
 
 
 import { GuestRouteGuard } from "./components/Common/GuestRouteGuard/GuestRouteGuard"
@@ -24,7 +25,6 @@ import { Logout } from "./components/Logout/Logout"
 import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
-import { MessageContextProvider } from "./contexts/MessageContext"
 
 
 

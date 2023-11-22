@@ -3,6 +3,10 @@
 // Local development server 'http://localhost:3030'
 export const BASE_URL = 'http://localhost:3030';
 
+export const WEATHER_URL = 'http://dataservice.accuweather.com';
+
+export const WEATHER_API_KEY = 'YPZiA19iC0t8HSZ7s2G66AvCWwU5omhK';
+
 export const ROOM_FORM_FIELDS = {
     NAME: 'name',
     PRICE: 'price',

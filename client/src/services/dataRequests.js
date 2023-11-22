@@ -1,5 +1,5 @@
-import { requestFactory } from './api';
-import { BASE_URL } from "../utils/constants"
+import { requestFactory } from './dataApi';
+import { BASE_URL } from "../utils/constants";
 
 export function dataFactory(token, userId) {
     const api = requestFactory(token, userId);

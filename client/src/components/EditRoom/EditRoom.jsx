@@ -3,7 +3,7 @@ import { useParams } from "react-router";
 
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
-import { dataFactory } from "../../services/requests";
+import { dataFactory } from "../../services/dataRequests";
 import { ROOM_FORM_FIELDS } from "../../utils/constants";
 import useForm from "../../hooks/useForm";
 

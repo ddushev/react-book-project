@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { createContext, useContext, useState } from "react";
 
-import { dataFactory } from "../services/requests"
+import { dataFactory } from "../services/dataRequests"
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { errorParser } from "../utils/errorParser";
 import { validateRegister } from "../utils/validateRegister";
