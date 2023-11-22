@@ -38,7 +38,7 @@ export const RoomDetails = () => {
                     </div>
                     <div className="p-4 mt-2 room-details">
                         <div className="d-flex justify-content-between mb-3">
-                            <h5 className="mb-0">{roomData?.name}</h5>
+                            <h5 className="mb-0">{roomData?.name} Details</h5>
                             <h5 className="mb-0"><i className="fas fa-map-marker-alt text-primary me-2" />{roomData?.location}</h5>
                         </div>
                         <div className="d-flex mb-3">
@@ -75,15 +75,19 @@ export const RoomDetails = () => {
 
 
                         </div>
-                        <WeatherDetails location={roomData?.location}/>
+                        <WeatherDetails location={roomData?.location} />
                         <div className="text-body mb-3 details-description">
                             {(locationPathname == `/available-rooms/${roomId}/details` ||
                                 locationPathname == `/reservation-confirmed/${roomId}`) &&
-                                roomData?.description
+                                <>
+                                    <h5>Description</h5>
+                                    {roomData?.description}
+                                </>
                             }
 
                             {locationPathname == `/booking-confirmation/${roomId}` &&
                                 <>
+                                    <h5>Booking confirmation</h5>
                                     <p>Dear {username},</p>
                                     <p>Congratulations! Your confirmation has been successfully processed, and the reservation for <span className="contact-person">{roomData?.bookedByUsername}</span> has been confirmed. Please ensure all arrangements are in order to provide a seamless experience for our guest. If you have any questions or need assistance, feel free to reach out. Thank you for being a valued host.</p>
                                     <p>Warm regards,</p>
@@ -91,7 +95,8 @@ export const RoomDetails = () => {
                                 </>
                             }
                             {locationPathname == `/pending-confirmation/${roomId}` &&
-                                <>
+                                <>  
+                                    <h5>Pending confirmation</h5>    
                                     <p>Dear {username},</p>
                                     <p>Thank you for your booking! Your request has been received, and we are currently liaising with the host <span className="contact-person">{roomData?.ownerName} </span> to confirm your reservation. Please allow us a short period for confirmation, and we'll promptly update you once everything is finalized. Your patience is greatly appreciated.</p>
                                     <p>Best regards,</p>
@@ -179,7 +184,7 @@ export const RoomDetails = () => {
             </div>
             {
                 roomMessages?.length > 0 ?
-                    <MessagesCatalog roomMessages={roomMessages} roomData={roomData}/> :
+                    <MessagesCatalog roomMessages={roomMessages} roomData={roomData} /> :
                     null
             }
         </>
