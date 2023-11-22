@@ -10,6 +10,7 @@ import { useMessageContext } from "../../contexts/MessageContext";
 import { Search } from "../Common/Search/Search";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { MessagesCatalog } from "../MessagesCatalog/MessagesCatalog";
+import { WeatherDetails } from "./WeatherDetails/WeatherDetails";
 
 
 export const RoomDetails = () => {
@@ -74,6 +75,7 @@ export const RoomDetails = () => {
 
 
                         </div>
+                        <WeatherDetails location={roomData?.location}/>
                         <div className="text-body mb-3 details-description">
                             {(locationPathname == `/available-rooms/${roomId}/details` ||
                                 locationPathname == `/reservation-confirmed/${roomId}`) &&

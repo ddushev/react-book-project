@@ -8,9 +8,3 @@ export async function getLocationKey(location) {
 export async function getLocationForecast(locationKey) {
     return api.get(`${WEATHER_URL}/forecasts/v1/daily/5day/${locationKey}?apikey=${WEATHER_API_KEY}`);
 }
-
-window.getLocationKey = getLocationKey;
-window.getLocationForecast = getLocationForecast;
-
-
-
