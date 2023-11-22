@@ -1354,7 +1354,7 @@
                 "parking": "No",
                 "description": "This cozy studio, nestled in a serene neighborhood, is a small yet inviting space designed for ultimate comfort. With warm decor, ample natural light, and thoughtful details, it offers a perfect retreat for those seeking a snug and intimate atmosphere.",
                 "bookedBy": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "bookedByUsername": "Daniel2 Dushev2",
+                "bookedByUsername": "Maria Georgieva",
                 "confirmed": true,
                 "ownerName": "Daniel Dushev",
                 "ownerEmail": "danieldyshew@gmail.com",
@@ -1419,7 +1419,7 @@
                 "bookedBy": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "bookedByUsername": 'Daniel Dushev',
                 "confirmed": true,
-                "ownerName": "Daniel2 Dushev2",
+                "ownerName": "Maria Georgieva",
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698520457256,
                 "_id": "72554f24-e650-4837-8631-84518fcfa7d4"
@@ -1439,7 +1439,7 @@
                 "bookedBy": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "bookedByUsername": 'Daniel Dushev',
                 "confirmed": false,
-                "ownerName": "Daniel2 Dushev2",
+                "ownerName": "Maria Georgieva",
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698520651499,
                 "_id": "45300aa5-d6cf-4267-b353-1850873c493d"
@@ -1460,7 +1460,7 @@
                 "bookedBy": false,
                 "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Daniel2 Dushev2",
+                "ownerName": "Maria Georgieva",
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e6ef"
@@ -1481,7 +1481,7 @@
                 "bookedBy": false,
                 "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Daniel2 Dushev2",
+                "ownerName": "Maria Georgieva",
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e7fh"
@@ -1502,7 +1502,7 @@
                 "bookedBy": false,
                 "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Daniel2 Dushev2",
+                "ownerName": "Maria Georgieva",
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e8gi"
@@ -1523,7 +1523,7 @@
                 "bookedBy": false,
                 "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Daniel2 Dushev2",
+                "ownerName": "Maria Georgieva",
                 "ownerEmail": "danieldyshew2@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e0hj"
