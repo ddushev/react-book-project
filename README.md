@@ -55,7 +55,7 @@ ReactBook is a Singe Page Application  that allows users to register login and l
    - The requests.js uses these functions to build all endpoints needed to work with the available resources.
 6. Styling
    - The app uses Bootstrap which is located in the public folder.
-   - There are also components that have additional CSS written and placed and loaded in the component itself e.g Header, Footer, Carousel, RoomDetails, MessagesCatalog  etc.
+   - Most of the components have additional CSS in the respective component folder
 7. Testing
    - Several components and hooks are tested using Vitest and React testing library (Header, EditRoom, RoomCard, MessageCard and useForm hook)
    - Run npm run test to execute tests
