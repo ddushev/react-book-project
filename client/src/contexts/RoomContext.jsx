@@ -73,7 +73,7 @@ export const RoomContextProvider = ({ children }) => {
             e.preventDefault();
             await data.deleteRoom(roomId);
             setRooms(state => state.filter(room => room._id !== roomId));
-            navigate('/available-rooms');
+            navigate('/my-published-rooms');
         } catch (errors) {
             console.error(errors.message);
         }
