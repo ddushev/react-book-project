@@ -1420,7 +1420,7 @@
                 "bookedByUsername": 'Daniel Dushev',
                 "confirmed": true,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "danieldyshew2@gmail.com",
+                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698520457256,
                 "_id": "72554f24-e650-4837-8631-84518fcfa7d4"
             },
@@ -1440,7 +1440,7 @@
                 "bookedByUsername": 'Daniel Dushev',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "danieldyshew2@gmail.com",
+                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698520651499,
                 "_id": "45300aa5-d6cf-4267-b353-1850873c493d"
             },
@@ -1461,7 +1461,7 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "danieldyshew2@gmail.com",
+                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e6ef"
             },
@@ -1482,7 +1482,7 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "danieldyshew2@gmail.com",
+                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e7fh"
             },
@@ -1503,7 +1503,7 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "danieldyshew2@gmail.com",
+                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e8gi"
             },
@@ -1524,7 +1524,7 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "danieldyshew2@gmail.com",
+                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e0hj"
             },
