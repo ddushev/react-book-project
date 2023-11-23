@@ -8,8 +8,8 @@ This is not a real-world app and you should not disclose personal information an
 # To install locally
 1. Clone the repo locally.
 2. Open the server folder in the terminal and type "node server". Don't close the terminal just minimize it and leave the server working.
-3. Open the client folder and type "npm install" to install all dependencies.
-4. In the client folder in the terminal type "npm run dev".
+3. Open the client folder in another terminal and type "npm install" to install all dependencies.
+4. In the terminal with the client folder type "npm run dev".
 5. Open the app at the address pointed out - most likely that would be "Local:   http://127.0.0.1:5173/"
 
 # Overview
