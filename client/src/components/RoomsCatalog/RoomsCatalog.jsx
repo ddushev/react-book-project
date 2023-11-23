@@ -5,7 +5,7 @@ import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
 
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
-import { RoomCard } from "../RoomCard/RoomCard";
+import { RoomCard } from "./RoomCard/RoomCard";
 import { Search } from "../Common/Search/Search";
 
 export const RoomsCatalog = () => {

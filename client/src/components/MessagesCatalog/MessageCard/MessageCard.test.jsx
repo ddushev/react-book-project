@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { render, screen } from '@testing-library/react';
 import { beforeEach } from 'vitest';
 
-import { AuthContext } from '../../contexts/AuthContext';
+import { AuthContext } from '../../../contexts/AuthContext';
 
 import { MessageCard } from './MessageCard';
 

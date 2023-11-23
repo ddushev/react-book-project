@@ -1,6 +1,6 @@
 import './MessageCard.css'
 
-import { useAuthContext } from '../../contexts/AuthContext';
+import { useAuthContext } from '../../../contexts/AuthContext';
 
 export const MessageCard = function ({
     message,

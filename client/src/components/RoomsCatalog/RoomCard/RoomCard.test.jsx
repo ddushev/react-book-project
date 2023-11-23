@@ -5,7 +5,7 @@ import { beforeEach } from "vitest";
 import { RoomCard } from "./RoomCard";
 
 // Mock the useRoomContext hook
-vi.mock('../../contexts/RoomContext', () => ({
+vi.mock('../../../contexts/RoomContext', () => ({
     useRoomContext: () => ({
         onBookRoomInteract: vi.fn(),
         onConfirmRoomClick: vi.fn(),
