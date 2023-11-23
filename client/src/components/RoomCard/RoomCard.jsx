@@ -66,7 +66,7 @@ export const RoomCard = ({
     }, [roomData?.bookedBy, roomData?.confirmed]);
 
     return (
-        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${Math.random()}s`}>
+        <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`0s`}>
             <div className="shadow rounded overflow-hidden">
                 {
                     locationPathname == '/my-bookings' || locationPathname == '/my-published-rooms' ?
