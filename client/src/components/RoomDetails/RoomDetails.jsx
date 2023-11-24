@@ -22,7 +22,6 @@ export const RoomDetails = () => {
     const { getRoomFromState, onDeleteRoomClick, onBookRoomInteract } = useRoomContext();
     const { getRoomMessages } = useMessageContext();
     const roomData = getRoomFromState(roomId);
-
     useEffect(() => {
         getRoomMessages(roomId)
             .then(data => setRoomMessages(data));
