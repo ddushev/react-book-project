@@ -1,4 +1,5 @@
-import { Navigate, Outlet, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { useRoomContext } from "../../../contexts/RoomContext";
@@ -8,9 +9,14 @@ export function RoomOwnerGuard() {
     const { userId } = useAuthContext();
     const { getRoomFromState } = useRoomContext();
     const selectedRoom = getRoomFromState(roomId);
-    if (selectedRoom?._ownerId != userId) {
-        return <Navigate to={`/available-rooms/${roomId}/details`} />
-    }
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (selectedRoom?._ownerId != userId) {
+            return navigate(-1);
+        }
+    }, [selectedRoom, userId]);
+
 
     return <Outlet />
 }

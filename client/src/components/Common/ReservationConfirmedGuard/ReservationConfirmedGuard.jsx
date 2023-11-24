@@ -1,7 +1,7 @@
+import { useEffect } from "react";
 import {  Outlet, useNavigate, useParams } from "react-router-dom";
 
 import { useRoomContext } from "../../../contexts/RoomContext";
-import { useEffect } from "react";
 
 export function ReservationConfirmedGuard() {
     const { roomId } = useParams();
@@ -11,7 +11,7 @@ export function ReservationConfirmedGuard() {
 
     useEffect(() => {
         if (selectedRoom?.bookedBy) {
-            return navigate(-2);
+            return navigate(-1);
         }
     }, [selectedRoom]);
 
