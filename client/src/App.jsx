@@ -9,6 +9,7 @@ import { GuestRouteGuard } from "./components/Common/GuestRouteGuard/GuestRouteG
 import { UserRouteGuard } from "./components/Common/UserRouteGuard/UserRouteGuard"
 import { RoomOwnerGuard } from "./components/Common/RoomOwnerGuard/RoomOwnerGuard"
 import { NotRoomOwnerGuard } from "./components/Common/NotRoomOwnerGuard/NotRoomOwnerGuard"
+import { ReservationConfirmedGuard } from "./components/Common/ReservationConfirmedGuard/ReservationConfirmedGuard"
 
 import { Header } from "./components/Header/Header"
 import { Home } from "./components/Home/Home"
@@ -39,7 +40,9 @@ function App() {
                             <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/available-rooms" element={<RoomsCatalog />} />
-                            <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
+                            <Route element={<ReservationConfirmedGuard />}>
+                                <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
+                            </Route>
 
                             <Route element={<UserRouteGuard />}>
                                 <Route path="/my-published-rooms" element={<RoomsCatalog />} />
