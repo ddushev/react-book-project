@@ -11,7 +11,7 @@ export function ReservationConfirmedGuard() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (!selectedRoom?.confirmed) {
+        if (selectedRoom?.bookedBy) {
             return navigate(-2);
         }
     }, [location.pathname, selectedRoom]);
