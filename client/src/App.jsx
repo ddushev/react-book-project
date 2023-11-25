@@ -28,6 +28,7 @@ import { Logout } from "./components/Logout/Logout"
 import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
+import { RoomBookedOrConfirmedGuard } from "./components/Common/RoomBookedOrConfirmedGuard/RoomBookedOrConfirmedGuard"
 
 
 
@@ -56,8 +57,12 @@ function App() {
                                 <Route path="/logout" element={<Logout />} />
 
                                 <Route element={<RoomOwnerGuard />}>
-                                    <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
-                                    <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
+                                    <Route element={<RoomBookedOrConfirmedGuard />}>
+                                        <Route path="/available-rooms/:roomId/edit" element={<EditRoom />} />
+                                    </Route>
+                                    <Route element={<RoomNotBookedOrIsConfirmedGuard />}>
+                                        <Route path="/booking-confirmation/:roomId" element={<RoomDetails />} />
+                                    </Route>
                                     <Route element={<RoomNotConfirmedGuard />}>
                                         <Route path="/reservation-confirmed/:roomId/send-message-to-guest" element={<SendMessage />} />
                                     </Route>
