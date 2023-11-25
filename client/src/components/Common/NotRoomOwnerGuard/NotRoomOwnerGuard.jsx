@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useParams } from "react-router-dom";
+import { Outlet, useNavigate, useParams } from "react-router-dom";
 
 import { useAuthContext } from "../../../contexts/AuthContext";
 import { useRoomContext } from "../../../contexts/RoomContext";
@@ -8,9 +8,12 @@ export function NotRoomOwnerGuard() {
     const { userId } = useAuthContext();
     const { getRoomFromState } = useRoomContext();
     const selectedRoom = getRoomFromState(roomId);
+    const navigate = useNavigate();
+
     if (selectedRoom?._ownerId == userId) {
-        return <Navigate to={`/available-rooms/${roomId}/details`} />
+        return navigate(-1);
     }
+
 
     return <Outlet />
 }
