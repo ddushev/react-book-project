@@ -9,7 +9,9 @@ import { GuestRouteGuard } from "./components/Common/GuestRouteGuard/GuestRouteG
 import { UserRouteGuard } from "./components/Common/UserRouteGuard/UserRouteGuard"
 import { RoomOwnerGuard } from "./components/Common/RoomOwnerGuard/RoomOwnerGuard"
 import { NotRoomOwnerGuard } from "./components/Common/NotRoomOwnerGuard/NotRoomOwnerGuard"
-import { RoomBookedGuard } from "./components/Common/RoomBookedGuard/RoomBookedGuard"
+import { RoomNotBookedOrIsConfirmedGuard } from "./components/Common/RoomNotBookedOrIsConfirmedGuard/RoomNotBookedOrIsConfirmedGuard"
+import { RoomNotConfirmedGuard } from "./components/Common/RoomNotConfirmedGuard/RoomNotConfirmedGuard"
+import { RoomBookedAndOwnerGuard } from "./components/Common/RoomBookedAndOwnerGuard/RoomBookedAndOwnerGuard"
 
 import { Header } from "./components/Header/Header"
 import { Home } from "./components/Home/Home"
@@ -26,7 +28,6 @@ import { Logout } from "./components/Logout/Logout"
 import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
-import { RoomNotConfirmedGuard } from "./components/Common/RoomNotConfirmedGuard/RoomNotConfirmedGuard"
 
 
 
@@ -41,7 +42,7 @@ function App() {
                             <Route path="/" element={<Home />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/available-rooms" element={<RoomsCatalog />} />
-                            <Route element={<RoomBookedGuard />}>
+                            <Route element={<RoomBookedAndOwnerGuard />}>
                                 <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
                             </Route>
 
@@ -63,7 +64,9 @@ function App() {
                                 </Route>
 
                                 <Route element={<NotRoomOwnerGuard />}>
-                                    <Route path="/pending-confirmation/:roomId" element={<RoomDetails />} />
+                                    <Route element={<RoomNotBookedOrIsConfirmedGuard />}>
+                                        <Route path="/pending-confirmation/:roomId" element={<RoomDetails />} />
+                                    </Route>
                                     <Route element={<RoomNotConfirmedGuard />}>
                                         <Route path="/reservation-confirmed/:roomId/send-message-to-host" element={<SendMessage />} />
                                     </Route>

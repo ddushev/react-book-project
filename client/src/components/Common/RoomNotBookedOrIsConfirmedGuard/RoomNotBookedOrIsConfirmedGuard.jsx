@@ -4,7 +4,7 @@ import { Outlet, useNavigate, useParams } from "react-router-dom";
 import { useRoomContext } from "../../../contexts/RoomContext";
 import { useAuthContext } from "../../../contexts/AuthContext";
 
-export function RoomBookedGuard() {
+export function RoomNotBookedOrIsConfirmedGuard() {
     const { roomId } = useParams();
     const { userId } = useAuthContext();
     const { getRoomFromState } = useRoomContext();
@@ -13,7 +13,7 @@ export function RoomBookedGuard() {
 
 
     useEffect(() => {
-        if (selectedRoom?.bookedBy && selectedRoom?._ownerId == userId) {
+        if (!selectedRoom?.bookedBy || selectedRoom?.confirmed) {
             return navigate(-1);
         }
     }, [selectedRoom]);
