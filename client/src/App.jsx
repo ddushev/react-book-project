@@ -26,6 +26,7 @@ import { Logout } from "./components/Logout/Logout"
 import { RoomDetails } from "./components/RoomDetails/RoomDetails"
 import { EditRoom } from "./components/EditRoom/EditRoom"
 import { NotFound } from "./components/NotFound/NotFound"
+import { RoomNotConfirmedGuard } from "./components/Common/RoomNotConfirmedGuard/RoomNotConfirmedGuard"
 
 
 
@@ -48,7 +49,9 @@ function App() {
                                 <Route path="/my-published-rooms" element={<RoomsCatalog />} />
                                 <Route path="/my-bookings" element={<RoomsCatalog />} />
                                 <Route path="/add-room" element={<AddRoom />} />
-                                <Route path="/reservation-confirmed/:roomId" element={<RoomDetails />} />
+                                <Route element={<RoomNotConfirmedGuard />}>
+                                    <Route path="/reservation-confirmed/:roomId" element={<RoomDetails />} />
+                                </Route>
                                 <Route path="/logout" element={<Logout />} />
 
                                 <Route element={<RoomOwnerGuard />}>
