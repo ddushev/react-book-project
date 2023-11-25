@@ -10,9 +10,9 @@ export function NotRoomOwnerGuard() {
     const { getRoomFromState } = useRoomContext();
     const selectedRoom = getRoomFromState(roomId);
     const navigate = useNavigate();
-
+    
     useEffect(() => {
-        if (selectedRoom?._ownerId != userId) {
+        if (selectedRoom?._ownerId == userId) {
             return navigate(-1);
         }
     }, [selectedRoom, userId]);
