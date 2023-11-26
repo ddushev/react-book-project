@@ -69,6 +69,8 @@ export function dataFactory(token, userId) {
         createMessage,
         getAllMessages,
         getMessagesPerRoom,
+        getRoomWithBookerDetails,
+        getRoomWithOwnerDetails,
         login,
         register,
         logout
