@@ -7,7 +7,7 @@ import { EditRoom } from "./EditRoom";
 
 
 // Mock the dataFactory and data methods
-vi.mock('../../services/requests', () => ({
+vi.mock('../../services/dataRequests', () => ({
   dataFactory: () => ({
     getRoom: () => Promise.resolve({}),
   }),

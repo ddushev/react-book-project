@@ -5,8 +5,8 @@ export const BASE_URL = 'http://localhost:3030';
 
 export const WEATHER_URL = 'http://dataservice.accuweather.com';
 
-// export const WEATHER_API_KEY = 'YPZiA19iC0t8HSZ7s2G66AvCWwU5omhK'; //danieldyshew@gmail.com
-export const WEATHER_API_KEY = '9NDqTQaNpkDFGIp2Ai9YOliy8UNTwoMn'; //daniel.dushev2@gmail.com
+// export const WEATHER_API_KEY = 'YPZiA19iC0t8HSZ7s2G66AvCWwU5omhK'; //danieldyshew@gmail.com acc used in firebase depl
+export const WEATHER_API_KEY = '9NDqTQaNpkDFGIp2Ai9YOliy8UNTwoMn'; //daniel.dushev2@gmail.com acc used in local env and github repo
 
 export const ROOM_FORM_FIELDS = {
     NAME: 'name',
@@ -24,7 +24,6 @@ export const ROOM_FORM_FIELDS = {
     BOOKED_BY_USERNAME: 'bookedByUsername',
     CONFIRMED: 'confirmed',
     OWNER_NAME: 'ownerName',
-    OWNER_EMAIL: 'ownerEmail'
 }
 
 export const SIGN_FORM_FIELDS = {

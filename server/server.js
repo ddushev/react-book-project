@@ -1357,7 +1357,6 @@
                 "bookedByUsername": "Maria Georgieva",
                 "confirmed": true,
                 "ownerName": "Daniel Dushev",
-                "ownerEmail": "danieldyshew@gmail.com",
                 "_createdOn": 1698519859107,
                 "_id": "941651bc-70d9-4157-afeb-aadcdd352c17"
             },
@@ -1378,7 +1377,6 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Daniel Dushev",
-                "ownerEmail": "danieldyshew@gmail.com",
                 "_createdOn": 1698520140080,
                 "_id": "c16473b1-d21b-46e8-a5d9-b4ffbc14e4b2"
             },
@@ -1399,7 +1397,6 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Daniel Dushev",
-                "ownerEmail": "danieldyshew@gmail.com",
                 "_createdOn": 1698835718365,
                 "_id": "92733f22-9486-4fa5-90cc-28804a96d2f1"
             },
@@ -1420,7 +1417,6 @@
                 "bookedByUsername": 'Daniel Dushev',
                 "confirmed": true,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698520457256,
                 "_id": "72554f24-e650-4837-8631-84518fcfa7d4"
             },
@@ -1440,7 +1436,6 @@
                 "bookedByUsername": 'Daniel Dushev',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698520651499,
                 "_id": "45300aa5-d6cf-4267-b353-1850873c493d"
             },
@@ -1461,7 +1456,6 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e6ef"
             },
@@ -1482,7 +1476,6 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e7fh"
             },
@@ -1503,7 +1496,6 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e8gi"
             },
@@ -1524,7 +1516,6 @@
                 "bookedByUsername": '',
                 "confirmed": false,
                 "ownerName": "Maria Georgieva",
-                "ownerEmail": "maria@gmail.com",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e0hj"
             },

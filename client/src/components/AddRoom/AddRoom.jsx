@@ -33,7 +33,6 @@ export const AddRoom = () => {
         [ROOM_FORM_FIELDS.BOOKED_BY_USERNAME]: '',
         [ROOM_FORM_FIELDS.CONFIRMED]: false,
         [ROOM_FORM_FIELDS.OWNER_NAME]: username,
-        [ROOM_FORM_FIELDS.OWNER_EMAIL]: userEmail,
     }, onAddRoomSubmit);
     return (
         <>

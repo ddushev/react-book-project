@@ -5,6 +5,13 @@ This is not a real-world app and you should not disclose personal information an
 - Client hosted on Firebase - https://reactbook-app.firebaseapp.com/
 - Server hosted on Glitch - https://spiky-sudden-digit.glitch.me/data (needs to be awakened if not used in the past 5 minutes)
 
+# To install locally
+1. Clone the repo locally.
+2. Open the server folder in the terminal and type "node server". Don't close the terminal just minimize it and leave the server working.
+3. Open the client folder in another terminal and type "npm install" to install all dependencies.
+4. In the terminal with the client folder type "npm run dev".
+5. Open the app at the address pointed out - most likely that would be "Local:   http://127.0.0.1:5173/"
+
 # Overview
 ReactBook is a Singe Page Application  that allows users to register login and logout into a system. Logged-in users can create/read/update/delete rooms and also book rooms other users have published. After a booking is made the host(user who published it) of that room can either confirm or decline the reservation. In the meantime, the guest(the user who booked it) can also cancel his request. After the booking is confirmed both parties can send messages to each other discussing details for that particular booking. Another functionality of the app is to search for available rooms by certain criteria(location, price per night, or occupancy). Functionalities available for not logged-in users are only to browse and search for available rooms and to register in the app.
 
@@ -23,12 +30,6 @@ ReactBook is a Singe Page Application  that allows users to register login and l
 5. React testing library
 6. Vite
 7. Vitest
-
-# To install locally
-1. Clone the repo locally.
-2. Open the server folder in the terminal and type "node server". Don't close the terminal just minimize it and leave the server working.
-3. Open the client folder in the terminal and type "npm run dev".
-4. Open the app at the address pointed out - most likely that would be "Local:   http://127.0.0.1:5173/"
 
 # Architecture
 1. Project structure

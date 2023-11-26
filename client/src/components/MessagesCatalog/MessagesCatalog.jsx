@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { useAuthContext } from '../../contexts/AuthContext';
 
-import { MessageCard } from '../MessageCard/MessageCard';
+import { MessageCard } from './MessageCard/MessageCard';
 
 export const MessagesCatalog = function ({ roomMessages, roomData }) {
     const { userId } = useAuthContext();

@@ -9,18 +9,18 @@ export const WeatherDetails = ({
 }) => {
     const [locationInfo, setLocationInfo] = useState({});
     useEffect(() => {
-        // const fetchData = async () => {
-        //     try {
-        //         const locationKey = await getLocationKey(location);
-        //         const key = locationKey[0]?.Key;
-        //         if (key) {
-        //             const forecastData = await getLocationForecast(key);
-        //             setLocationInfo(forecastData);
-        //         }
-        //     } catch (errors) {
-        //         console.error(errors.message);
-        //     }
-        // }
+        const fetchData = async () => {
+            try {
+                const locationKey = await getLocationKey(location);
+                const key = locationKey[0]?.Key;
+                if (key) {
+                    const forecastData = await getLocationForecast(key);
+                    setLocationInfo(forecastData);
+                }
+            } catch (errors) {
+                console.error(errors.message);
+            }
+        }
         // fetchData();
         //If API calls are exhausted
         setLocationInfo({

@@ -18,9 +18,9 @@ export const RoomContextProvider = ({ children }) => {
     const navigate = useNavigate();
     useEffect(() => {
         data.getRooms()
-            .then(data => setRooms(Object.values(data)));
+            .then(data => setRooms(Object.values(data)))
+            .catch(errors => console.error(errors.message));
     }, []);
-
     async function onAddRoomSubmit(roomInfo) {
         try {
             validateRoom(roomInfo);
@@ -80,8 +80,17 @@ export const RoomContextProvider = ({ children }) => {
 
     }
 
+    async function getRoom(roomId) {
+        try {
+            const room = await data.getRoom(roomId);
+            return room;
+        } catch (errors) {
+            console.error(errors.message);
+        }
+    }
+
     function getRoomFromState(roomId) {
-        return rooms.find(game => game._id == roomId);
+        return rooms.find(room => room._id == roomId);
     }
 
     async function onRoomSearchClick(searchValues) {
@@ -99,6 +108,7 @@ export const RoomContextProvider = ({ children }) => {
         onBookRoomInteract,
         onConfirmRoomClick,
         onDeleteRoomClick,
+        getRoom,
         getRoomFromState,
         onRoomSearchClick
     }

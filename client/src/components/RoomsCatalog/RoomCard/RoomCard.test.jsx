@@ -5,7 +5,7 @@ import { beforeEach } from "vitest";
 import { RoomCard } from "./RoomCard";
 
 // Mock the useRoomContext hook
-vi.mock('../../contexts/RoomContext', () => ({
+vi.mock('../../../contexts/RoomContext', () => ({
     useRoomContext: () => ({
         onBookRoomInteract: vi.fn(),
         onConfirmRoomClick: vi.fn(),
@@ -30,7 +30,6 @@ describe('RoomCard in available rooms catalog', () => {
         bookedByUsername: "",
         confirmed: false,
         ownerName: "Daniel Dushev",
-        ownerEmail: "danieldyshew@gmail.com",
         _id: "941651bc-70d9-4157-afeb-aadcdd352c17"
     }
     beforeEach(() => {
