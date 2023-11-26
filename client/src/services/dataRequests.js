@@ -37,7 +37,7 @@ export function dataFactory(token, userId) {
         const relations = encodeURIComponent(`author=_ownerId:users`)
         return api.get(`${BASE_URL}/data/messages?where=${match}&load=${relations}`);
     }
-
+    asd
     async function getRoomWithBookerDetails(roomId) {
         const relations = encodeURIComponent(`booker=bookedBy:users`);
         return api.get(`${BASE_URL}/data/rooms/${roomId}&load=${relations}`);
