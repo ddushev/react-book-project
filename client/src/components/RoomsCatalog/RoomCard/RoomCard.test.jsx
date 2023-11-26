@@ -30,7 +30,6 @@ describe('RoomCard in available rooms catalog', () => {
         bookedByUsername: "",
         confirmed: false,
         ownerName: "Daniel Dushev",
-        ownerEmail: "danieldyshew@gmail.com",
         _id: "941651bc-70d9-4157-afeb-aadcdd352c17"
     }
     beforeEach(() => {
