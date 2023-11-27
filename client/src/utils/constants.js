@@ -22,7 +22,6 @@ export const ROOM_FORM_FIELDS = {
     DESCRIPTION: 'description',
     BOOKED_BY: 'bookedBy',
     CONFIRMED: 'confirmed',
-    OWNER_NAME: 'ownerName',
 }
 
 export const SIGN_FORM_FIELDS = {
