@@ -1,9 +1,9 @@
 import { fahrenheitToCelsius } from "../../../../utils/convertFahrenheitToCelsius";
 import { dateFormatter } from "../../../../utils/dateFormatter";
 
-export const DailyWeatherCard = ({ index, dailyForecast }) => {
+export const DailyWeatherCard = ({ dailyForecast }) => {
     return (
-        <div className="d-flex mb-3">
+        <div className="mb-3">
             <small className="border-end me-3 pe-3">
                 <i className="fas fa-calendar-day text-primary me-2" />
                 {dateFormatter(dailyForecast?.Date)}

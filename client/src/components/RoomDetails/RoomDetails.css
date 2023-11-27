@@ -1,4 +1,4 @@
-.room-item {
+/* .room-item {
     display: flex;
     flex-wrap: nowrap;
 }
@@ -21,11 +21,11 @@
 
 .contact-person{ 
     font-weight: bold;
-}
+} */
 
 
 /*  Laptop */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
     .room-item {
         flex-wrap: wrap;
     }
@@ -39,5 +39,30 @@
     .room-img img {
         object-fit: cover;
         width: 100%;
+    }
+} */
+
+.details-location-container {
+    display: flex;
+    justify-content: space-between;
+}
+.weather-img-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+
+    .details-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .weather-img-container, .details-location-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
     }
 }

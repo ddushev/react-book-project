@@ -1,3 +1,5 @@
+import './WeatherDetails.css';
+
 import { useEffect, useState } from "react";
 
 import { getLocationForecast, getLocationKey } from "../../../services/weatherRequests";
@@ -203,19 +205,24 @@ export const WeatherDetails = ({
                 }
             ]
         });
+        // setLocationInfo({});
     }, [location]);
 
     return (
-        locationInfo?.hasOwnProperty('Headline') &&
-        <>
-            <h5>5 Day Forecast</h5>
-            <div className="d-flex mb-3">
-                {locationInfo?.Headline?.Text}
+        locationInfo?.hasOwnProperty('Headline') ?
+            <div className="weather-container">
+                <h5>5 Day Forecast</h5>
+                <div className="mb-3">
+                    {locationInfo?.Headline?.Text}
+                </div>
+                {locationInfo?.DailyForecasts?.map(dailyForecast => <DailyWeatherCard
+                    key={dailyForecast.Date}
+                    dailyForecast={dailyForecast} />)}
+            </div> :
+            <div className="no-weather-container">
+                <h5>Unfortunatelly there is no forecast for the selected location.</h5>
+                <i className="far fa-frown"></i>
             </div>
-            {locationInfo?.DailyForecasts?.map((dailyForecast, index) => <DailyWeatherCard
-                key={dailyForecast.Date}
-                index={index}
-                dailyForecast={dailyForecast} />)}
-        </>
+
     );
 }
