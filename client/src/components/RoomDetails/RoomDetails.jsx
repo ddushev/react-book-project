@@ -25,6 +25,12 @@ export const RoomDetails = () => {
     useEffect(() => {
         getRoomMessages(roomId)
             .then(data => setRoomMessages(data));
+            if (locationPathname == `/booking-confirmation/${roomId}`) {
+
+            }else if (locationPathname == `/pending-confirmation/${roomId}`) {
+
+            }
+            //TODO Add get requests for room with user and booker details
     }, [roomId]);
     return (
         <>
