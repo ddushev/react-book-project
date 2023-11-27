@@ -5,6 +5,11 @@
 .weather-img-container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.room-img img {
+    border-radius: 15px;
 }
 
 .contact-person{ 
@@ -25,7 +30,7 @@
         gap: 10px;
         text-align: center;
     }
-    .confirmation-container {
+    .confirmation-container, .details-description {
         display: flex;
         flex-direction: column;
         text-align: center;
