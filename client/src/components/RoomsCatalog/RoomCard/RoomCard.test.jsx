@@ -27,7 +27,6 @@ describe('RoomCard in available rooms catalog', () => {
         parking: "No",
         description: "This cozy studio...",
         bookedBy: false,
-        bookedByUsername: "",
         confirmed: false,
         ownerName: "Daniel Dushev",
         _id: "941651bc-70d9-4157-afeb-aadcdd352c17"

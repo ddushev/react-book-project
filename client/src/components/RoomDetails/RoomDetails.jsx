@@ -149,7 +149,7 @@ export const RoomDetails = () => {
                             !roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId, bookedByUsername: username }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
+                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
