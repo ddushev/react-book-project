@@ -21,9 +21,7 @@ export const ROOM_FORM_FIELDS = {
     PARKING: 'parking',
     DESCRIPTION: 'description',
     BOOKED_BY: 'bookedBy',
-    BOOKED_BY_USERNAME: 'bookedByUsername',
     CONFIRMED: 'confirmed',
-    OWNER_NAME: 'ownerName',
 }
 
 export const SIGN_FORM_FIELDS = {

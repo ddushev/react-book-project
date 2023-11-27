@@ -102,7 +102,7 @@ export const RoomCard = ({
                                         {currentPageInfo?.firstLink}
                                     </Link>
                                     {currentPageInfo?.secondLink &&
-                                        <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: currentPageInfo?.bookedBy, bookedByUsername: "" }, roomData?._id, currentPageInfo?.secondLinkTo)}
+                                        <Link onClick={() => currentPageInfo?.secondLinkCallback({ ...roomData, bookedBy: currentPageInfo?.bookedBy }, roomData?._id, currentPageInfo?.secondLinkTo)}
                                             className={`btn btn-sm btn-${currentPageInfo?.colorTypeClass} rounded py-2 px-4`}
                                             to={currentPageInfo?.secondLinkTo}>
                                             {currentPageInfo?.secondLink}

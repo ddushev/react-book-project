@@ -18,13 +18,21 @@ export const RoomDetails = () => {
     const { roomId } = useParams();
     const { userId, username } = useAuthContext();
     const [roomMessages, setRoomMessages] = useState([]);
+    const [roomDataWithDetails, setroomDataWithDetails] = useState({});
 
-    const { getRoomFromState, onDeleteRoomClick, onBookRoomInteract } = useRoomContext();
+    const { getRoomFromState, onDeleteRoomClick, onBookRoomInteract, getRoomAndBookerDetails, getRoomAndOwnerDetails } = useRoomContext();
     const { getRoomMessages } = useMessageContext();
     const roomData = getRoomFromState(roomId);
     useEffect(() => {
         getRoomMessages(roomId)
             .then(data => setRoomMessages(data));
+            if (locationPathname == `/booking-confirmation/${roomId}`) {
+                getRoomAndBookerDetails(roomId)
+                    .then(data => setroomDataWithDetails(data));
+            }else if (locationPathname == `/pending-confirmation/${roomId}`) {
+                getRoomAndOwnerDetails(roomId)
+                .then(data => setroomDataWithDetails(data));
+            }
     }, [roomId]);
     return (
         <>
@@ -40,7 +48,7 @@ export const RoomDetails = () => {
                             <>
                                 <h5>Booking confirmation</h5>
                                 <p>Dear {username},</p>
-                                <p>Congratulations! Your confirmation has been successfully processed, and the reservation for <span className="contact-person">{roomData?.bookedByUsername}</span> has been confirmed. Please ensure all arrangements are in order to provide a seamless experience for our guest. If you have any questions or need assistance, feel free to reach out. Thank you for being a valued host.</p>
+                                <p>Congratulations! Your confirmation has been successfully processed, and the reservation for <span className="contact-person">{`${roomDataWithDetails?.booker?.firstName} ${roomDataWithDetails?.booker?.lastName}`}</span> has been confirmed. Please ensure all arrangements are in order to provide a seamless experience for our guest. If you have any questions or need assistance, feel free to reach out. Thank you for being a valued host.</p>
                                 <p>Warm regards,</p>
                                 <p>ReactBook's team</p>
                             </>
@@ -49,7 +57,7 @@ export const RoomDetails = () => {
                             <>
                                 <h5>Pending confirmation</h5>
                                 <p>Dear {username},</p>
-                                <p>Thank you for your booking! Your request has been received, and we are currently liaising with the host <span className="contact-person">{roomData?.ownerName} </span> to confirm your reservation. Please allow us a short period for confirmation, and we'll promptly update you once everything is finalized. Your patience is greatly appreciated.</p>
+                                <p>Thank you for your booking! Your request has been received, and we are currently liaising with the host <span className="contact-person">{`${roomDataWithDetails?.owner?.firstName} ${roomDataWithDetails?.owner?.lastName}`} </span> to confirm your reservation. Please allow us a short period for confirmation, and we'll promptly update you once everything is finalized. Your patience is greatly appreciated.</p>
                                 <p>Best regards,</p>
                                 <p>ReactBook's team</p>
                             </>
@@ -141,7 +149,7 @@ export const RoomDetails = () => {
                             !roomData?.bookedBy &&
 
                             <div className="d-flex justify-content-between">
-                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId, bookedByUsername: username }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
+                                <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
                                 <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">

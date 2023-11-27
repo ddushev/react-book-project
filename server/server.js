@@ -1354,9 +1354,7 @@
                 "parking": "No",
                 "description": "This cozy studio, nestled in a serene neighborhood, is a small yet inviting space designed for ultimate comfort. With warm decor, ample natural light, and thoughtful details, it offers a perfect retreat for those seeking a snug and intimate atmosphere.",
                 "bookedBy": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "bookedByUsername": "Maria Georgieva",
                 "confirmed": true,
-                "ownerName": "Daniel Dushev",
                 "_createdOn": 1698519859107,
                 "_id": "941651bc-70d9-4157-afeb-aadcdd352c17"
             },
@@ -1374,9 +1372,7 @@
                 "parking": "Yes",
                 "description": "The Executive Suite is a luxurious oasis of sophistication and comfort, featuring spacious living and sleeping areas. With its tasteful furnishings, panoramic city views, and exclusive amenities, it offers the perfect blend of style and relaxation for the discerning traveler.",
                 "bookedBy": false,
-                "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Daniel Dushev",
                 "_createdOn": 1698520140080,
                 "_id": "c16473b1-d21b-46e8-a5d9-b4ffbc14e4b2"
             },
@@ -1394,9 +1390,7 @@
                 "parking": "Yes",
                 "description": "The Double Room by the Sea is a serene and enchanting retreat, offering guests a breathtaking view of the ocean's vast expanse. With its cozy ambiance and comfortable amenities, it's the perfect choice for couples seeking a romantic getaway.",
                 "bookedBy": false,
-                "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Daniel Dushev",
                 "_createdOn": 1698835718365,
                 "_id": "92733f22-9486-4fa5-90cc-28804a96d2f1"
             },
@@ -1414,9 +1408,7 @@
                 "parking": "Yes",
                 "description": "The Super Deluxe room is a spacious and well-appointed retreat, designed for a premium and comfortable stay. With modern amenities, elegant decor, and ample space, it provides a lavish experience for those seeking a touch of luxury during their visit.",
                 "bookedBy": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "bookedByUsername": 'Daniel Dushev',
                 "confirmed": true,
-                "ownerName": "Maria Georgieva",
                 "_createdOn": 1698520457256,
                 "_id": "72554f24-e650-4837-8631-84518fcfa7d4"
             },
@@ -1433,9 +1425,7 @@
                 "wifi": "No",
                 "description": "The affordable Single Room is a budget-conscious traveler's ideal choice, offering a comfortable and practical space without sacrificing quality. Compact yet well-furnished, it provides all the essentials for a cozy stay, ensuring a pleasant and cost-effective accommodation experience.",
                 "bookedBy": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "bookedByUsername": 'Daniel Dushev',
                 "confirmed": false,
-                "ownerName": "Maria Georgieva",
                 "_createdOn": 1698520651499,
                 "_id": "45300aa5-d6cf-4267-b353-1850873c493d"
             },
@@ -1453,9 +1443,7 @@
                 "parking": "Yes",
                 "description": "Perched high above the bustling city of Istanbul, our penthouse offers an extraordinary retreat in the heart of this vibrant metropolis. With panoramic views of the Bosphorus, historic landmarks, and the city's dynamic skyline, this lavish penthouse is a sanctuary of luxury.",
                 "bookedBy": false,
-                "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Maria Georgieva",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e6ef"
             },
@@ -1473,9 +1461,7 @@
                 "parking": "Yes",
                 "description": "Enjoy the ultimate convenience with our ski-in, ski-out room, where you can step right onto the slopes from your doorstep. Wake up to breathtaking mountain views and spend your days skiing or snowboarding to your heart's content, all without leaving the comfort of your cozy retreat.",
                 "bookedBy": false,
-                "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Maria Georgieva",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e7fh"
             },
@@ -1493,9 +1479,7 @@
                 "parking": "No",
                 "description": "Step into a world of refined elegance in our Superior Room at the Luxury Hotel on the Isle of Skye. This meticulously designed space invites you to unwind amidst bespoke furnishings, a harmonious palette of muted tones, and subtle textures, creating a haven that effortlessly marries modern comfort with timeless sophistication.",
                 "bookedBy": false,
-                "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Maria Georgieva",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e8gi"
             },
@@ -1513,9 +1497,7 @@
                 "parking": "Yes",
                 "description": "Discover a world of unparalleled luxury and sophistication in our meticulously designed Luxury Room, offering a mesmerizing Eiffel Tower view that unfurls before your eyes. Whether you're unwinding in modern comfort, savoring a glass of champagne, or simply gazing out at the nightly spectacle of the iconic Parisian landmark.",
                 "bookedBy": false,
-                "bookedByUsername": '',
                 "confirmed": false,
-                "ownerName": "Maria Georgieva",
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e0hj"
             },

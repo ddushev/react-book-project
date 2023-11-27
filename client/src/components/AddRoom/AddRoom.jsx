@@ -30,9 +30,7 @@ export const AddRoom = () => {
         [ROOM_FORM_FIELDS.PARKING]: 'Yes',
         [ROOM_FORM_FIELDS.DESCRIPTION]: '',
         [ROOM_FORM_FIELDS.BOOKED_BY]: false,
-        [ROOM_FORM_FIELDS.BOOKED_BY_USERNAME]: '',
         [ROOM_FORM_FIELDS.CONFIRMED]: false,
-        [ROOM_FORM_FIELDS.OWNER_NAME]: username,
     }, onAddRoomSubmit);
     return (
         <>

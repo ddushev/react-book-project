@@ -89,6 +89,24 @@ export const RoomContextProvider = ({ children }) => {
         }
     }
 
+    async function getRoomAndBookerDetails(roomId) {
+        try {
+            const room = await data.getRoomWithBookerDetails(roomId);
+            return room;
+        } catch (errors) {
+            console.error(errors.message);
+        }
+    }
+
+    async function getRoomAndOwnerDetails(roomId) {
+        try {
+            const room = await data.getRoomWithOwnerDetails(roomId);
+            return room;
+        } catch (errors) {
+            console.error(errors.message);
+        }
+    }
+
     function getRoomFromState(roomId) {
         return rooms.find(room => room._id == roomId);
     }
@@ -109,6 +127,8 @@ export const RoomContextProvider = ({ children }) => {
         onConfirmRoomClick,
         onDeleteRoomClick,
         getRoom,
+        getRoomAndBookerDetails,
+        getRoomAndOwnerDetails,
         getRoomFromState,
         onRoomSearchClick
     }
