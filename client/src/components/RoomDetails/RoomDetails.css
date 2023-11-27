@@ -1,47 +1,3 @@
-/* .room-item {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-.room-details {
-    width: 100%;
-    flex: 2 1 auto;
-}
-
-.room-img {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex: 1 0 auto;
-}
-
-.details-description {
-    margin-bottom: 3rem !important;
-}
-
-.contact-person{ 
-    font-weight: bold;
-} */
-
-
-/*  Laptop */
-/* @media (max-width: 1024px) {
-    .room-item {
-        flex-wrap: wrap;
-    }
-
-    .room-img {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .room-img img {
-        object-fit: cover;
-        width: 100%;
-    }
-} */
-
 .details-location-container {
     display: flex;
     justify-content: space-between;
@@ -49,6 +5,10 @@
 .weather-img-container {
     display: flex;
     justify-content: space-between;
+}
+
+.contact-person{ 
+    font-weight: bold;
 }
 
 @media (max-width: 1024px) {
@@ -63,6 +23,11 @@
     .weather-img-container, .details-location-container {
         flex-direction: column;
         gap: 10px;
+        text-align: center;
+    }
+    .confirmation-container {
+        display: flex;
+        flex-direction: column;
         text-align: center;
     }
 }

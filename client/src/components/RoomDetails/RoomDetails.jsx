@@ -40,28 +40,7 @@ export const RoomDetails = () => {
             <Search />
             <div className="room-details wow fadeInUp" data-wow-delay="0s">
                 <div className="room-item shadow rounded overflow-hidden">
-                    {/* <div className="position-relative room-img" >
-                        <img className="img-fluid" src={roomData?.imageUrl} alt="room image" />
-                    </div> */}
                     <div className="p-4 mt-2 room-details">
-                        {locationPathname == `/booking-confirmation/${roomId}` &&
-                            <>
-                                <h5>Booking confirmation</h5>
-                                <p>Dear {username},</p>
-                                <p>Congratulations! Your confirmation has been successfully processed, and the reservation for <span className="contact-person">{`${roomDataWithDetails?.booker?.firstName} ${roomDataWithDetails?.booker?.lastName}`}</span> has been confirmed. Please ensure all arrangements are in order to provide a seamless experience for our guest. If you have any questions or need assistance, feel free to reach out. Thank you for being a valued host.</p>
-                                <p>Warm regards,</p>
-                                <p>ReactBook's team</p>
-                            </>
-                        }
-                        {locationPathname == `/pending-confirmation/${roomId}` &&
-                            <>
-                                <h5>Pending confirmation</h5>
-                                <p>Dear {username},</p>
-                                <p>Thank you for your booking! Your request has been received, and we are currently liaising with the host <span className="contact-person">{`${roomDataWithDetails?.owner?.firstName} ${roomDataWithDetails?.owner?.lastName}`} </span> to confirm your reservation. Please allow us a short period for confirmation, and we'll promptly update you once everything is finalized. Your patience is greatly appreciated.</p>
-                                <p>Best regards,</p>
-                                <p>ReactBook's team</p>
-                            </>
-                        }
                         <div className="details-container">
                             <div className="details-location-container justify-content-between mb-3">
                                 <h5 className="mb-0">{roomData?.name} details</h5>
@@ -114,9 +93,27 @@ export const RoomDetails = () => {
                                     {roomData?.description}
                                 </>
                             }
-
-
                         </div>
+
+                        {locationPathname == `/booking-confirmation/${roomId}` &&
+                            <div className="confirmation-container">
+                                <h5>Booking confirmation</h5>
+                                <p>Dear {username},</p>
+                                <p>Congratulations! Your confirmation has been successfully processed, and the reservation for <span className="contact-person">{`${roomDataWithDetails?.booker?.firstName} ${roomDataWithDetails?.booker?.lastName}`}</span> has been confirmed. Please ensure all arrangements are in order to provide a seamless experience for our guest. If you have any questions or need assistance, feel free to reach out. Thank you for being a valued host.</p>
+                                <p>Warm regards,</p>
+                                <p>ReactBook's team</p>
+                            </div>
+
+                        }
+                        {locationPathname == `/pending-confirmation/${roomId}` &&
+                            <div className="confirmation-container">
+                                <h5>Pending confirmation</h5>
+                                <p>Dear {username},</p>
+                                <p>Thank you for your booking! Your request has been received, and we are currently liaising with the host <span className="contact-person">{`${roomDataWithDetails?.owner?.firstName} ${roomDataWithDetails?.owner?.lastName}`} </span> to confirm your reservation. Please allow us a short period for confirmation, and we'll promptly update you once everything is finalized. Your patience is greatly appreciated.</p>
+                                <p>Best regards,</p>
+                                <p>ReactBook's team</p>
+                            </div>
+                        }
                         {/* Owner buttons on available rooms page before room is booked*/}
                         {
                             userId == roomData?._ownerId &&
@@ -194,7 +191,7 @@ export const RoomDetails = () => {
 
                     </div>
                 </div>
-            </div>
+            </div >
             {
                 roomMessages?.length > 0 ?
                     <MessagesCatalog roomMessages={roomMessages} roomData={roomData} /> :
