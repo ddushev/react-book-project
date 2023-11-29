@@ -1,0 +1,11 @@
+.no-weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.no-weather-container .fa-frown {
+    display: flex;
+    font-size: 100px;
+    color: var(--dark);
+    justify-content: center;
+}

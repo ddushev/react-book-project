@@ -1,43 +1,38 @@
-.room-item {
+.details-location-container {
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: space-between;
 }
-
-.room-details {
-    width: 100%;
-    flex: 2 1 auto;
-}
-
-.room-img {
+.weather-img-container {
     display: flex;
-    text-align: center;
-    justify-content: center;
-    flex: 1 0 auto;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-.details-description {
-    margin-bottom: 3rem !important;
+.room-img img {
+    border-radius: 15px;
 }
 
 .contact-person{ 
     font-weight: bold;
 }
 
-
-/*  Laptop */
 @media (max-width: 1024px) {
-    .room-item {
-        flex-wrap: wrap;
-    }
 
-    .room-img {
+    .details-container {
         display: flex;
-        text-align: center;
+        flex-direction: column;
         justify-content: center;
+        text-align: center;
     }
 
-    .room-img img {
-        object-fit: cover;
-        width: 100%;
+    .weather-img-container, .details-location-container {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    .confirmation-container, .details-description {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 }
