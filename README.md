@@ -63,4 +63,7 @@ ReactBook is a Singe Page Application  that allows users to register login and l
 8. Deployment
     - The server is hosted via Glitch(https://glitch.com/) and can be accessed at: https://spiky-sudden-digit.glitch.me/data. After several minutes of inactivity, it falls asleep.
     - The client is deployed via Firebase(https://firebase.google.com/) and can be access at https://reactbook-app.firebaseapp.com/
+# For refactoring:
+1. Routes and links
+
       
