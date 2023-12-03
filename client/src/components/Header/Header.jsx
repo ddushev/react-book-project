@@ -73,7 +73,7 @@ export const Header = () => {
                                 <NavLink to={PATH.ABOUT} className="nav-item nav-link" activeclassname="active">
                                     About
                                 </NavLink>
-                                <NavLink to="/available-rooms" className="nav-item nav-link" activeclassname="active">
+                                <NavLink to={PATH.AVAILABLE_ROOMS} className="nav-item nav-link" activeclassname="active">
                                     Rooms' Catalog
                                 </NavLink>
                                 {isAuthenticated &&

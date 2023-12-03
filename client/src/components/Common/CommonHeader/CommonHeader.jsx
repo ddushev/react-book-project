@@ -38,7 +38,7 @@ export const CommonHeader = () => {
             page: 'About us'
 
         },
-        "/available-rooms": {
+        [PATH.AVAILABLE_ROOMS]: {
             heading: 'Available Rooms',
             page: 'Published by others'
         },
@@ -99,7 +99,7 @@ export const CommonHeader = () => {
                                 <Link to={PATH.HOME}>Home</Link>
                             </li>
                             <li className="breadcrumb-item">
-                                <Link to="/available-rooms">All Rooms</Link>
+                                <Link to={PATH.AVAILABLE_ROOMS}>All Rooms</Link>
                             </li>
                             <li
                                 className="breadcrumb-item text-white active"

@@ -44,7 +44,7 @@ function App() {
                         <Routes>
                             <Route path={PATH.HOME} element={<Home />} />
                             <Route path={PATH.ABOUT} element={<About />} />
-                            <Route path="/available-rooms" element={<RoomsCatalog />} />
+                            <Route path={PATH.AVAILABLE_ROOMS} element={<RoomsCatalog />} />
                             <Route element={<RoomBookedAndOwnerGuard />}>
                                 <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
                             </Route>

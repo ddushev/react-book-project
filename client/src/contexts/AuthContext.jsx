@@ -5,6 +5,7 @@ import { dataFactory } from "../services/dataRequests"
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { errorParser } from "../utils/errorParser";
 import { validateRegister } from "../utils/validateRegister";
+
 import PATH from "../utils/paths";
 
 
@@ -24,7 +25,7 @@ export const AuthContextProvider = ({
             const loginInfoResponse = await data.login(loginInfo);
             const { password, _createdOn, ...loginData } = loginInfoResponse;
             setAuth(loginData);
-            navigate('/available-rooms');
+            navigate(PATH.AVAILABLE_ROOMS);
         } catch (errors) {
             setAuthErrors(errorParser(errors));
             navigate('/sign-in');
@@ -51,7 +52,7 @@ export const AuthContextProvider = ({
             const registerdInfo = await data.register(registerData)
             const { password, _createdOn, ...registeredData } = registerdInfo;
             setAuth(registeredData);
-            navigate('/available-rooms');
+            navigate(PATH.AVAILABLE_ROOMS);
         } catch (errors) {
             setAuthErrors(errorParser(errors));
             navigate('/sign-up');

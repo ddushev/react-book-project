@@ -2,6 +2,8 @@ import "./Carousel.css";
 
 import { Link } from "react-router-dom";
 
+import PATH from "../../../utils/paths";
+
 export const Carousel = () => {
     return (
         <div className="container-fluid p-0 mb-5">
@@ -22,7 +24,7 @@ export const Carousel = () => {
                                     Find your place
                                 </h1>
                                 <Link
-                                    to="/available-rooms"
+                                    to={PATH.AVAILABLE_ROOMS}
                                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                                 >
                                     Our Rooms
@@ -47,7 +49,7 @@ export const Carousel = () => {
                                     Share your place
                                 </h1>
                                 <Link
-                                    to="/available-rooms"
+                                    to={PATH.AVAILABLE_ROOMS}
                                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                                 >
                                     Our Rooms

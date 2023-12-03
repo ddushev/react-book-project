@@ -5,6 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 
 import { useRoomContext } from "../../../contexts/RoomContext";
 
+import PATH from "../../../utils/paths";
+
 export const RoomCard = ({
     roomData
 }) => {
@@ -49,7 +51,7 @@ export const RoomCard = ({
                 firstLinkTo: locationPathname == '/my-published-rooms' ? `/booking-confirmation/${roomData?._id}` : `/available-rooms/${roomData?._id}/details`,
                 secondLink: locationPathname == '/my-published-rooms' ? 'Decline booking' : 'Cancel booking',
                 secondLinkCallback: onBookRoomInteract,
-                secondLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : '/available-rooms',
+                secondLinkTo: locationPathname == '/my-published-rooms' ? '/my-published-rooms' : PATH.AVAILABLE_ROOMS,
                 bookedBy: locationPathname == '/my-published-rooms' ? false : ''
             })
         } else if (!roomData?.confirmed && !roomData?.bookedBy) {
