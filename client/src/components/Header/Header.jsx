@@ -3,6 +3,8 @@ import "./Header.css";
 
 import { Link, NavLink } from "react-router-dom";
 
+import PATH from "../../utils/paths";
+
 export const Header = () => {
     const { isAuthenticated, userImg } = useAuthContext();
     return (
@@ -10,7 +12,7 @@ export const Header = () => {
             <div className="row gx-0">
                 <div className="col-lg-3 bg-dark d-none d-lg-block">
                     <Link
-                        to="/"
+                        to={PATH.HOME}
                         className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
                     >
                         <h1 className="m-0 text-primary text-uppercase">ReactBook</h1>
@@ -49,7 +51,7 @@ export const Header = () => {
                         </div>
                     </div>
                     <nav className="navbar navbar-expand-lg bg-dark navbar-dark p-3 p-lg-0">
-                        <Link to="/" className="navbar-brand d-block d-lg-none">
+                        <Link to={PATH.HOME} className="navbar-brand d-block d-lg-none">
                             <h1 className="m-0 text-primary text-uppercase">ReactBook</h1>
                         </Link>
                         <button
@@ -65,7 +67,7 @@ export const Header = () => {
                             id="navbarCollapse"
                         >
                             <div className="navbar-nav mr-auto py-0">
-                                <NavLink to="/" className="nav-item nav-link" activeclassname="active">
+                                <NavLink to={PATH.HOME} className="nav-item nav-link" activeclassname="active">
                                     Home
                                 </NavLink>
                                 <NavLink to="/about" className="nav-item nav-link" activeclassname="active">

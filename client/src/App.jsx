@@ -12,6 +12,7 @@ import { NotRoomOwnerGuard } from "./components/Common/NotRoomOwnerGuard/NotRoom
 import { RoomNotBookedOrIsConfirmedGuard } from "./components/Common/RoomNotBookedOrIsConfirmedGuard/RoomNotBookedOrIsConfirmedGuard"
 import { RoomNotConfirmedGuard } from "./components/Common/RoomNotConfirmedGuard/RoomNotConfirmedGuard"
 import { RoomBookedAndOwnerGuard } from "./components/Common/RoomBookedAndOwnerGuard/RoomBookedAndOwnerGuard"
+import PATH from "./utils/paths"
 
 import { Header } from "./components/Header/Header"
 import { Home } from "./components/Home/Home"
@@ -32,6 +33,7 @@ import { RoomBookedOrConfirmedGuard } from "./components/Common/RoomBookedOrConf
 
 
 
+
 function App() {
     return (
         <div className="container-xxl bg-white p-0">
@@ -40,7 +42,7 @@ function App() {
                     <MessageContextProvider>
                         <Header />
                         <Routes>
-                            <Route path="/" element={<Home />} />
+                            <Route path={PATH.HOME} element={<Home />} />
                             <Route path="/about" element={<About />} />
                             <Route path="/available-rooms" element={<RoomsCatalog />} />
                             <Route element={<RoomBookedAndOwnerGuard />}>

@@ -3,6 +3,8 @@ import "./CommonHeader.css";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation, useParams } from "react-router-dom";
 
+import PATH from "../../../utils/paths";
+
 export const CommonHeader = () => {
     const locationPathname = useLocation().pathname;
     const locationSearch = useLocation().search;
@@ -10,7 +12,6 @@ export const CommonHeader = () => {
         heading: '',
         page: ''
     });
-
 
     //configure dynamic URLs
     const { roomId } = useParams();
@@ -95,7 +96,7 @@ export const CommonHeader = () => {
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb justify-content-center text-uppercase">
                             <li className="breadcrumb-item">
-                                <Link to="/">Home</Link>
+                                <Link to={PATH.HOME}>Home</Link>
                             </li>
                             <li className="breadcrumb-item">
                                 <Link to="/available-rooms">All Rooms</Link>
