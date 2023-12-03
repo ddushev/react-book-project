@@ -5,6 +5,7 @@ import { dataFactory } from "../services/dataRequests"
 import { useLocalStorage } from "../hooks/useLocalStorage";
 import { errorParser } from "../utils/errorParser";
 import { validateRegister } from "../utils/validateRegister";
+import PATH from "../utils/paths";
 
 
 export const AuthContext = createContext();
@@ -35,11 +36,11 @@ export const AuthContextProvider = ({
             await data.logout();
             localStorage.removeItem('key');
             setAuth({});
-            navigate('/');
+            navigate(PATH.HOME);
         } catch (errors) {
             localStorage.removeItem('key');
             setAuth({});
-            navigate('/');
+            navigate(PATH.HOME);
         }
     }
 
