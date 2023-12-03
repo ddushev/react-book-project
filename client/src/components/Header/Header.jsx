@@ -71,11 +71,11 @@ export const Header = () => {
                                 <NavLink to="/about" className="nav-item nav-link" activeclassname="active">
                                     About
                                 </NavLink>
-                                <NavLink to="available-rooms" className="nav-item nav-link" activeclassname="active">
+                                <NavLink to="/available-rooms" className="nav-item nav-link" activeclassname="active">
                                     Rooms' Catalog
                                 </NavLink>
                                 {isAuthenticated &&
-                                    <NavLink to="add-room" className="nav-item nav-link" activeclassname="active">
+                                    <NavLink to="/add-room" className="nav-item nav-link" activeclassname="active">
                                         Add Room
                                     </NavLink>
                                 }
