@@ -33,7 +33,7 @@ export const CommonHeader = () => {
     }, [locationPathname, locationSearch]);
 
     const pageInfo = useRef({
-        "/about": {
+        [PATH.ABOUT]: {
             heading: 'About',
             page: 'About us'
 

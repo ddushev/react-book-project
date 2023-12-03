@@ -70,7 +70,7 @@ export const Header = () => {
                                 <NavLink to={PATH.HOME} className="nav-item nav-link" activeclassname="active">
                                     Home
                                 </NavLink>
-                                <NavLink to="/about" className="nav-item nav-link" activeclassname="active">
+                                <NavLink to={PATH.ABOUT} className="nav-item nav-link" activeclassname="active">
                                     About
                                 </NavLink>
                                 <NavLink to="/available-rooms" className="nav-item nav-link" activeclassname="active">

@@ -62,7 +62,7 @@ export const Footer = () => {
                             <h6 className="section-title text-start text-primary text-uppercase mb-4">
                                 Company
                             </h6>
-                            <Link className="btn btn-link" to="/about">
+                            <Link className="btn btn-link" to={PATH.ABOUT}>
                                 About Us
                             </Link>
                             <Link className="btn btn-link" to="/send-feedback">

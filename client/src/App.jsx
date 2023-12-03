@@ -43,7 +43,7 @@ function App() {
                         <Header />
                         <Routes>
                             <Route path={PATH.HOME} element={<Home />} />
-                            <Route path="/about" element={<About />} />
+                            <Route path={PATH.ABOUT} element={<About />} />
                             <Route path="/available-rooms" element={<RoomsCatalog />} />
                             <Route element={<RoomBookedAndOwnerGuard />}>
                                 <Route path="/available-rooms/:roomId/details" element={<RoomDetails />} />
