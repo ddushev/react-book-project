@@ -26,7 +26,6 @@ export const MessageCard = function ({
             <p>
                 {message}
             </p>
-            {/* <i className="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1" /> */}
         </div>
     );
 }

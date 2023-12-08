@@ -16,7 +16,6 @@ export const AddRoom = () => {
             setRoomErrors([]);
         }
     }, []);
-    const { userEmail, username } = useAuthContext();
     const { values, onSubmit, onChangeHandler } = useForm({
         [ROOM_FORM_FIELDS.NAME]: '',
         [ROOM_FORM_FIELDS.PRICE]: '',
@@ -148,46 +147,6 @@ export const AddRoom = () => {
                                                 <label htmlFor="name">Property location</label>
                                             </div>
                                         </div>
-                                        {/* <div className="col-md-6">
-                                            <div
-                                                className="form-floating date"
-                                                id="date3"
-                                                data-target-input="nearest"
-                                            >
-                                                <input
-                                                    type="text"
-                                                    className="form-control datetimepicker-input"
-                                                    id="checkin"
-                                                    placeholder="Check In"
-                                                    data-target="#date3"
-                                                    data-toggle="datetimepicker"
-                                                    name="checkin-availability"
-                                                    value={values["checkin-availability"]}
-                                                    onChange={onChangeHandler}
-                                                />
-                                                <label htmlFor="checkin">Available from</label>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-6">
-                                            <div
-                                                className="form-floating date"
-                                                id="date4"
-                                                data-target-input="nearest"
-                                            >
-                                                <input
-                                                    type="text"
-                                                    className="form-control datetimepicker-input"
-                                                    id="checkout"
-                                                    placeholder="Check Out"
-                                                    data-target="#date4"
-                                                    data-toggle="datetimepicker"
-                                                    name="checkout-availability"
-                                                    value={values["checkout-availability"]}
-                                                    onChange={onChangeHandler}
-                                                />
-                                                <label htmlFor="checkout">Available to</label>
-                                            </div>
-                                        </div> */}
                                         <div className="col-md-6">
                                             <div className="form-floating">
                                                 <select name={ROOM_FORM_FIELDS.ADULT} value={values.adult} onChange={onChangeHandler} className="form-select" id="select1">

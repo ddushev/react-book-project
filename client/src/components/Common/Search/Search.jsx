@@ -7,7 +7,7 @@ import { SEARCH_FIELDS } from "../../../utils/constants";
 import useForm from "../../../hooks/useForm";
 
 export const Search = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const { onRoomSearchClick } = useRoomContext();
 
     const location = searchParams.get('location') ? searchParams.get('location') : '';
