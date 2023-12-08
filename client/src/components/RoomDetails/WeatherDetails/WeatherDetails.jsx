@@ -10,7 +10,9 @@ export const WeatherDetails = ({
     location
 }) => {
     const [locationInfo, setLocationInfo] = useState({});
+    const [isFetching, setIsFetching] = useState(false);
     useEffect(() => {
+        setIsFetching(true);
         const fetchData = async () => {
             try {
                 const locationKey = await getLocationKey(location);
@@ -19,6 +21,7 @@ export const WeatherDetails = ({
                     const forecastData = await getLocationForecast(key);
                     setLocationInfo(forecastData);
                 }
+                setIsFetching(false);
             } catch (errors) {
                 console.error(errors.message);
             }
@@ -207,6 +210,10 @@ export const WeatherDetails = ({
         // });
         // setLocationInfo({});
     }, [location]);
+
+    if(isFetching) {
+        return <h5 className="loading-container">Checking weather conditions&hellip;</h5>
+    }
 
     return (
         locationInfo?.hasOwnProperty('Headline') ?
