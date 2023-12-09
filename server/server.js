@@ -1371,7 +1371,7 @@
                 "wifi": "Yes",
                 "parking": "Yes",
                 "description": "The Executive Suite is a luxurious oasis of sophistication and comfort, featuring spacious living and sleeping areas. With its tasteful furnishings, panoramic city views, and exclusive amenities, it offers the perfect blend of style and relaxation for the discerning traveler.",
-                "bookedBy": false,
+                "bookedBy": "847ec027-f659-4086-8032-5173e2f9c93a",
                 "confirmed": false,
                 "_createdOn": 1698520140080,
                 "_id": "c16473b1-d21b-46e8-a5d9-b4ffbc14e4b2"
@@ -1442,7 +1442,7 @@
                 "wifi": "Yes",
                 "parking": "Yes",
                 "description": "Perched high above the bustling city of Istanbul, our penthouse offers an extraordinary retreat in the heart of this vibrant metropolis. With panoramic views of the Bosphorus, historic landmarks, and the city's dynamic skyline, this lavish penthouse is a sanctuary of luxury.",
-                "bookedBy": false,
+                "bookedBy": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "confirmed": false,
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e6ef"
@@ -1460,7 +1460,7 @@
                 "wifi": "Yes",
                 "parking": "Yes",
                 "description": "Enjoy the ultimate convenience with our ski-in, ski-out room, where you can step right onto the slopes from your doorstep. Wake up to breathtaking mountain views and spend your days skiing or snowboarding to your heart's content, all without leaving the comfort of your cozy retreat.",
-                "bookedBy": false,
+                "bookedBy": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "confirmed": false,
                 "_createdOn": 1698836269290,
                 "_id": "a9d80ad3-a185-4257-9ced-b63eadb9e7fh"
