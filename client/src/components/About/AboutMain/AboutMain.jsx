@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 
 import { useRoomContext } from "../../../contexts/RoomContext";
 
+import PATH from "../../../utils/paths";
+
 export const AboutMain = () => {
     const { rooms } = useRoomContext();
     return (
@@ -56,7 +58,7 @@ export const AboutMain = () => {
                                 </div>
                             </div>
                         </div>
-                        <Link className="btn btn-primary py-3 px-5 mt-2" to="/available-rooms">
+                        <Link className="btn btn-primary py-3 px-5 mt-2" to={PATH.AVAILABLE_ROOMS}>
                             Explore More
                         </Link>
                     </div>

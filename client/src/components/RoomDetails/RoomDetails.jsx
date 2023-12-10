@@ -6,11 +6,13 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
 import { useMessageContext } from "../../contexts/MessageContext";
+import PATH from "../../utils/paths";
 
 import { Search } from "../Common/Search/Search";
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { MessagesCatalog } from "../MessagesCatalog/MessagesCatalog";
 import { WeatherDetails } from "./WeatherDetails/WeatherDetails";
+
 
 
 export const RoomDetails = () => {
@@ -139,7 +141,7 @@ export const RoomDetails = () => {
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-published-rooms">
                                     Published Rooms
                                 </Link>
-                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={PATH.AVAILABLE_ROOMS}>
                                     Available Rooms
                                 </Link>
                             </div>
@@ -154,7 +156,7 @@ export const RoomDetails = () => {
                                 <Link onClick={() => onBookRoomInteract({ ...roomData, bookedBy: userId }, roomId, `/pending-confirmation/${roomId}`)} className="btn btn-sm btn-primary rounded py-2 px-4" to="#">
                                     Book Room
                                 </Link>
-                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={PATH.AVAILABLE_ROOMS}>
                                     Available Rooms
                                 </Link>
                             </div>
@@ -170,7 +172,7 @@ export const RoomDetails = () => {
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/my-bookings">
                                     Check your bookings
                                 </Link>
-                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={PATH.AVAILABLE_ROOMS}>
                                     Available Rooms
                                 </Link>
                             </div>
@@ -183,7 +185,7 @@ export const RoomDetails = () => {
                                 <Link className="btn btn-sm btn-primary rounded py-2 px-4" to="/sign-in">
                                     Sign In to Book
                                 </Link>
-                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to="/available-rooms">
+                                <Link className="btn btn-sm btn-dark rounded py-2 px-4" to={PATH.AVAILABLE_ROOMS}>
                                     Back to Catalog
                                 </Link>
                             </div>

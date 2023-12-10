@@ -1,5 +1,8 @@
 import "./Footer.css";
+
 import { Link } from "react-router-dom";
+
+import PATH from "../../utils/paths";
 
 export const Footer = () => {
     return (<div
@@ -10,7 +13,7 @@ export const Footer = () => {
             <div className="row g-5">
                 <div className="col-md-6 col-lg-4">
                     <div className="bg-primary rounded p-4">
-                        <Link to="/">
+                        <Link to={PATH.HOME}>
                             <h1 className="text-white text-uppercase mb-3">ReactBook</h1>
                         </Link>
                         <p className="text-white mb-0">
@@ -59,7 +62,7 @@ export const Footer = () => {
                             <h6 className="section-title text-start text-primary text-uppercase mb-4">
                                 Company
                             </h6>
-                            <Link className="btn btn-link" to="/about">
+                            <Link className="btn btn-link" to={PATH.ABOUT}>
                                 About Us
                             </Link>
                             <Link className="btn btn-link" to="/send-feedback">
@@ -79,7 +82,7 @@ export const Footer = () => {
                             <h6 className="section-title text-start text-primary text-uppercase mb-4">
                                 Services
                             </h6>
-                            <Link className="btn btn-link" to="/available-rooms">
+                            <Link className="btn btn-link" to={PATH.AVAILABLE_ROOMS}>
                                 Book a Room
                             </Link>
                             <Link className="btn btn-link" to="/add-room">
@@ -107,7 +110,7 @@ export const Footer = () => {
                     </div>
                     <div className="col-md-6 text-center text-md-end">
                         <div className="footer-menu">
-                            <Link to="/">Home</Link>
+                            <Link to={PATH.HOME}>Home</Link>
                             <a href="#">Cookies</a>
                             <a href="#">Help</a>
                             <a href="#">FQAs</a>

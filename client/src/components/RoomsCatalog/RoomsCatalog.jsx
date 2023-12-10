@@ -4,9 +4,12 @@ import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useRoomContext } from "../../contexts/RoomContext";
 
+import PATH from "../../utils/paths";
+
 import { CommonHeader } from "../Common/CommonHeader/CommonHeader";
 import { RoomCard } from "./RoomCard/RoomCard";
 import { Search } from "../Common/Search/Search";
+
 
 export const RoomsCatalog = () => {
     let { rooms } = useRoomContext();
@@ -32,7 +35,7 @@ export const RoomsCatalog = () => {
     });
 
     const pageInfo = useRef({
-        "/available-rooms": {
+        [PATH.AVAILABLE_ROOMS]: {
             roomsCatalog: {
                 mainHeading: 'Explore available ',
                 mainHeadingSpan: 'Rooms',
@@ -70,7 +73,7 @@ export const RoomsCatalog = () => {
                 mainHeading: 'Book a ',
                 mainHeadingSpan: 'Room',
                 secondaryHeading: 'No Booked Rooms',
-                to: '/available-rooms'
+                to: PATH.AVAILABLE_ROOMS
             },
             filterRooms: (rooms, userId) => rooms.filter(room => room.bookedBy == userId),
         }
@@ -89,7 +92,7 @@ export const RoomsCatalog = () => {
                     mainHeading: 'Try other search ',
                     mainHeadingSpan: 'Criterias',
                     secondaryHeading: 'No Rooms Found',
-                    to: '/available-rooms'
+                    to: PATH.AVAILABLE_ROOMS
                 },
                 filterRooms: (rooms, userId, location, price, adult, child) => {
                     rooms = rooms.filter(room => !room.bookedBy && room._ownerId != userId);
