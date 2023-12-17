@@ -36,7 +36,6 @@ import { RoomBookedOrConfirmedGuard } from "./components/Common/RoomBookedOrConf
 
 function App() {
     return (
-        //Rest day but keep the ball rollin
         <div className="container-xxl bg-white p-0">
             <AuthContextProvider>
                 <RoomContextProvider>
