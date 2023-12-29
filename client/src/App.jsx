@@ -35,6 +35,7 @@ import { RoomBookedOrConfirmedGuard } from "./components/Common/RoomBookedOrConf
 
 
 function App() {
+    // keep the ball rolling
     return (
         <div className="container-xxl bg-white p-0">
             <AuthContextProvider>
