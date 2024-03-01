@@ -2,7 +2,7 @@
 The app uses a practice server that does not keep track of the changes made after a couple of minutes of inactivity.
 
 # ReactBook app 
-- Client hosted on Firebase - https://reactbook-app.firebaseapp.com/
+- Client hosted on Firebase - https://reactbook-app.firebaseapp.com/ - (it needs around 30-60seconds to awaken the server once the booking list is open or login/register is attempted)
 - Server hosted on Glitch - https://spiky-sudden-digit.glitch.me/data (needs to be awakened if not used in the past 5 minutes)
 
 # To install locally
