@@ -1,11 +1,12 @@
 // Server URLs
-// Production Server hosted on Glitch 'https://spiky-sudden-digit.glitch.me'
-// Local development server 'http://localhost:3030'
+// Production Server hosted on Glitch 'https://react-book-project.onrender.com'
+// export const BASE_URL = 'https://react-book-project.onrender.com';
+// Local development server 
 export const BASE_URL = 'http://localhost:3030';
 
 export const WEATHER_URL = 'http://dataservice.accuweather.com';
 
-// export const WEATHER_API_KEY = 'YPZiA19iC0t8HSZ7s2G66AvCWwU5omhK'; //danieldyshew@gmail.com acc used in firebase depl
+// export const WEATHER_API_KEY = 'YPZiA19iC0t8HSZ7s2G66AvCWwU5omhK'; //danieldyshew@gmail.com acc used in firebase deploy
 export const WEATHER_API_KEY = '9NDqTQaNpkDFGIp2Ai9YOliy8UNTwoMn'; //daniel.dushev2@gmail.com acc used in local env and github repo
 
 export const ROOM_FORM_FIELDS = {

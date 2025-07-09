@@ -2,8 +2,8 @@
 The app uses a practice server that does not keep track of the changes made after a couple of minutes of inactivity.
 
 # ReactBook app 
-- Client hosted on Firebase - https://reactbook-app.firebaseapp.com/ - (it needs around 30-60seconds to awaken the server once the booking list is open or login/register is attempted)
-- Server hosted on Glitch - https://spiky-sudden-digit.glitch.me/data (needs to be awakened if not used in the past 5 minutes)
+- Client hosted on Firebase - https://reactbook-app.web.app/ - (it needs around 30-60seconds to awaken the server once the booking list is open or login/register is attempted)
+- Server hosted on Render - https://react-book-project.onrender.com/data (needs to be awakened if not used in the past 5 minutes)
 
 # To install locally
 1. Clone the repo locally.
@@ -61,9 +61,7 @@ ReactBook is a Singe Page Application  that allows users to register login and l
    - Several components and hooks are tested using Vitest and React testing library (Header, EditRoom, RoomCard, MessageCard and useForm hook)
    - Run npm run test to execute tests
 8. Deployment
-    - The server is hosted via Glitch(https://glitch.com/) and can be accessed at: https://spiky-sudden-digit.glitch.me/data. After several minutes of inactivity, it falls asleep.
-    - The client is deployed via Firebase(https://firebase.google.com/) and can be access at https://reactbook-app.firebaseapp.com/
+    - The server is hosted via Render and can be accessed at: https://react-book-project.onrender.com/data. After several minutes of inactivity, it falls asleep.
+    - The client is deployed via Firebase(https://firebase.google.com/) and can be access at https://reactbook-app.web.app/
 # For refactoring:
 1. Routes and links
-
-      
